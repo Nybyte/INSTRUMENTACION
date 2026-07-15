@@ -1,0 +1,173 @@
+# Boletín 3
+Amplificación
+
+## Índice
+* [Problema 1](#1)
+* [Problema 2](#2)
+* [Problema 3](#3)
+
+---
+
+## Problema 1 <a name="1"></a>
+**Enunciado:**
+Diseñar etapas
+amplificadoras
+para adaptar:
+
+a)
+$$V_{in} (0, 0.1\text{ V})$$
+$$\to$$
+$$V_{out} (-5, +5\text{ V})$$
+
+b)
+$$V_{in} (-0.2, 0.5\text{ V})$$
+$$\to$$
+$$V_{out} (0, 10\text{ V})$$
+
+c)
+$$V_{in} (1, 1.5\text{ V})$$
+$$\to$$
+$$V_{out} (+1, -1\text{ V})$$
+
+d)
+$$V_{in} (0, 0.01\text{ V})$$
+$$\to$$
+$$V_{out} (-10, +10\text{ V})$$
+
+**Solución:**
+1. Ecuaciones:
+$$V_{out} = A \cdot V_{in} + B$$
+
+a)
+$$-5 = A \cdot 0 + B$$
+$$+5 = A \cdot 0.1 + B$$
+$$\implies B = -5$$
+$$\text{V}$$
+$$\implies A = 100$$
+$$V_{out} = 100 \cdot V_{in} - 5$$
+
+b)
+$$0 = A \cdot (-0.2) + B$$
+$$10 = A \cdot 0.5 + B$$
+$$\implies A = 14.29$$
+$$\implies B = 2.86$$
+$$\text{V}$$
+$$V_{out} = 14.29 \cdot V_{in} + 2.86$$
+
+c)
+$$1 = A \cdot 1 + B$$
+$$-1 = A \cdot 1.5 + B$$
+$$\implies A = -4$$
+$$\implies B = 5$$
+$$\text{V}$$
+$$V_{out} = -4 \cdot V_{in} + 5$$
+
+d)
+$$-10 = A \cdot 0 + B$$
+$$+10 = A \cdot 0.01 + B$$
+$$\implies B = -10$$
+$$\text{V}$$
+$$\implies A = 2000$$
+$$V_{out} = 2000 \cdot V_{in} - 10$$
+
+2. Diseño (ej. a)
+Montaje de dos
+etapas
+inversoras:
+$$V_{out} = \frac{R_3 R_5}{R_1 R_4} V_{in} - \frac{R_5}{R_2} V_{ref}$$
+Para:
+$$V_{ref} = 5$$
+$$\text{V}$$
+Elegimos:
+$$R_1 = R_4 = 10$$
+$$\text{k}\Omega$$
+$$R_3 = R_5 = 100$$
+$$\text{k}\Omega$$
+$$R_2 = 100$$
+$$\text{k}\Omega$$
+
+---
+
+## Problema 2 <a name="2"></a>
+**Enunciado:**
+Transductor:
+$$V_s = 1 + 0.05P + 0.001P^2$$
+con
+$$P \in (0, 20)$$
+a) Diseñad un
+amplificador
+para salida:
+$$0$$
+a
+$$2$$
+$$\text{V}$$
+b) Error de
+linealidad.
+c) Minimizar
+alinealidad.
+
+**Solución:**
+a) Extremos:
+-
+$$P = 0 \to V_s = 1$$
+$$\text{V}$$
+-
+$$P = 20 \to V_s = 2.4$$
+$$\text{V}$$
+
+Ecuación:
+$$V_{out} = A \cdot V_s + B$$
+-
+$$0 = A \cdot 1 + B \implies B = -A$$
+-
+$$2 = A \cdot 2.4 - A \implies A = 1.43$$
+$$\implies B = -1.43$$
+$$\text{V}$$
+$$V_{out} = 1.43 \cdot V_s - 1.43$$
+
+b) Alinealidad
+Recta ideal:
+$$V_{id} = 0.1 \cdot P$$
+Real:
+$$V_{out} = 0.0714 \cdot P + 0.00143 \cdot P^2$$
+Error máximo en
+$$P = 10$$
+:
+$$\Delta V = \vert V_{out} - V_{id} \vert = 0.143$$
+$$\text{V}$$
+Alinealidad:
+$$\text{ALIN} = \frac{0.143}{2} \cdot 100$$
+$$\text{ALIN} \approx 7.1$$
+$$\%$$
+
+---
+
+## Problema 3 <a name="3"></a>
+**Enunciado:**
+Sensor de
+posición:
+- X(mm) y Vs(mV)
+Calculad:
+a) Sensibilidad
+media.
+b) Linealidad.
+
+**Solución:**
+a) Sensibilidad
+- Mínimos
+cuadrados:
+$$S_1 = 320.71$$
+$$\text{mV/mm}$$
+- Extremos:
+$$S_2 = 323.04$$
+$$\text{mV/mm}$$
+
+b) Linealidad
+- Caso 1 (M.C.):
+$$\text{ALIN} = \frac{57.1}{8012.9 - (-4.86)} \cdot 100$$
+$$\text{ALIN} \approx 0.7$$
+$$\%$$
+- Caso 2 (Extr.):
+$$\text{ALIN} = \frac{80.6}{8070 - (-6)} \cdot 100$$
+$$\text{ALIN} \approx 1.0$$
+$$\%$$
