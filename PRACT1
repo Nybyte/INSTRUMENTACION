@@ -1,0 +1,289 @@
+# Práctica 1
+LVDT
+
+## Índice
+* [Objetivos](#1)
+* [Instru.](#2)
+* [Comp.](#3)
+* [Teoría](#4)
+* [Parám.](#5)
+* [Circuito](#6)
+* [IC NE5521](#7)
+* [Fase A](#8)
+* [Fase B](#9)
+* [Fase C](#10)
+
+---
+
+## Objetivos <a name="1"></a>
+Estudiar las
+característ.
+del LVDT y su
+circuito de
+acondicionam.
+
+---
+
+## Instru. <a name="2"></a>
+Instrumentos
+necesarios:
+* Fuente
+  alimentac.
+  $$\pm 12$$
+  voltios de
+  corriente
+  continua
+  $$\text{V}_{\text{dc}}$$
+* Osciloscopio.
+* Multímetro
+  digital.
+
+---
+
+## Comp. <a name="3"></a>
+Componentes:
+* Circuito de
+  acondic.
+* Sensor LVDT.
+
+---
+
+## Teoría <a name="4"></a>
+LVDT es un
+transformador
+diferencial
+lineal.
+Tiene:
+* Un soporte
+  no magnético.
+* Un devanado
+  primario
+  excitado en
+  alterna.
+* Dos
+  secundarios
+  idénticos en
+  oposición de
+  fase.
+* Un núcleo
+  móvil
+  ferro-
+  magnético.
+
+### Funcionam.
+* Núcleo en el
+  centro:
+  tensiones en
+  secundarios
+  son iguales.
+  Salida es
+  nula por
+  oposición de
+  fase.
+* Núcleo
+  desplazado:
+  flujos
+  diferentes.
+  Salida es
+  proporcional
+  al desplazam.
+
+### Parámetros
+* Rango:
+  desde
+  $$\pm 150$$
+  micrómetros
+  $$\mu\text{m}$$
+  hasta
+  $$\pm 150$$
+  milímetros
+  $$\text{mm}$$
+* Precisión:
+  $$\pm 0.1$$
+  por ciento
+  $$\%$$
+
+### Modelo
+* Primario:
+  $$V_1 = A \sin(\omega t)$$
+* Secundario:
+  $$V_o = A' \sin(\omega t)$$
+  donde
+  $$A' = k \cdot x$$
+  siendo
+  $$x$$
+  desplazam.
+
+---
+
+## Parám. <a name="5"></a>
+Calidades:
+* Tensión de
+  entrada
+  nominal.
+* Margen de
+  frecuencias.
+* Campo nominal
+  de desplazam.
+* Margen de
+  temperatur.
+* Impedancias
+  de primario y
+  secundarios.
+* Linealidad,
+  sensibilidad
+  y fase.
+
+---
+
+## Circuito <a name="6"></a>
+El circuito
+debe:
+* Excitar el
+  primario con
+  onda senoidal
+  estable.
+* Demodular la
+  salida de los
+  secundarios.
+* Entregar una
+  tensión
+  continua
+  proporcional
+  al desplazam.
+  Es una señal
+  modulada en
+  amplitud
+  (AM).
+
+---
+
+## IC NE5521 <a name="7"></a>
+Implementa las
+funciones:
+* Referencia
+  de tensión:
+  genera
+  $$\pm 8$$
+  voltios de
+  corriente
+  continua
+  $$\text{V}_{\text{dc}}$$
+* Oscilador:
+  genera una
+  onda
+  triangular.
+* Driver:
+  conversor de
+  onda senoidal
+  estable,
+  y ataca al
+  primario del
+  LVDT.
+* Demodulador
+  síncrono:
+  rectifica y
+  detecta fase
+  con señal de
+  sincronismo.
+* Filtro activo
+  paso bajo:
+  quita la
+  portadora de
+  la salida del
+  demodulador y
+  añade offset.
+  Salida va de
+  $$0$$
+  a
+  $$8$$
+  voltios
+  $$\text{V}$$
+
+---
+
+## Fase A <a name="8"></a>
+Análisis de
+acondicionam:
+1. Alimentar
+   el panel a
+   $$\pm 15$$
+   voltios de
+   corriente
+   continua
+   $$\text{V}_{\text{dc}}$$
+   y masa.
+   Mover cursor
+   desde
+   $$0$$
+   adelante.
+2. Ver señal
+   senoidal en
+   primario del
+   LVDT.
+3. Ver salidas
+   secundarios
+   por núcleo.
+4. Ver entradas
+   demodulador
+   síncrono
+   (sincronismo
+   y salida del
+   LVDT).
+5. Ver salida
+   demodulador
+   frente a
+   entrada.
+6. Comparar en
+   osciloscopio
+   salida de
+   demodulador
+   con salida
+   final.
+
+---
+
+## Fase B <a name="9"></a>
+Trazado de
+recta óptima:
+1. Conectar el
+   multímetro a
+   salida y
+   masa.
+2. Mover núcleo
+   de
+   $$2$$
+   en
+   $$2$$
+   milímetros
+   $$\text{mm}$$
+   desde
+   $$0$$
+   hasta
+   $$25$$
+   milímetros
+   $$\text{mm}$$
+   y registrar
+   tensiones.
+3. Hacer tabla
+   de medidas.
+4. Graficar
+   $$V$$
+   frente a
+   $$X$$
+5. Ajustar por
+   mínimos
+   cuadrados.
+
+---
+
+## Fase C <a name="10"></a>
+Alinealidad:
+Medir error de
+linealidad del
+sistema
+sensor-
+acondicionador.
+Calcular con
+conceptos de
+clase.
