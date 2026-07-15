@@ -1,0 +1,192 @@
+# Práctica 4
+LDR
+
+## Índice
+* [Objetivos](#1)
+* [Instru.](#2)
+* [Comp.](#3)
+* [Teoría](#4)
+* [Circuito](#5)
+* [Fase A](#6)
+* [Fase B](#7)
+
+---
+
+## Objetivos <a name="1"></a>
+Estudiar una LDR
+y su aplicación
+en interruptor
+crepuscular.
+
+---
+
+## Instru. <a name="2"></a>
+Instrumentos:
+* Fuente
+  alimentac.
+  estabilizada
+  $$5$$
+  voltios de
+  corriente
+  continua
+  $$\text{V}_{\text{dc}}$$
+* Multímetro
+  digital.
+* Fotómetro
+  digital.
+* Fuente
+  luminosa
+  variable.
+
+---
+
+## Comp. <a name="3"></a>
+Componentes:
+* LDR de
+  referencia
+  NORP12 de CdS.
+  Sensibilidad
+  espectral
+  similar al ojo
+  humano.
+  Pico en
+  $$530$$
+  nanómetros
+  $$\text{nm}$$
+* Tarjeta de
+  interruptor
+  crepuscular.
+
+---
+
+## Teoría <a name="4"></a>
+Fotorresistencia
+LDR cambia su
+resistencia al
+incidir luz
+(radiación de
+$$10$$
+nanómetros
+$$\text{nm}$$
+a
+$$1$$
+milímetro
+$$\text{mm}$$
+).
+A mayor luz,
+más electrones
+pasan a banda
+de conducción
+(menor
+resistencia).
+
+### Modelo
+$$R = A \cdot E^{-\alpha}$$
+donde:
+* $$R$$
+  resistencia
+  ohmios
+  $$\Omega$$
+* $$E$$
+  iluminación
+  lux
+  $$\text{lux}$$
+* $$A, \alpha$$
+  coeficientes.
+
+### Logarítmico
+$$\log(R) = A' - \alpha \cdot \log(E)$$
+donde:
+* $$A' = \log(A)$$
+Es una recta.
+
+---
+
+## Circuito <a name="5"></a>
+Estructura:
+* Puente:
+  $$R_1 = R_2 = 1$$
+  kiloohmio
+  $$\text{k}\Omega$$
+  $$R_3 = 470$$
+  ohmios
+  $$\Omega$$
+  y LDR.
+* Comparador
+  LM311.
+* Histéresis:
+  $$R_5 = 4.7$$
+  kiloohmios
+  $$\text{k}\Omega$$
+  con jumper
+  J6.
+* Salida:
+  relé y LED
+  con
+  $$R_6 = 470$$
+  ohmios
+  $$\Omega$$
+* Puntos test:
+  * T1: LDR
+    (pin 3).
+  * T2: masa.
+  * T3: salida
+    (pin 7).
+
+---
+
+## Fase A <a name="6"></a>
+Caracterización:
+1. Conectar LDR
+   a multímetro.
+2. Registrar R
+   para luxes
+   duplicados:
+   $$10$$
+   $$20$$
+   $$40$$
+   $$80$$
+   $$160$$
+   lux
+   $$\text{lux}$$
+3. Graficar en
+   lineal y
+   log-log.
+4. Ajustar por
+   mínimos
+   cuadrados en
+   log-log para
+   hallar
+   $$A$$
+   y
+   $$\alpha$$
+
+---
+
+## Fase B <a name="7"></a>
+Interruptor:
+1. Alimentar a
+   $$5$$
+   voltios
+   $$\text{V}$$
+   con jumper
+   J6 OFF.
+2. Ver cambio y
+   comparar con
+   umbral
+   teórico.
+3. Cerca del
+   umbral sin
+   histéresis,
+   ver
+   oscilaciones
+   (ruido de
+   relé) en
+   osciloscopio.
+4. Jumper J6 ON
+   con
+   $$R_5$$
+   para añadir
+   histéresis.
+   Comprobar
+   estabilidad.
