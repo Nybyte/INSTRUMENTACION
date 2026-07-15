@@ -1,0 +1,545 @@
+# Examen Problemas
+
+## Índice
+* [Problema 1](#1)
+  - Galga elástica
+  - (0 a 1000N)
+* [Problema 2](#2)
+  - PT100 (-5 a 5V)
+  - (0 a 200ºC)
+* [Problema 3](#3)
+  - Galgas voladizo
+  - (0 a 1000N)
+* [Problema 4](#4)
+  - NTC Divisor
+  - (-10 a 50ºC)
+* [Problema 5](#5)
+  - Bourdon Pot
+  - (-5 a 5V)
+* [Problema 6](#6)
+  - PT100
+  - (0 a 10V)
+* [Problema 7](#7)
+  - Nivel deposit
+  - Potenciómetro
+* [Problema 8](#8)
+  - Termopar LM335
+  - (50 a 300ºC)
+* [Problema 9](#9)
+  - Bourdon Pot
+  - (0 a 5V)
+* [Problema 10](#10)
+  - PT100
+  - (0 a 5V)
+
+---
+
+## Problema 1 <a name="1"></a>
+**Pregunta:**
+Para la medida
+de una fuerza
+disponemos de
+una pieza con:
+$$\epsilon = F \cdot 10^{-6}$$
+Galga con:
+$$R = 500$$
+$$\Omega$$
+$$K_g = 2$$
+Fuerza: 0 a
+1000N.
+Salida: 0 a 1V.
+a) Vref y G.
+b) Alinealidad.
+c) Jumper dcha.
+para linealidad
+perfecta.
+
+**Respuesta:**
+a) Vref y G
+Con jumper izq,
+el pin 3 del
+U1 va a masa
+(0V).
+Aplicando nudos
+en pin 2 de U1:
+$$\frac{V_{ref}}{R} + \frac{V_{U1}}{R(1+x)} + \frac{V_{U2}}{2R} = 0$$
+Siendo U2 un
+inversor con
+$$R_6 = R_7 = R$$
+:
+$$V_{U2} = -V_{U1}$$
+Sustituyendo:
+$$\frac{V_{ref}}{R} + \frac{V_{U1}}{R(1+x)} - \frac{V_{U1}}{2R} = 0$$
+Despejando:
+$$V_{U1} = -V_{ref} \frac{2(1+x)}{1-x}$$
+$$x = K_g \cdot \epsilon$$
+Para 1000N:
+$$x = 2 \cdot 10^{-3} = 0.002$$
+La variación
+$$\Delta V_{U1}$$
+se amplifica
+para dar 1V.
+
+b) Alinealidad
+La función
+$$\frac{1+x}{1-x}$$
+no es lineal.
+El error es
+la desviación
+de la recta
+ideal,
+analizable con
+Taylor.
+
+c) Jumper dcha
+Conecta pin 3
+a la salida
+$$V_{U2}$$
+.
+$$V_C = V_{U2}$$
+$$\frac{V_{ref}-V_{U2}}{R} + \frac{V_{U1}-V_{U2}}{R(1+x)} = 0$$
+Haciendo que el
+denominador
+sea constante,
+obtenemos la
+relación de
+resistencias
+perfectamente
+lineal.
+
+---
+
+## Problema 2 <a name="2"></a>
+**Pregunta:**
+PT100 con:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$\beta = -5.8 \times 10^{-7}$$
+Rango: 0 a
+200ºC.
+Salida: -5 a
++5V.
+a) Circuito.
+b) Alinealidad.
+c) Calentamiento
+($\sigma=10$mW/ºC).
+
+**Respuesta:**
+a) Diseño
+Inyectamos
+$$I = 1\text{mA}$$
+para evitar
+autocalentami.
+$$R(0) = 100$$
+$$\Omega$$
+$$V_{PT}(0) = 0.1$$
+$$\text{V}$$
+$$R(200) = 175.68$$
+$$\Omega$$
+$$V_{PT}(200) = 0.1757$$
+$$\text{V}$$
+Recta ideal:
+$$V_{out} = A \cdot V_{PT} + B$$
+$$-5 = A \cdot 0.1 + B$$
+$$5 = A \cdot 0.1757 + B$$
+Despejando:
+$$A = 132.13$$
+$$B = -18.21$$
+$$\text{V}$$
+Usamos un
+amplificador
+no inversor
+y un sumador
+para el offset.
+
+b) Alinealidad
+$$V_{ideal}(T) = 0.05 T - 5$$
+$$V_{real}(T) = 0.132 R(T) - 18.21$$
+El máximo
+error ocurre
+a 100ºC por
+el factor
+$$\beta$$
+cuadrático.
+
+c) Calentamiento
+Potencia max:
+$$P_{max} = I^2 \cdot R_{max}$$
+$$P_{max} = 10^{-6} \cdot 175.68$$
+$$P_{max} = 0.175$$
+$$\text{mW}$$
+Incremento T:
+$$\Delta T = \frac{0.175}{10}$$
+$$\Delta T = 0.0175$$
+$$^{\circ}\text{C}$$
+
+---
+
+## Problema 3 <a name="3"></a>
+**Pregunta:**
+Dos galgas:
+$$\epsilon_1 = -\epsilon_2$$
+$$\epsilon_1 = F \cdot 10^{-6}$$
+Rango: 0 a
+1000N.
+V = 10V.
+Galgas en
+voladizo.
+a) Ganancia G
+para 0 a 5V.
+b) Alinealidad.
+
+**Respuesta:**
+a) Diseño
+Deformación:
+$$x = 2 \cdot 1000 \cdot 10^{-6}$$
+$$x = 0.002$$
+Voltajes del
+puente:
+$$V_A = 10 \frac{1+x}{3+x}$$
+$$V_B = 10 \frac{1-x}{3-x}$$
+Diferencia:
+$$\Delta V = 10 \frac{4x}{9-x^2}$$
+Aprox:
+$$\Delta V \approx \frac{40}{9} x$$
+Para x=0.002:
+$$\Delta V = 8.88$$
+$$\text{mV}$$
+Ganancia G:
+$$G = \frac{5}{0.00888}$$
+$$G = 562.5$$
+
+b) Alinealidad
+$$Error = G \cdot 40x \left( \frac{1}{9-x^2} - \frac{1}{9} \right)$$
+El error se
+maximiza a
+fondo de escala
+siendo menor a
+unos pocos
+microvoltios.
+
+---
+
+## Problema 4 <a name="4"></a>
+**Pregunta:**
+NTC con:
+$$R_{T0} = 5$$
+$$\text{k}\Omega$$
+$$T_0 = 25$$
+$$^{\circ}\text{C}$$
+$$B = 4000$$
+$$\text{K}$$
+Rango: -10 a
+50ºC.
+Salida 0 a 5V.
+a) Circuito.
+b) Alinealidad.
+c) Calentamiento
+($\sigma=5$mW/ºC).
+
+**Respuesta:**
+a) Diseño
+Centro:
+$$T_c = 20$$
+$$^{\circ}\text{C}$$
+$$R_{NTC}(20) = 6287$$
+$$\Omega$$
+Resistencia Rs:
+$$R_s = 6287 \frac{4000-586}{4000+586}$$
+$$R_s = 4680$$
+$$\Omega$$
+Divisor a 5V:
+$$V_{div}(-10) = 0.677$$
+$$\text{V}$$
+$$V_{div}(50) = 3.627$$
+$$\text{V}$$
+Recta:
+$$0 = 0.677 A + B$$
+$$5 = 3.627 A + B$$
+$$A = 1.695$$
+$$B = -1.147$$
+$$\text{V}$$
+
+b) Alinealidad
+En el centro:
+$$V_{div}(20) = 2.133$$
+$$\text{V}$$
+$$V_{real} = 2.468$$
+$$\text{V}$$
+$$V_{ideal} = 2.500$$
+$$\text{V}$$
+$$Error = 32$$
+$$\text{mV}$$
+$$ALIN(\%) = 0.64\%$$
+
+c) Calentamiento
+Cuando
+$$R_{NTC} = R_s$$
+:
+$$P_{max} = \frac{25}{4 \cdot 4680}$$
+$$P_{max} = 1.335$$
+$$\text{mW}$$
+Incremento T:
+$$\Delta T = \frac{1.335}{5}$$
+$$\Delta T = 0.267$$
+$$^{\circ}\text{C}$$
+
+---
+
+## Problema 5 <a name="5"></a>
+**Pregunta:**
+Tubo Bourdon
+con pot:
+$$R_t = 10$$
+$$\text{k}\Omega$$
+$$p = 0$$
+$$\implies \alpha = 72^\circ$$
+$$p = p_{max}$$
+$$\implies \alpha = 288^\circ$$
+Salida -5 a 5V.
+a) Vref y R2.
+b) Alinealidad.
+
+**Respuesta:**
+a) Diseño
+Voltaje
+potenciómetro:
+$$V_{pot} = 5 \frac{\alpha}{360}$$
+$$V_{pot}(72^\circ) = 1$$
+$$\text{V}$$
+$$V_{pot}(288^\circ) = 4$$
+$$\text{V}$$
+Circuito sum.
+inversor:
+$$V_{out} = -\frac{R_2}{100\text{k}}(V_{pot} + V_{ref})$$
+Sistema:
+$$-5 = -\frac{R_2}{100\text{k}}(4 + V_{ref})$$
+$$5 = -\frac{R_2}{100\text{k}}(1 + V_{ref})$$
+Sumando:
+$$0 = R_2(5 + 2V_{ref})$$
+$$V_{ref} = -2.5$$
+$$\text{V}$$
+Despejando:
+$$R_2 = 333.3$$
+$$\text{k}\Omega$$
+
+b) Alinealidad
+El potenciómetro
+está cargado
+por R1 de 100K.
+Error de carga:
+$$\epsilon \approx 15\% \frac{R_t}{R_1}$$
+$$\epsilon \approx 1.5\%$$
+
+---
+
+## Problema 6 <a name="6"></a>
+**Pregunta:**
+PT100 con:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$\beta = -5.8 \times 10^{-7}$$
+Rango: 0 a
+100ºC.
+Salida 0 a 10V.
+
+**Respuesta:**
+a) Diseño
+$$R(100) = 138.42$$
+$$\Omega$$
+Fuente cte
+con AO:
+$$I = \frac{1 - V_-}{1000}$$
+$$V_- = \frac{100}{1100}$$
+$$I = 0.909$$
+$$\text{mA}$$
+Salida AO1:
+$$V_{out1} = \frac{100 - R}{11000}$$
+En T=0ºC:
+$$V_{out1}(0) = 0$$
+$$\text{V}$$
+En T=100ºC:
+$$V_{out1}(100) = -0.0349$$
+$$\text{V}$$
+Sumador:
+$$V_{out} = -\frac{R_3}{R_2}V_{out1} - \frac{R_3}{R_1}V_{ref}$$
+Al ser 0V a 0ºC:
+$$V_{ref} = 0$$
+$$\text{V}$$
+$$10 = \frac{R_3}{R_2} 0.0349$$
+$$\frac{R_3}{R_2} = 286.3$$
+Tomando
+$$R_2 = 1$$
+$$\text{k}\Omega$$
+$$R_3 = 286.3$$
+$$\text{k}\Omega$$
+
+---
+
+## Problema 7 <a name="7"></a>
+**Pregunta:**
+Nivel de
+depósito con
+potenciómetro:
+$$R_t = 10$$
+$$\text{k}\Omega$$
+$$h = 0 \implies R_1=0$$
+$$h = h_{max} \implies R_1=R_t$$
+a) Salida Vo vs h.
+b) Alinealidad.
+
+**Respuesta:**
+a) Ecuación
+$$x = \frac{h}{h_{max}}$$
+$$R_1 = 10x$$
+$$R_2 = 10(1-x)$$
+El cursor va a
+R4=100k y R3
+está en paralelo
+con R1.
+$$R_{1eq} = \frac{1000x}{10x+100}$$
+Voltaje pot:
+$$V_{pot} = 5 \frac{R_2}{R_{1eq} + R_2}$$
+$$V_{pot} = 5 \frac{10 - 9x - x^2}{10 + x - x^2}$$
+Sumador AO:
+$$V_{out} = -(2 V_{pot} - 5)$$
+$$V_{out} = 5 - 2 V_{pot}$$
+$$V_{out} = \frac{5x^2 + 95x - 50}{10 + x - x^2}$$
+Rango -5 a 5V.
+
+b) Alinealidad
+$$V_{ideal} = 10x - 5$$
+$$V_{error} = V_{real} - V_{ideal}$$
+$$V_{error} = \frac{10x^2(x-1)}{10 + x - x^2}$$
+Derivando para
+el máximo
+cerca de 0.5.
+
+---
+
+## Problema 8 <a name="8"></a>
+**Pregunta:**
+Termopar LM335:
+Horno:
+50 a 300ºC.
+Ambiente:
+0 a 40ºC.
+Salida 0 a 5V.
+Compensación
+unión fría por
+hardware.
+a) Diseño.
+b) Error term.
+cuadrático UF.
+c) Alinealidad.
+
+**Respuesta:**
+a) Diseño
+$$V_2 = 2.73$$
+$$\text{V}$$
+$$+ 10$$
+$$\text{mV/}^{\circ}\text{C} T_2$$
+Señal a sumar:
+$$V_c = \frac{V_2 - 2.73}{1000}$$
+Asume que da:
+$$10 \mu\text{V/}^{\circ}\text{C} T_2$$
+$$V_{comp} = V_{TC} + V_c$$
+Evaluando:
+$$V_{comp}(50) = 505$$
+$$\mu\text{V}$$
+$$V_{comp}(300) = 3180$$
+$$\mu\text{V}$$
+Diferencia:
+$$\Delta V = 2675$$
+$$\mu\text{V}$$
+Ganancia G:
+$$G = \frac{5}{0.002675}$$
+$$G = 1869.15$$
+
+b) Error term
+El hardware no
+compensa:
+$$\beta T_2^2$$
+Error máximo en
+$$T_2 = 40$$
+$$^{\circ}\text{C}$$
+$$Error_{max} = 0.002 \cdot 1600$$
+$$Error_{max} = 3.2$$
+$$\mu\text{V}$$
+
+c) Alinealidad
+$$V_{ideal}(T) = 0.02(T-50)$$
+$$V_{real}(T) = G (V_{comp}(T) - 505)$$
+Error restando
+ambas curvas.
+
+---
+
+## Problema 9 <a name="9"></a>
+**Pregunta:**
+Tubo Bourdon
+con pot:
+$$p = 0$$
+$$\implies \alpha = 36^\circ$$
+$$p = p_{max}$$
+$$\implies \alpha = 324^\circ$$
+Salida 0 a 5V.
+
+**Respuesta:**
+a) Diseño
+Voltaje
+potenciómetro:
+$$V_{pot}(36) = 0.5$$
+$$\text{V}$$
+$$V_{pot}(324) = 4.5$$
+$$\text{V}$$
+Recta ideal:
+$$0 = 0.5 A + B$$
+$$5 = 4.5 A + B$$
+Despejando:
+$$A = 1.25$$
+$$B = -0.625$$
+$$\text{V}$$
+Se implementa
+con un amp
+diferencial.
+
+---
+
+## Problema 10 <a name="10"></a>
+**Pregunta:**
+PT100 con
+circuito de
+corriente cte.
+Rango -10 a
+40ºC.
+Salida 0 a 5V.
+
+**Respuesta:**
+a) Diseño
+Voltajes
+salida AO1:
+$$V_{out1}(-10) = 0.3598$$
+$$\text{mV}$$
+$$V_{out1}(40) = -14.097$$
+$$\text{mV}$$
+Sumador:
+$$V_{out} = -\frac{R_3}{R_2}V_{out1} - \frac{R_3}{R_1}V_{ref}$$
+$$0 = -\frac{R_3}{R_2}(0.359) - \frac{R_3}{R_1}V_{ref}$$
+$$5 = -\frac{R_3}{R_2}(-14.0) - \frac{R_3}{R_1}V_{ref}$$
+Restando:
+$$5 = \frac{R_3}{R_2}(14.4568\text{m})$$
+$$\frac{R_3}{R_2} = 345.86$$
+Si
+$$V_{ref} = -1$$
+$$\text{V}$$
+$$\frac{R_3}{R_1} = 0.1244$$
+Eligiendo:
+$$R_2 = 1$$
+$$\text{k}\Omega$$
+$$R_3 = 345.8$$
+$$\text{k}\Omega$$
+$$R_1 = 2.78$$
+$$\text{M}\Omega$$
