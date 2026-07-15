@@ -1,0 +1,185 @@
+# Boletín 5
+Galgas y Piezo.
+
+## Índice
+* [Problema 1](#1)
+* [Problema 2](#2)
+* [Problema 3](#3)
+
+---
+
+## Problema 1 <a name="1"></a>
+**Enunciado:**
+Galga en
+voladizo:
+$$\epsilon_L = F \cdot 10^{-6}$$
+$$\text{N}^{-1}$$
+Galga:
+$$L = 5$$
+$$\text{mm}$$
+$$K_g = 2$$
+$$K_t = 0.01$$
+$$R_n = 500$$
+$$\Omega$$
+a) Diseñar
+circuito para
+$$V_{out} (0, 5\text{ V})$$
+con
+$$F \in (-500, +500\text{ N})$$
+b) Error por
+sensibilidad
+transversal si
+$$\epsilon_T = -0.1 \cdot 10^{-6} \cdot F$$
+c) Error por
+tamaño de galga
+a
+$$f = 10$$
+$$\text{kHz}$$
+con
+$$v = 1500$$
+$$\text{m/s}$$
+.
+
+**Solución:**
+a) Diseño
+Deformación:
+$$\delta = K_g \cdot \epsilon_L = 2 \cdot 10^{-6} \cdot F$$
+Excursión
+$$\delta \in (-0.001, +0.001)$$
+Salida puente
+con
+$$E = 10$$
+$$\text{V}$$
+:
+$$V_o = 2.5 \cdot \delta$$
+$$V_o \in (-2.5, +2.5)$$
+$$\text{mV}$$
+Amplificador
+diferencial de
+ganancia:
+$$200$$
+$$V_1 = 200 \cdot V_o$$
+$$V_1 \in (-0.5, +0.5)$$
+$$\text{V}$$
+Segunda etapa
+inversora:
+$$V_{out} = 5 \cdot V_1 + 2.5$$
+$$\text{V}$$
+
+b) Error
+transversal
+$$\delta_{real} = K_g(\epsilon_L + K_t\epsilon_T)$$
+$$\delta_{real} = 2 \cdot 10^{-6} \cdot F \cdot 0.999$$
+Diferencia es
+de
+$$0.1$$
+$$\%$$
+(despreciable).
+
+c) Error
+tamaño
+Longitud de
+onda:
+$$\lambda = \frac{v}{f} = 150$$
+$$\text{mm}$$
+Factor:
+$$F_c = \text{sinc}\left(\frac{L}{\lambda}\right)$$
+$$F_c = 0.998$$
+Diferencia:
+$$0.2$$
+$$\%$$
+
+---
+
+## Problema 2 <a name="2"></a>
+**Enunciado:**
+Puente con:
+$$R_1 = R_2 = 10 R_n$$
+$$R_4 = R_n$$
+$$R_3 = R_n(1+\delta)$$
+$$E = 5$$
+$$\text{V}$$
+a) Ganancia G
+para salida:
+$$0$$
+a
+$$1$$
+$$\text{V}$$
+con
+$$F \in (0, 1000\text{ N})$$
+b) Error de
+linealidad.
+c) Valor de G'
+para
+linealidad
+perfecta.
+
+**Solución:**
+a) Ganancia
+$$V_s = 5 \cdot \frac{10}{121} \cdot \frac{\delta}{1+\frac{\delta}{11}}$$
+Para
+$$\delta = 0.002$$
+$$V_s \approx \frac{50}{121} \cdot 0.002$$
+Ganancia:
+$$G = 1210$$
+
+b) Alinealidad
+$$\text{ALIN} = \frac{\vert V_{sreal} - V_{sideal} \vert}{V_{smax}} \cdot 100$$
+$$\text{ALIN} \approx 0.012$$
+$$\%$$
+
+c) Linealidad
+perfecta
+$$G' = -\frac{1}{1100}$$
+
+---
+
+## Problema 3 <a name="3"></a>
+**Enunciado:**
+Piezoeléctrico:
+$$S = 10^{-11}$$
+$$\text{C/N}$$
+$$C_s = 100$$
+$$\text{pF}$$
+a) Diseñar con
+amplificador de
+carga para
+$$V_{out} (\pm 5\text{ V})$$
+con
+$$F \in (0, 100\text{ N})$$
+b) Frecuencia de
+corte si
+$$R_f = 50$$
+$$\text{M}\Omega$$
+.
+c) Error DC si
+$$i_b = 10$$
+$$\text{fA}$$
+.
+
+**Solución:**
+a) Diseño
+Elegimos:
+$$C_f = 1000$$
+$$\text{pF} = 1$$
+$$\text{nF}$$
+Tensión:
+$$V_1 = -\frac{S \cdot F}{C_f} = -10^{-2} \cdot F$$
+$$V_1 \in (0, -1)$$
+$$\text{V}$$
+Segunda etapa:
+$$V_{out} = -10 \cdot V_1 - 5$$
+$$\text{V}$$
+
+b) Frecuencia
+$$f_c = \frac{1}{2\pi R_f C_f}$$
+$$f_c = \frac{1}{2\pi \cdot 50 \times 10^6 \cdot 10^{-9}}$$
+$$f_c \approx 3.2$$
+$$\text{Hz}$$
+
+c) Error DC
+$$V_{eDC} = i_b \cdot R_f$$
+$$V_{eDC} = 10^{-14} \cdot 50 \times 10^6$$
+$$V_{eDC} = 0.5$$
+$$\mu\text{V}$$
+(Despreciable).
