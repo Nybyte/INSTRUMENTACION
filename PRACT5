@@ -1,0 +1,182 @@
+# Práctica 5
+Encoder
+
+## Índice
+* [Objetivos](#1)
+* [Instru.](#2)
+* [Comp.](#3)
+* [Absoluto](#4)
+* [Incremental](#5)
+* [Analítico](#6)
+* [Fase 1](#7)
+* [Fase 2](#8)
+
+---
+
+## Objetivos <a name="1"></a>
+Estudiar un
+sensor de
+posición
+angular de tipo
+encoder óptico.
+
+---
+
+## Instru. <a name="2"></a>
+Instrumentos:
+* Osciloscopio.
+* Multímetro
+  digital.
+
+---
+
+## Comp. <a name="3"></a>
+Componentes:
+* Encoder
+  HEIDENHAIN
+  ROD486 5000
+  con regla.
+* Contador
+  EZM 4930.
+* Circuito de
+  acondic.
+
+---
+
+## Absoluto <a name="4"></a>
+Salida única
+para cada
+posición.
+Posiciones:
+$$N = 2^n$$
+* $$N$$
+  posiciones.
+* $$n$$
+  pistas/
+  detectores.
+* Código Gray:
+  evita errores
+  de lectura ya
+  que solo
+  cambia un bit
+  entre cotas
+  consecutivas.
+
+---
+
+## Incremental <a name="5"></a>
+Una sola pista.
+Genera pulsos
+con el
+movimiento.
+* Canal A solo:
+  da velocidad.
+* Canales A
+  y B (a
+  $$90$$
+  grados
+  eléctricos):
+  dan sentido.
+  * Horario:
+    en flanco de
+    subida de A,
+    B es
+    $$0$$
+  * Antihorario:
+    en flanco de
+    subida de A,
+    B es
+    $$1$$
+* Canal Z:
+  impulso de
+  cero absoluto.
+
+---
+
+## Analítico <a name="6"></a>
+Incremental
+con salidas
+A y B seno-
+coseno:
+* Resolución:
+  $$5000$$
+  ciclos por
+  giro.
+* Desplazam. de
+  un ciclo:
+  $$\Delta\alpha = 0.072$$
+  grados
+  $$^\circ$$
+  (equivale a
+  $$4.32$$
+  minutos de
+  arco
+  $$\text{min}$$
+  ).
+* Medida total:
+  D ciclos más
+  fase F.
+* Exactitud de
+  $$1/20$$
+  de ciclo.
+* Resolución:
+  $$1$$
+  entre
+  $$100000$$
+  de vuelta
+  $$\Delta\alpha = 12.96$$
+  segundos de
+  arco
+  $$\text{seg}$$
+
+---
+
+## Fase 1 <a name="7"></a>
+Medida gruesa:
+1. Alimentar
+   panel a
+   $$12$$
+   voltios
+   $$\text{V}$$
+   y encoder a
+   $$5$$
+   voltios
+   $$\text{V}$$
+2. Rotar y ver
+   contador:
+   $$\alpha' = D \cdot \frac{360^\circ}{5000}$$
+3. Ver A y B en
+   osciloscopio.
+4. Ver canal Z
+   (cero a
+   $$56$$
+   grados
+   $$^\circ$$
+   ). Reset de
+   $$2$$
+   milisegundos
+   $$\text{ms}$$
+   requiere
+   giro lento.
+
+---
+
+## Fase 2 <a name="8"></a>
+Medida fina:
+1. Ver A y B
+   analógicas en
+   osciloscopio
+   (modo XY da
+   círculo).
+2. Para una
+   posición:
+   medir salida
+   A y B sobre
+   $$2.5$$
+   voltios
+   $$\text{V}$$
+3. Calcular:
+   $$\beta = \arctan\left(\frac{A_{anal}}{B_{anal}}\right)$$
+4. Sumar D y F
+   para ángulo
+   total.
