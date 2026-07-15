@@ -1,0 +1,306 @@
+# Práctica 6
+Temperatura
+
+## Índice
+* [Objetivos](#1)
+* [Instru.](#2)
+* [Comp.](#3)
+* [RTD](#4)
+* [LM335](#5)
+* [NTC](#6)
+* [Linealiza](#7)
+* [Fase 1](#8)
+* [Fase 2](#9)
+
+---
+
+## Objetivos <a name="1"></a>
+Estudiar tres
+sensores de
+temperatura:
+* PT100 (RTD).
+* LM335 (C.I.).
+* NTC (termist.)
+y sus circuitos
+de acondic.
+
+---
+
+## Instru. <a name="2"></a>
+Instrumentos:
+* Fuente de
+  alimentac.
+  estabiliz.
+* Calibrador
+  SIKA TP.
+* Multímetro
+  digital.
+
+---
+
+## Comp. <a name="3"></a>
+Componentes:
+* Sonda RTD.
+* Sonda NTC.
+* Sonda LM335.
+* Tarjeta de
+  acondic.
+  con voltímet.
+  DM 700.
+
+---
+
+## RTD <a name="4"></a>
+Resistencia de
+platino.
+Resistencia
+aumenta con la
+temperatura:
+$$R(t) = R_0 \cdot (1 + \alpha \cdot t)$$
+donde:
+* $$R(t)$$
+  resistencia
+  ohmios
+  $$\Omega$$
+* $$R_0$$
+  resistencia
+  a $$0$$
+  grados
+  Celsius
+  $$^\circ\text{C}$$
+  ($$100$$
+  ohmios
+  $$\Omega$$
+  ).
+* $$\alpha$$
+  coeficiente
+  por grado
+  Celsius
+  $$^\circ\text{C}^{-1}$$
+* $$t$$
+  temperatura
+  grados
+  Celsius
+  $$^\circ\text{C}$$
+
+### Circuito
+Dos etapas de
+ganancia.
+Ajusta la
+salida de
+$$0$$
+a
+$$8$$
+voltios
+$$\text{V}$$
+para
+$$0$$
+a
+$$80$$
+grados
+Celsius
+$$^\circ\text{C}$$
+Tiene ajustes
+de cero y
+fondo.
+
+---
+
+## LM335 <a name="5"></a>
+Sensor en C.I.
+tipo Zener.
+Tensión de
+ruptura es
+proporcional
+a la temp.
+absoluta.
+$$V_o = 10\text{ mV/K} \cdot T$$
+donde:
+* $$10$$
+  milivoltios
+  por kelvin
+  $$\text{mV/K}$$
+* $$T$$
+  temperatura
+  en kelvin
+  $$\text{K}$$
+* Rango:
+  $$-55$$
+  grados
+  Celsius
+  $$^\circ\text{C}$$
+  a
+  $$150$$
+  grados
+  Celsius
+  $$^\circ\text{C}$$
+* Error sin
+  calibrar
+  mayor de
+  $$0.5$$
+  grados
+  Celsius
+  $$^\circ\text{C}$$
+
+### Circuito
+Dos etapas.
+Tensión a la
+salida es
+proporcional
+a temperatura
+en Celsius.
+Ajustes de
+cero y fondo.
+
+---
+
+## NTC <a name="6"></a>
+Semiconductor
+de coeficiente
+negativo.
+Resistencia
+disminuye al
+subir temp:
+$$R(T) = R_0 \cdot e^{B \cdot \left( \frac{1}{T} - \frac{1}{T_0} \right)}$$
+donde:
+* $$R_0$$
+  a $$25$$
+  grados
+  Celsius
+  $$^\circ\text{C}$$
+  es $$3000$$
+  ohmios
+  $$\Omega$$
+  ($$9795$$
+  ohmios
+  $$\Omega$$
+  a $$0$$
+  grados
+  Celsius
+  $$^\circ\text{C}$$
+  ).
+* $$B$$
+  coeficiente
+  $$3925$$
+  kelvin
+  $$\text{K}$$
+* $$T_0$$
+  es $$273$$
+  kelvin
+  $$\text{K}$$
+* $$T$$
+  temperatura
+  en kelvin
+  $$\text{K}$$
+
+---
+
+## Linealiza <a name="7"></a>
+Para corregir
+no linealidad,
+colocar $$R_p$$
+en paralelo o
+divisor con
+NTC.
+
+### Técnica 1
+Punto de
+inflexión en
+temperatura
+central
+$$T_c = 40^\circ\text{C}$$
+($$313$$
+kelvin
+$$\text{K}$$
+).
+$$R_p = R_{\text{NTC}}(T_c) \cdot \frac{B - 2T_c}{B + 2T_c}$$
+Da:
+$$R_p = 1158$$
+ohmios
+$$\Omega$$
+
+### Técnica 2
+Pasa por
+tres puntos:
+$$T_1 = 0^\circ\text{C}$$
+$$T_2 = 40^\circ\text{C}$$
+$$T_3 = 80^\circ\text{C}$$
+Da:
+$$R_p = 1273$$
+ohmios
+$$\Omega$$
+
+---
+
+## Fase 1 <a name="8"></a>
+Ajuste:
+1. Alimentar a
+   $$\pm 15$$
+   voltios de
+   corriente
+   continua
+   $$\text{V}_{\text{dc}}$$
+2. Fijar SIKA a
+   $$0$$
+   grados
+   Celsius
+   $$^\circ\text{C}$$
+3. Esperar
+   $$9$$
+   minutos de
+   equilibrio.
+4. Ajustar cero
+   de los
+   tres
+   circuitos a
+   $$0$$
+   voltios
+   $$\text{V}$$
+5. Fijar SIKA a
+   $$80$$
+   grados
+   Celsius
+   $$^\circ\text{C}$$
+6. Esperar
+   $$9$$
+   minutos.
+7. Ajustar Span
+   para tener
+   $$8$$
+   voltios
+   $$\text{V}$$
+   (o $$5$$
+   voltios
+   $$\text{V}$$
+   según rango).
+
+---
+
+## Fase 2 <a name="9"></a>
+Medida:
+1. Bajar temp.
+   en SIKA de
+   $$10$$
+   en
+   $$10$$
+   grados
+   Celsius
+   $$^\circ\text{C}$$
+   desde
+   $$80$$
+   hasta
+   $$0$$
+   grados
+   Celsius
+   $$^\circ\text{C}$$
+2. Esperar
+   $$9$$
+   minutos en
+   cada cota.
+3. Anotar
+   voltaje de
+   cada sensor.
+4. Graficar y
+   obtener la
+   linealidad
+   experimental.
