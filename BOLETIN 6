@@ -1,0 +1,203 @@
+# Boletín 6
+Temperatura
+
+## Índice
+* [Problema 1](#1)
+* [Problema 2](#2)
+* [Problema 3](#3)
+
+---
+
+## Problema 1 <a name="1"></a>
+**Enunciado:**
+Termopares en
+circuito lineal.
+a)
+$$\alpha_{ab} = 15$$
+$$\mu\text{V/K}$$
+$$\alpha_{ac} = 10$$
+$$\mu\text{V/K}$$
+$$T_1 = 1000$$
+$$^{\circ}\text{C}$$
+$$T_2 = 500$$
+$$^{\circ}\text{C}$$
+$$T_3 = 100$$
+$$^{\circ}\text{C}$$
+$$T_4 = 50$$
+$$^{\circ}\text{C}$$
+Calcular f.e.m.
+
+**Solución:**
+En Kelvin:
+$$T_1 = 1273$$
+$$\text{K}$$
+$$T_2 = 773$$
+$$\text{K}$$
+$$T_3 = 373$$
+$$\text{K}$$
+$$T_4 = 523$$
+$$\text{K}$$
+Relaciones:
+$$\alpha_{bc} = \alpha_{ac} - \alpha_{ab} = -5$$
+$$\mu\text{V/K}$$
+$$\alpha_{cb} = 5$$
+$$\mu\text{V/K}$$
+Fórmula:
+$$\epsilon_T = -\alpha_{ab}T_1 + \alpha_{ac}T_2 + \alpha_{cb}T_4 - \alpha_{bc}T_2 - \alpha_{cb}T_3$$
+Sustituyendo:
+$$\epsilon_T = -15 \cdot 1273 + 10 \cdot 773 + 5 \cdot 523 - (-5) \cdot 773 - 5 \cdot 373$$
+$$\epsilon_T = -7750$$
+$$\mu\text{V}$$
+
+---
+
+## Problema 2 <a name="2"></a>
+**Enunciado:**
+Medir horno
+$$0$$
+a
+$$500$$
+$$^{\circ}\text{C}$$
+con termopar:
+$$\alpha_{ab} = 15$$
+$$\mu\text{V/}^{\circ}\text{C}$$
+$$\beta_{ab} = 2 \times 10^{-3}$$
+$$\mu\text{V/}(^{\circ}\text{C})^2$$
+Compensación
+unión fría
+con PT100:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha_{Pt} = 0.0039$$
+$$^{\circ}\text{C}^{-1}$$
+a) Diseñar
+circuito para
+$$V_{out} (0, 5\text{ V})$$
+b) Error por
+término
+cuadrático.
+
+**Solución:**
+a) Diseño
+Para la PT100
+con
+$$V_{ref} = 1$$
+$$\text{V}$$
+:
+$$V_2 = -0.5 \cdot \alpha_{Pt} \cdot T_2$$
+Salida del
+sumador:
+$$V_3 = \frac{R_5 R_2}{R_3 R_1} \epsilon(T_1 - T_2) + \frac{R_5}{R_4} (0.5 \alpha_{Pt} T_2)$$
+Cancelamos
+$$T_2$$
+usando extremos
+(0-40ºC):
+$$\alpha' = 15.08$$
+$$\mu\text{V/}^{\circ}\text{C}$$
+Elegimos:
+$$\frac{R_2}{R_1} = 100$$
+$$\implies \frac{R_3}{R_4} = 0.773$$
+$$R_3 = 77.33$$
+$$\text{k}\Omega$$
+$$R_4 = 100$$
+$$\text{k}\Omega$$
+Para
+$$T_1 = 500$$
+$$^{\circ}\text{C}$$
+$$\epsilon(500) = 8$$
+$$\text{mV}$$
+Queremos:
+$$V_3 = 5$$
+$$\text{V}$$
+$$\implies R_5 = 483.31$$
+$$\text{k}\Omega$$
+
+b) Alinealidad
+A
+$$250$$
+$$^{\circ}\text{C}$$
+:
+$$V_{3real} = 2.422$$
+$$\text{V}$$
+$$V_{3ideal} = 2.500$$
+$$\text{V}$$
+$$\text{ALIN} = \frac{2.5 - 2.422}{5} \cdot 100$$
+$$\text{ALIN} \approx 1.56$$
+$$\%$$
+
+---
+
+## Problema 3 <a name="3"></a>
+**Enunciado:**
+Medir con PT100:
+$$R(T) = R_0(1+\alpha T + \beta T^2)$$
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+a) Circuito
+salida
+$$0$$
+a
+$$10$$
+$$\text{V}$$
+para
+$$T \in (0, 100\text{ ºC})$$
+b) Alinealidad.
+c) Autocalenta-
+miento si
+$$\sigma = 10$$
+$$\text{mW/}^{\circ}\text{C}$$
+.
+
+**Solución:**
+a) Diseño
+Puente con
+inversor:
+$$V_{out} = \frac{R_2}{R_1} \frac{V_{ref}}{2} (\alpha T + \beta T^2)$$
+Para
+$$V_{ref} = 2$$
+$$\text{V}$$
+y
+$$V_{out}(100) = 10$$
+$$\text{V}$$
+:
+$$\frac{R_2}{R_1} = 26.03$$
+$$R_1 = 10$$
+$$\text{k}\Omega$$
+$$R_2 = 260.3$$
+$$\text{k}\Omega$$
+
+b) Alinealidad
+A
+$$50$$
+$$^{\circ}\text{C}$$
+:
+$$V_{real} = 5.038$$
+$$\text{V}$$
+$$\text{ALIN} = \frac{5.038 - 5.00}{10} \cdot 100$$
+$$\text{ALIN} \approx 0.38$$
+$$\%$$
+
+c) Autocalenta-
+miento
+Corriente:
+$$I_s = \frac{V_{ref}}{2 R_0} = 10$$
+$$\text{mA}$$
+Potencia:
+$$P_d = I_s^2 \cdot R_{100} = 13.9$$
+$$\text{mW}$$
+Error:
+$$E_{auto} = \frac{P_d}{\sigma} = 1.39$$
+$$^{\circ}\text{C}$$
+Se reduce a
+$$< 0.1$$
+$$^{\circ}\text{C}$$
+si bajamos
+$$V_{ref}$$
+a
+$$0.5$$
+$$\text{V}$$
+.
