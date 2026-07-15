@@ -1,0 +1,1068 @@
+# Más Problemas
+Galgas
+
+## Índice
+* [Problema 1](#1)
+  - Voladizo
+  - Dos galgas
+* [Problema 2](#2)
+  - Toro comp.
+  - Dos galgas
+* [Problema 3](#3)
+  - Puente
+  - Jumper act.
+* [Problema 4](#4)
+  - Puente
+  - Activo U?
+
+---
+
+## Problema 1 <a name="1"></a>
+**Pregunta:**
+1.- Para la
+medida de la
+fuerza aplicada
+disponemos de
+una pieza en
+voladizo como la
+representada
+en la figura.
+En la superficie
+se montan dos
+galgas iguales,
+una en la cara
+superior G1,
+y otra en la
+cara inferior
+G2. Ambas se
+deforman con
+el mismo valor:
+$$\epsilon_1 = F \cdot 10^{-6}$$
+$$\text{N}^{-1}$$
+$$\epsilon_1 = -\epsilon_2$$
+Si ambas galgas
+se montan en el
+circuito de la
+figura, y su
+constante de
+galga es:
+$$K_g = 2$$
+a) Calculad
+la ganancia G
+del amplificador
+diferencial
+para obtener una
+salida entre
+$$0$$
+y
+$$5$$
+$$\text{V}$$
+para fuerza
+entre
+$$0$$
+y
+$$1000$$
+$$\text{N}$$
+.
+b) Calculad la
+alinealidad del
+sistema.
+
+**Respuesta:**
+Análisis inicial
+del sensor
+(Galgas)
+El sistema
+utiliza dos
+galgas
+extensio-
+métricas
+iguales (
+$$G_1$$
+y
+$$G_2$$
+) montadas en
+una pieza en
+voladizo, una
+sometida a
+tracción y
+otra a
+compresión.
+Fuerza máxima:
+$$F_{max} = 1000$$
+$$\text{N}$$
+Deformación
+unitaria
+máxima:
+$$\epsilon_{max} = F_{max} \cdot 10^{-6}$$
+$$\epsilon_{max} = 1000 \cdot 10^{-6}$$
+$$\epsilon_{max} = 10^{-3}$$
+Variación
+unitaria de
+resistencia:
+$$\delta$$
+Sabiendo que
+el factor de
+galga es:
+$$K_g = 2$$
+calculamos la
+variación
+máxima de
+resistencia:
+$$\delta_{max} = \frac{\Delta R}{R} = K_g \cdot \epsilon_{max}$$
+$$\delta_{max} = 2 \cdot 10^{-3}$$
+$$\delta_{max} = 0.002$$
+Las
+resistencias de
+las galgas
+serán:
+$$G_1 = R(1 + \delta)$$
+$$G_2 = R(1 - \delta)$$
+
+a) Cálculo de
+la ganancia G
+del
+amplificador
+diferencial
+Las galgas
+están montadas
+en las ramas
+inferiores del
+puente de
+Wheatstone,
+con dos
+resistencias
+fijas
+$$4R$$
+en las ramas
+superiores y
+excitación de:
+$$E = 5$$
+$$\text{V}$$
+.
+
+1. Tensión de
+salida del
+puente (
+$$\Delta V$$
+):
+Aplicamos la
+fórmula general
+para un puente
+en
+desequilibrio:
+$$V_o = E \cdot \frac{K}{(K+1)^2} \cdot \frac{\delta_2 + \delta_3 + \delta_2\delta_3 - \delta_1 - \delta_4 - \delta_1\delta_4}{\left(1 + \frac{K\delta_1 + \delta_3}{K+1}\right)\left(1 + \frac{K\delta_2 + \delta_4}{K+1}\right)}$$
+Adaptamos los
+parámetros al
+circuito:
+- Rama superior
+izquierda (
+$$R_1$$
+):
+$$4R \implies \delta_1 = 0$$
+- Rama superior
+derecha (
+$$R_2$$
+):
+$$4R \implies \delta_2 = 0$$
+- Rama inferior
+izquierda (
+$$G_1$$
+):
+$$R(1+\delta) \implies \delta_3 = \delta$$
+- Rama inferior
+derecha (
+$$G_2$$
+):
+$$R(1-\delta) \implies \delta_4 = -\delta$$
+- Relación de
+resistencias
+iniciales K:
+$$K = \frac{R_1}{G_{1(nominal)}} = \frac{4R}{R} = 4$$
+Sustituimos
+estos valores
+en la fórmula:
+$$\Delta V = 5 \cdot \frac{4}{(4+1)^2} \cdot \frac{0 + \delta + 0 - 0 - (-\delta) - 0}{\left(1 + \frac{0 + \delta}{5}\right)\left(1 + \frac{0 - \delta}{5}\right)}$$
+$$\Delta V = 5 \cdot \frac{4}{25} \cdot \frac{2\delta}{\left(\frac{5+\delta}{5}\right)\left(\frac{5-\delta}{5}\right)}$$
+$$\Delta V = \frac{4}{5} \cdot \frac{2\delta}{\frac{25-\delta^2}{25}}$$
+$$\Delta V = \frac{4}{5} \cdot \frac{50\delta}{25-\delta^2}$$
+$$\Delta V = \frac{40\delta}{25-\delta^2}$$
+$$\text{V}$$
+
+2. Cálculo
+numérico de la
+tensión
+máxima del
+puente:
+Para el fondo
+de escala (
+$$F = 1000$$
+$$\text{N}$$
+$$\implies$$
+$$\delta_{max} = 0.002$$
+):
+$$\Delta V_{max} = \frac{40(0.002)}{25 - (0.002)^2}$$
+$$\Delta V_{max} = \frac{0.08}{25 - 0.000004}$$
+$$\Delta V_{max} = \frac{0.08}{24.999996}$$
+$$\Delta V_{max} \approx 0.0032$$
+$$\text{V}$$
+$$\Delta V_{max} = 3.2$$
+$$\text{mV}$$
+
+3. Cálculo de
+la Ganancia
+(G):
+El
+amplificador
+debe elevar
+esos
+$$0.0032$$
+$$\text{V}$$
+hasta los
+$$5$$
+$$\text{V}$$
+finales:
+$$V_{out} = G \cdot \Delta V_{max}$$
+$$5 = G \cdot 0.0032$$
+$$G = \frac{5}{0.0032}$$
+$$G = 1562.5$$
+
+b) Cálculo de
+la alinealidad
+del sistema
+La
+alinealidad
+define la
+máxima
+desviación de
+la curva real
+respecto a la
+recta ideal
+(ajustada por
+los extremos),
+referida al
+Fondo de
+escala (FSR).
+$$ALIN(\%) = \frac{\vert V_{real} - V_{ideal} \vert_{MAX}}{FSR} \cdot 100\%$$
+
+1. Análisis
+teórico:
+La función
+real de salida
+es:
+$$V_{real}(\delta) = G \cdot \frac{40\delta}{25-\delta^2}$$
+$$V_{real}(\delta) = 1562.5 \cdot \frac{40\delta}{25-\delta^2}$$
+$$V_{real}(\delta) = \frac{62500\delta}{25-\delta^2}$$
+La recta ideal
+(uniendo
+origen y
+fondo de
+escala):
+$$V_{ideal}(\delta) = \frac{5}{0.002}\delta$$
+$$V_{ideal}(\delta) = 2500\delta$$
+La función
+real tiene un
+término
+$$\delta^2$$
+"en el"
+denominador,
+lo que
+introduce una
+ligera
+alinealidad.
+
+2. Cálculo del
+error máximo:
+Evaluamos el
+error en el
+punto medio
+del rango (
+$$F = 500$$
+$$\text{N}$$
+$$\implies$$
+$$\delta = 0.001$$
+):
+Valor real:
+$$V_{real}(0.001) = \frac{62500(0.001)}{25 - 0.001^2}$$
+$$V_{real}(0.001) = \frac{62.5}{24.999999}$$
+$$V_{real}(0.001) = 2.5000001$$
+$$\text{V}$$
+Valor ideal:
+$$V_{ideal}(0.001) = 2500 \cdot 0.001$$
+$$V_{ideal}(0.001) = 2.5$$
+$$\text{V}$$
+Error
+absoluto:
+$$\vert 2.5000001 - 2.5 \vert = 10^{-7}$$
+$$\text{V}$$
+
+3. Porcentaje
+de
+Alinealidad:
+Con un FSR de
+$$5$$
+$$\text{V}$$
+:
+$$ALIN(\%) = \frac{10^{-7}}{5} \cdot 100\%$$
+$$ALIN(\%) = 0.000002\%$$
+Conclusión:
+Debido a la
+configuración
+casi simétrica
+("push-pull")
+y al valor
+diminuto de
+$$\delta^2$$
+la alinealidad
+es
+prácticamente
+nula.
+
+---
+
+## Problema 2 <a name="2"></a>
+**Pregunta:**
+2.- Para la
+medida de una
+fuerza
+disponemos de un
+toro circular en
+compresión como
+el de la figura.
+En su superficie
+se encuentran
+montadas dos
+galgas de
+resistencia
+nominal
+Rn=500Oh y
+factor de galga
+Kg=2. La
+relación entre
+las
+deformaciones y
+la fuerza es:
+$$\epsilon_1 = -10^{-7}\text{N}^{-1}F(\text{N})$$
+$$\epsilon_2 = 10^{-7}\text{N}^{-1}F(\text{N})$$
+a) Diseñe un
+circuito usando
+ambas galgas, un
+puente de
+Wheatstone y
+operacionales
+que permita
+obtener una
+tensión de
+salida Vout
+entre (-1 a +1
+volt) para
+fuerza entre (0
+a 10.000N).
+b) Calcule la
+alinealidad de
+su diseño para
+el rango de
+fuerzas.
+
+**Respuesta:**
+Contexto y Datos
+Iniciales
+Toro circular
+en compresión
+con dos galgas:
+$$G_1$$
+y
+$$G_2$$
+.
+Resistencia
+nominal:
+$$R_n = 500$$
+$$\Omega$$
+Factor de
+galga:
+$$K_g = 2$$
+Relaciones de
+deformación:
+$$\epsilon_1 = -10^{-7} \cdot F$$
+$$\epsilon_2 = 10^{-7} \cdot F$$
+con F en
+Newtons.
+Rango de
+fuerza:
+$$F \in [0, 10000]$$
+$$\text{N}$$
+Rango de
+tensión de
+salida:
+$$V_{out} \in [-1, +1]$$
+$$\text{V}$$
+
+a) Diseño del
+circuito
+
+1. Cálculo de
+las
+deformaciones
+y variaciones:
+Para:
+$$F = 10000$$
+$$\text{N}$$
+$$\epsilon_1 = -10^{-7} \cdot 10000$$
+$$\epsilon_1 = -10^{-3}$$
+$$\epsilon_2 = 10^{-7} \cdot 10000$$
+$$\epsilon_2 = 10^{-3}$$
+Variación de
+resistencia:
+$$\frac{\Delta R}{R} = K_g \cdot \epsilon$$
+$$\delta_1 = 2 \cdot (-10^{-3})$$
+$$\delta_1 = -0.002$$
+$$\delta_2 = 2 \cdot 10^{-3}$$
+$$\delta_2 = 0.002$$
+
+2. Puente de
+Wheatstone:
+Usamos un
+puente de
+Wheatstone con
+las galgas en
+ramas
+opuestas. Si
+$$G_1 = R(1+\delta_1)$$
+y
+$$G_2 = R(1+\delta_2)$$
+la tensión de
+salida del
+puente (
+$$\Delta V$$
+) con
+alimentación E
+y ramas
+iguales es:
+$$\Delta V \approx E \cdot \frac{\delta_2 - \delta_1}{4}$$
+$$\Delta V = E \cdot \frac{0.002 - (-0.002)}{4}$$
+$$\Delta V = E \cdot 0.002$$
+$$\text{V}$$
+Para obtener
+$$V_{out}$$
+de
+$$\pm 1$$
+$$\text{V}$$
+necesitamos un
+amplificador
+diferencial
+con ganancia G.
+Si elegimos
+alimentación
+de puente de:
+$$E = 5$$
+$$\text{V}$$
+:
+$$\Delta V_{max} = 5 \cdot 0.002$$
+$$\Delta V_{max} = 0.01$$
+$$\text{V}$$
+$$\Delta V_{max} = 10$$
+$$\text{mV}$$
+Para:
+$$V_{out} = 1$$
+$$\text{V}$$
+con entrada de
+$$10$$
+$$\text{mV}$$
+:
+$$G = \frac{V_{out}}{\Delta V}$$
+$$G = \frac{1}{0.01}$$
+$$G = 100$$
+Se debe diseñar
+un
+amplificador
+diferencial
+con ganancia de
+$$100$$
+.
+
+b) Alinealidad
+del sistema
+La
+alinealidad en
+sistemas con
+puentes de
+Wheatstone se
+debe a que la
+respuesta real
+es no lineal:
+$$V_o = E \cdot \frac{\delta_2 - \delta_1}{4 + 2(\delta_1 + \delta_2)}$$
+En nuestro
+caso, como:
+$$\delta_1 = -\delta_2 = \delta$$
+(galgas
+opuestas en
+tracción y
+compresión),
+la ecuación
+del puente es:
+$$V_o = E \cdot \frac{2\delta}{4}$$
+$$V_o = E \cdot \frac{\delta}{2}$$
+Esta expresión
+es exactamente
+lineal respecto
+a
+$$\delta$$
+y por tanto
+respecto a F.
+Conclusión: La
+alinealidad
+teórica del
+diseño es
+0
+$$\%$$
+.
+Si existieran
+desequilibrios
+iniciales,
+aparecería una
+pequeña
+alinealidad que
+se calcularía
+con mínimos
+cuadrados.
+
+---
+
+## Problema 3 <a name="3"></a>
+**Pregunta:**
+3.- Para la
+medida de una
+fuerza
+disponemos de una
+pieza elástica
+cuya superficie
+se deforma en una
+determinada
+dirección:
+$$\epsilon = F \cdot 10^{-6}$$
+$$\text{N}^{-1}$$
+Esta deformación
+se mide mediante
+una galga
+colocada en su
+superficie con
+características:
+Resistencia
+nominal:
+$$R = 500$$
+$$\Omega$$
+Constante de
+galga:
+$$K_g = 2$$
+Como circuito de
+adaptación
+utilizamos el
+siguiente:
+(NOTA: En los
+dos primeros
+apartados el
+jumper estará en
+la posición
+izquierda).
+a) Calculad el
+valor de Vref
+y el de la
+ganancia G del
+amplificador
+diferencial
+para que la
+salida varíe de
+$$0$$
+a
+$$1$$
+$$\text{V}$$
+para fuerza
+de
+$$0$$
+a
+$$1000$$
+$$\text{N}$$
+.
+b) Calculad el
+error de
+alinealidad
+cometido en
+nuestro
+sistema.
+c) Si colocamos
+el jumper en la
+posición
+derecha.
+¿Cuánto deben
+valer R6 y R7
+para que la
+linealidad sea
+perfecta.
+
+**Respuesta:**
+Datos del
+problema
+Pieza: Voladizo
+con dos galgas,
+$$G_1$$
+(cara superior)
+y
+$$G_2$$
+(cara inferior).
+Relación
+deformación-
+fuerza:
+$$\epsilon_1 = F \cdot 10^{-6}$$
+$$\text{N}^{-1}$$
+$$\epsilon_1 = -\epsilon_2$$
+Galgas:
+Resistencia
+nominal:
+$$R = 500$$
+$$\Omega$$
+Factor de
+galga:
+$$K_g = 2$$
+Circuito: Puente
+de Wheatstone
+con
+resistencias
+fijas
+$$4R$$
+y galgas
+$$R(1+\delta)$$
+alimentado por
+$$V_{REF}$$
+(asumiremos una
+fuente estándar
+por ejemplo:
+$$E = 5$$
+$$\text{V}$$
+si no se indica
+otra, o la
+llamaremos E
+para
+generalizar).
+
+a) Cálculo de
+la ganancia G
+del
+amplificador
+diferencial
+Variación
+unitaria de
+resistencia:
+$$\delta$$
+Para una
+fuerza:
+$$F = 1000$$
+$$\text{N}$$
+la deformación
+es:
+$$\epsilon = 1000 \cdot 10^{-6}$$
+$$\epsilon = 10^{-3}$$
+La variación
+relativa de
+resistencia es:
+$$\delta = \frac{\Delta R}{R} = K_g \cdot \epsilon$$
+$$\delta = 2 \cdot 10^{-3}$$
+$$\delta = 0.002$$
+
+Salida del
+puente (
+$$\Delta V$$
+):
+El circuito es
+un puente de
+Wheatstone con
+dos ramas
+activas en
+lados opuestos.
+La fórmula
+general de
+salida para un
+puente es:
+$$V_o = E \cdot \frac{R_1 R_4 - R_2 R_3}{(R_1+R_2)(R_3+R_4)}$$
+En nuestro
+caso, con
+resistencias
+$$4R$$
+y galgas
+$$R(1\pm\delta)$$
+la salida es:
+$$\Delta V \approx E \cdot \frac{\delta}{2}$$
+Para:
+$$F = 1000$$
+$$\text{N}$$
+con:
+$$\delta = 0.002$$
+:
+$$\Delta V = E \cdot \frac{0.002}{2}$$
+$$\Delta V = E \cdot 0.001$$
+$$\text{V}$$
+
+Cálculo de la
+ganancia G:
+Queremos una
+salida
+$$V_{out} = 5$$
+$$\text{V}$$
+para:
+$$F = 1000$$
+$$\text{N}$$
+:
+$$V_{out} = G \cdot \Delta V$$
+$$5 = G \cdot (E \cdot 0.001)$$
+Si
+$$E=5$$
+$$\text{V}$$
+entonces:
+$$G = \frac{5}{5 \cdot 0.001}$$
+$$G = 1000$$
+
+b) Cálculo de
+la alinealidad
+del sistema
+Linealidad del
+puente:
+Cuando
+utilizamos
+galgas en ramas
+opuestas de un
+puente de
+Wheatstone, la
+salida del
+puente es
+proporcional a
+la diferencia
+de deformación.
+Según nuestros
+apuntes, al ser:
+$$\epsilon_1 = -\epsilon_2$$
+la expresión
+del puente es
+perfectamente
+lineal respecto
+a
+$$\delta$$
+(y, por tanto,
+respecto a la
+fuerza F).
+
+Resultado:
+La alinealidad
+es del
+0
+$$\%$$
+.
+Explicación:
+En este
+montaje, los
+térrminos no
+lineales de
+segundo orden
+del puente se
+cancelan al
+tener galgas en
+tracción y
+compresión en
+ramas opuestas,
+resultando en
+una respuesta
+idealmente
+lineal.
+
+c) Jumper en
+posición
+derecha
+(Linealidad
+perfecta)
+Cuando el
+jumper está en
+la posición
+derecha, el
+circuito
+incorpora una
+realimentación
+o configuración
+que ajusta la
+ganancia
+compensando la
+carga o el
+error
+intrínseco del
+puente.
+Para conseguir
+una linealidad
+perfecta (anular
+el error de
+alinealidad,
+que aunque es
+pequeño en el
+puente, siempre
+existe debido a
+factores no
+ideales):
+
+Fundamento:
+La alinealidad
+perfecta se
+logra cuando el
+circuito de
+acondiciona-
+miento compensa
+la división no
+lineal del
+puente de
+Wheatstone (el
+divisor de
+tensión real).
+
+Valores de R6
+y R7:
+Se deben
+dimensionar
+para que el
+término de
+realimentación
+del amplificador
+operacional
+sea igual y
+opuesto al
+error no lineal
+del puente.
+Esto implica
+configurar un
+puente de
+compensación o
+un lazo de
+realimentación
+donde R6 y R7
+ajusten el
+punto de
+trabajo del
+operacional
+para cancelar
+el factor:
+$$\frac{1}{1+\delta}$$
+en la ecuación
+del puente.
+
+---
+
+## Problema 4 <a name="4"></a>
+**Pregunta:**
+4.- Para la
+medida de una
+fuerza
+disponemos de una
+pieza elástica
+cuya superficie
+se deforma en una
+determinada
+dirección:
+$$\epsilon = F \cdot 10^{-6}$$
+$$\text{N}^{-1}$$
+Esta deformación
+se mide mediante
+una galga
+colocada en su
+superficie con
+características:
+Resistencia
+nominal:
+$$R_n = 500$$
+$$\Omega$$
+Constante de
+galga:
+$$K_g = 2$$
+Como circuito de
+adaptación
+utilizamos el
+siguiente:
+a) Asignad el
+valor de Vref
+y el de la
+ganancia G del
+amplificador
+diferencial
+para que la
+salida varíe de
+$$0$$
+a
+$$1$$
+$$\text{V}$$
+para fuerza de
+$$0$$
+a
+$$1000$$
+$$\text{N}$$
+.
+b) Calculad el
+error de
+alinealidad
+cometido en
+nuestro
+sistema.
+
+**Respuesta:**
+Datos de partida
+Relación
+deformación -
+fuerza:
+$$\epsilon = F \cdot 10^{-6}$$
+$$\text{N}^{-1}$$
+Resistencia
+nominal:
+$$R_n = 500$$
+$$\Omega$$
+Constante de
+galga:
+$$K_g = 2$$
+Fuerza aplicada:
+Rango de 0 a
+$$1000$$
+$$\text{N}$$
+Tensión de
+salida:
+$$V_{out}$$
+de 0 a 1 V.
+
+a) Cálculo de
+Vref y Ganancia
+G
+
+1. Cálculo de
+la deformación
+y variación
+relativa de
+resistencia:
+Para:
+$$F = 1000$$
+$$\text{N}$$
+$$\epsilon_{max} = 1000 \cdot 10^{-6}$$
+$$\epsilon_{max} = 10^{-3}$$
+La variación
+relativa de
+resistencia:
+$$\delta = K_g \cdot \epsilon$$
+$$\delta_{max} = 2 \cdot 10^{-3}$$
+$$\delta_{max} = 0.002$$
+
+2. Tensión de
+salida del
+puente (
+$$\Delta V$$
+):
+El circuito es
+un puente de
+Wheatstone.
+Observando la
+figura, tenemos
+dos resistencias
+fijas
+$$2R_n$$
+y dos galgas
+$$R_n(1\pm\delta)$$
+.
+Asumiendo que
+es un puente
+alimentado con
+Vref, la salida
+es proporcional
+a
+$$\delta$$
+.
+$$\Delta V = V_{ref} \cdot \frac{\delta}{4}$$
+(aproximación
+habitual para
+puente con una
+rama activa).
+Para:
+$$F = 1000$$
+$$\text{N}$$
+$$\implies$$
+$$\Delta V_{max} = V_{ref} \cdot \frac{0.002}{4}$$
+$$\Delta V_{max} = V_{ref} \cdot 0.0005$$
+$$\text{V}$$
+
+3. Ganancia
+del
+amplificador
+diferencial (G):
+Queremos:
+$$V_{out} = 1$$
+$$\text{V}$$
+para:
+$$F = 1000$$
+$$\text{N}$$
+:
+$$V_{out} = G \cdot \Delta V_{max}$$
+$$1 = G \cdot (V_{ref} \cdot 0.0005)$$
+Tenemos dos
+incógnitas
+(Vref y G).
+Fijamos una
+Vref estándar,
+por ejemplo:
+$$V_{ref} = 5$$
+$$\text{V}$$
+:
+$$\Delta V_{max} = 5 \cdot 0.0005$$
+$$\Delta V_{max} = 0.0025$$
+$$\text{V}$$
+$$\Delta V_{max} = 2.5$$
+$$\text{mV}$$
+$$G = \frac{1}{0.0025}$$
+$$G = 400$$
+
+b) Cálculo del
+error de
+alinealidad
+La
+alinealidad
+mide la
+desviación de
+la curva real
+respecto a la
+recta ideal.
+
+Función real:
+La salida del
+puente
+$$V_{out} = f(F)$$
+presenta una no
+linealidad
+debido a la
+estructura del
+puente de
+Wheatstone:
+$$V_{out} \approx V_{ref} \cdot \frac{\delta}{2+\delta}$$
+
+Cálculo:
+Para:
+$$\delta = 0.002$$
+la diferencia
+entre la
+respuesta lineal
+y la real es
+despreciable.
+Como:
+$$\delta \ll 1$$
+$$0.002 \ll 1$$
+el error es:
+$$Error \approx \left\vert \frac{\delta}{2} - \frac{\delta}{2+\delta} \right\vert$$
+$$Error \approx \frac{\delta^2}{4}$$
+$$Error \approx \frac{0.002^2}{4}$$
+$$Error = 10^{-6}$$
+$$\text{V}$$
+
+Alinealidad (%):
+$$ALIN(\%) = \frac{Error_{max}}{FSR} \cdot 100\%$$
+$$ALIN(\%) \approx 0.0001\%$$
+¡Este sistema
+es altamente
+lineal debido a
+que la
+deformación es
+muy pequeña!
