@@ -1,0 +1,433 @@
+# Tema 3
+Transductores
+características
+y tipos
+
+## Índice
+* [3.1](#1)
+* [3.2](#2)
+* [3.3](#3)
+
+---
+
+## 3.1 <a name="1"></a>
+Definición de
+transductor y
+sensor.
+
+### Transductor
+Bloque que
+convierte la
+variable
+medida
+(mensurando)
+en una señal
+o parámetro
+eléctrico.
+
+### Esquema
+* Entrada
+  $$X_i$$
+  (física,
+  química,
+  biológica).
+* Bloque:
+  TRANSDUCTOR
+* Salida
+  $$X_o$$
+  (eléctrica).
+
+### Sensor vs
+### Transductor
+* Transductor:
+  conjunto
+  completo
+  (flotador,
+  polea,
+  potenciómetro).
+* Sensor:
+  elemento de
+  interfaz
+  eléctrica
+  (el
+  potenciómetro).
+
+### Tipos
+### Energéticos
+* Activos
+  (generadores):
+  dan señal de
+  tensión
+  $$\text{V}$$
+  o corriente
+  $$\text{A}$$
+  sin energía
+  externa.
+* Pasivos
+  (moduladores):
+  varían un
+  parámetro
+  como
+  resistencia
+  $$R$$
+  capacidad
+  $$C$$
+  inductancia
+  $$L$$
+  Requieren
+  alimentación.
+
+### Relación
+### de Salida
+En general:
+$$X_o = f(X_i, T, P, Hr, \dots)$$
+* Idealmente
+  es lineal y
+  solo de
+  $$X_i$$
+  $$X_o = K \cdot X_i$$
+
+---
+
+## 3.2 <a name="2"></a>
+Características
+estáticas de
+transductores.
+
+### Características
+* Estáticas
+* Dinámicas
+* Márgenes
+  operación
+* Fiabilidad
+* Precio
+
+### Función de
+### Transferencia
+Relación
+estática:
+$$X_o = f(X_i)$$
+* Depende de
+  condiciones
+  de influencia
+  especificadas.
+
+### Expresión
+### Analítica
+Ejemplo: RTD
+de platino
+* Para rango
+  negativo:
+  $$R(t) = R_0 (1 + A t + B t^2 + C (t - 100) t^3)$$
+* Rango
+  $$0$$
+  a
+  $$850$$
+  grados Celsius
+  $$^\circ\text{C}$$
+  $$R(t) = R_0 (1 + A t + B t^2)$$
+* Coeficientes:
+  $$A = 3.9083 \cdot 10^{-3}$$
+  grado Celsius^-1
+  $$^\circ\text{C}^{-1}$$
+  $$B = -5.775 \cdot 10^{-7}$$
+  grado Celsius^-2
+  $$^\circ\text{C}^{-2}$$
+  $$C = -4.183 \cdot 10^{-12}$$
+  grado Celsius^-4
+  $$^\circ\text{C}^{-4}$$
+
+### Otras formas
+* Tabla de
+  datos:
+  valores de
+  $$R_t/R_0$$
+* Gráfica:
+  curva
+  resistencia
+  versus
+  temperatura.
+
+### Teórica vs
+### Experimental
+* Teórica:
+  genérica de
+  un modelo.
+* Experimental
+  (curva de
+  calibración):
+  medida en un
+  dispositivo
+  real para
+  corregir
+  tolerancias.
+
+### Tolerancias
+### RTD Platino
+(IEC 751):
+* Clase A:
+  $$\Delta t = \pm(0.15 + 0.002 |t|)$$
+  grados Celsius
+  $$^\circ\text{C}$$
+* Clase B:
+  $$\Delta t = \pm(0.30 + 0.005 |t|)$$
+  grados Celsius
+  $$^\circ\text{C}$$
+* 1/2 DIN:
+  * Si
+    $$t < 0$$
+    $$\Delta t = \pm(0.2 + 0.014 |t|)$$
+    grados Celsius
+    $$^\circ\text{C}$$
+  * Si
+    $$t > 0$$
+    $$\Delta t = \pm(0.2 + 0.0035 |t|)$$
+    grados Celsius
+    $$^\circ\text{C}$$
+* DIN 43760:
+  * Si
+    $$t < 0$$
+    $$\Delta t = \pm(0.4 + 0.028 |t|)$$
+    grados Celsius
+    $$^\circ\text{C}$$
+  * Si
+    $$t > 0$$
+    $$\Delta t = \pm(0.4 + 0.007 |t|)$$
+    grados Celsius
+    $$^\circ\text{C}$$
+
+### Recta Ideal
+Aproximación
+de la curva
+a una recta:
+* Despreciando
+  no lineales.
+* Ajustada por
+  extremos.
+* Mínimos
+  cuadrados.
+
+### Sensibilidad
+Variación de
+salida ante
+variación de
+entrada:
+$$S = \left. \frac{dy}{dx} \right|_{x_i}$$
+* Unidades:
+  $$X_o/X_i$$
+  * Ejemplo:
+    ohmio/ºC
+    $$\Omega/^\circ\text{C}$$
+
+### Sensibilidad
+### Cruzada
+Salida
+afectada por
+otra variable
+$$y = f(x, z)$$
+* Sensibilidad
+  en x:
+  $$S_x = \left. \frac{\partial y}{\partial x} \right|_{x,z}$$
+* Sensibilidad
+  en z:
+  $$S_z = \left. \frac{\partial y}{\partial z} \right|_{x,z}$$
+* Solución:
+  compensar
+  por hardware
+  o software.
+  * Ejemplo:
+    termopar
+    $$T_1, T_2$$
+
+### Sensibilidad
+### Unitaria
+Variación
+porcentual:
+$$S_u = \frac{1}{y} \frac{dy}{dx}$$
+* Ejemplo:
+  PT100 y
+  PT1000.
+  * Absoluta:
+    $$S_{Pt100} = 0.4$$
+    ohmio/ºC
+    $$\Omega/^\circ\text{C}$$
+    $$S_{Pt1000} = 4.0$$
+    ohmio/ºC
+    $$\Omega/^\circ\text{C}$$
+  * Unitaria:
+    ambas
+    tienen
+    $$S_u = 0.4\%/^\circ\text{C}$$
+
+### Alinealidad
+Diferencia
+entre curva
+real y recta
+elegida.
+* Entrada:
+  $$\text{ALIN} = \frac{\text{MAX}|x_{real}-x_{ideal}|}{|x_{max}-x_{min}|}\cdot 100\%$$
+* Salida:
+  $$\text{ALIN} = \frac{\text{MAX}|y_{real}-y_{ideal}|}{|y_{max}-y_{min}|}\cdot 100\%$$
+* Linealidad:
+  $$\text{LIN} = 100\% - \text{ALIN}$$
+
+### Problema de
+### Alinealidad
+Sensor PT100
+$$R_0 = 100$$
+ohmio
+$$\Omega$$
+$$\alpha = 3.91\cdot 10^{-3}$$
+$$^\circ\text{C}^{-1}$$
+$$\beta = -5.77\cdot 10^{-7}$$
+$$^\circ\text{C}^{-2}$$
+* Rango:
+  $$0$$
+  a
+  $$100$$
+  grados Celsius
+  $$^\circ\text{C}$$
+* Real en
+  $$100^\circ\text{C}$$
+  $$R_{\text{real}} = 138.523$$
+  ohmio
+  $$\Omega$$
+
+* A) Recta
+  despreciando
+  término
+  cuadrático:
+  $$R_{\text{ideal}} = 100(1 + \alpha T)$$
+  * En
+    $$100^\circ\text{C}$$
+    $$R_{\text{ideal}} = 139.100$$
+    ohmio
+    $$\Omega$$
+  * Alinealidad:
+    $$\text{ALIN} = 1.48\%$$
+
+* B) Recta
+  ajustada por
+  extremos:
+  $$R_{\text{ideal}} = 100(1 + \alpha' T)$$
+  $$\alpha' = 3.852\cdot 10^{-3}$$
+  * En
+    $$50^\circ\text{C}$$
+    $$R_{\text{real}} = 119.410$$
+    $$R_{\text{ideal}} = 119.260$$
+    ohmio
+    $$\Omega$$
+  * Alinealidad:
+    $$\text{ALIN} = 0.39\%$$
+
+* C) Recta
+  mínimos
+  cuadrados:
+  $$R_{\text{ideal}} = R''_0 (1 + \alpha'' T)$$
+  $$R''_0 = 100.1$$
+  $$\alpha'' = 3.848\cdot 10^{-3}$$
+  * En
+    $$0^\circ\text{C}$$
+    $$R_{\text{real}} = 100.000$$
+    $$R_{\text{ideal}} = 100.100$$
+    ohmio
+    $$\Omega$$
+  * Alinealidad:
+    $$\text{ALIN} = 0.26\%$$
+
+### Detectores
+Sensores con
+dos estados:
+todo-nada,
+on-off, 0-1.
+* Ejemplos:
+  termostato,
+  presostato.
+* Usan
+  histéresis
+  para dar
+  estabilidad.
+
+### Umbral de
+### Entrada
+Variación
+mínima para
+cambiar la
+salida.
+* Su inverso
+  es la
+  resolución.
+  Umbral cero
+  es
+  resolución
+  infinita.
+
+### Histéresis
+Diferencia de
+salida para
+una misma
+entrada
+según el
+sentido de
+variación
+(subida o
+bajada).
+* Se llama
+  memoria del
+  sistema.
+  $$H = \frac{\text{MAX}|X_S - X_B|}{X_{max} - X_{min}} \cdot 100\%$$
+
+---
+
+## 3.3 <a name="3"></a>
+Clasificación
+de los
+transductores.
+
+### Criterios
+* Tipo de dato:
+  analógicos o
+  digitales.
+* Precisión.
+* Uso:
+  de campo o
+  laboratorio.
+
+### Clasificación
+### por Salida
+$$X_{out}$$
+(Mismo
+acondicionado):
+* Pasivos:
+  * Resistencia
+    $$R$$
+  * Capacidad
+    $$C$$
+  * Inductancia
+    $$L$$
+  * Mutual
+    $$M$$
+* Activos:
+  * Generan
+    tensión
+    $$\text{V}$$
+    (termopar).
+  * Generan
+    corriente
+    $$\text{A}$$
+    (fotodiodo).
+
+### Clasificación
+### por Entrada
+$$X_{in}$$
+(Variable
+medida):
+* Posición y
+  distancia.
+* Fuerza y
+  presión.
+* Temperatura.
+* Caudal.
+* Luz y
+  radiación.
+* Humedad.
