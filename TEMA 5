@@ -1,0 +1,366 @@
+# Tema 5
+Transductores
+de fuerza
+
+## Índice
+* [5.1](#1)
+* [5.2](#2)
+* [5.3](#3)
+
+---
+
+## 5.1 <a name="1"></a>
+Introducción.
+
+### Medida de
+### Fuerzas
+* Vectorial:
+  $$\vec{F} = (F_x, F_y, F_z)$$
+* Los sensores
+  electrónicos
+  solo miden el
+  módulo.
+* Dirección y
+  sentido se
+  deducen del
+  montaje.
+* Para 3D se
+  usan 3
+  sensores
+  ortogonales.
+
+### Métodos
+* Dinámico:
+  la fuerza
+  neta es
+  distinta de
+  cero.
+  $$\sum \vec{F} = m \cdot \vec{a} \neq 0$$
+  * Indirecto:
+    se mide la
+    aceleración.
+* Estático:
+  la fuerza y
+  momento neto
+  son cero.
+  $$\sum \vec{F} = 0$$
+  $$\sum \vec{M} = 0$$
+  * Se balancea
+    con otra
+    fuerza.
+  * Métodos de
+    balance:
+    * Balanza
+      mecánica
+      (masa
+      conocida).
+    * Balanza
+      electro-
+      magnética
+      (corriente).
+    * Presión
+      generada
+      (células
+      hidráulicas
+      o
+      neumáticas).
+    * Deformación
+      elástica
+      (galgas y
+      cristales).
+
+---
+
+## 5.2 <a name="2"></a>
+Galgas
+extensiométricas.
+
+### Concepto
+Resistencia
+variable con
+la
+deformación
+superficial.
+$$\delta = \frac{\Delta R}{R} = K_g \cdot \epsilon = K_g \frac{\Delta L}{L}$$
+* Parámetro
+  $$K_g$$
+  es el
+  Factor de
+  Galga.
+
+### Hilo Cilíndrico
+Resistencia:
+$$R = \rho \frac{l}{\pi r^2}$$
+* Variación:
+  $$\frac{\Delta R}{R} \approx \frac{d\rho}{\rho} + \frac{dl}{l} - 2\frac{dr}{r}$$
+* Poisson:
+  $$\frac{dr}{r} = -\nu \frac{dl}{l}$$
+  $$\nu \in (0 \to 0.5)$$
+* Bridgman:
+  $$\frac{d\rho}{\rho} = C \frac{dV}{V} = C(1-2\nu)\frac{dl}{l}$$
+* Total:
+  $$K_g = C(1-2\nu) + 1 + 2\nu$$
+
+### Galga de Film
+Sensibilidad
+transversal
+$$K_t \approx 0.02$$
+$$\delta \approx K_g \left( \frac{\Delta x}{x} + K_t \frac{\Delta y}{y} \right)$$
+* Se aproxima:
+  $$\delta \approx K_g \cdot \epsilon$$
+
+### Orden de
+### Magnitud
+La
+deformación
+$$\epsilon$$
+es muy
+pequeña
+(del orden de
+$$0.001$$).
+* Se mide en
+  micro-
+  deformación:
+  $$1\,\mu\text{d} = 10^{-6}$$
+* Con
+  $$K_g = 2$$
+  $$R = 200$$
+  ohmio
+  $$\Omega$$
+  y
+  $$\epsilon = 1000\,\mu\text{d}$$
+  * Variación:
+    $$\Delta R = 0.4$$
+    ohmio
+    $$\Omega$$
+
+### Acondicionamiento
+Se usa el
+Puente de
+Wheatstone.
+$$V_o = E \left( \frac{R_3}{R_1 + R_3} - \frac{R_4}{R_2 + R_4} \right)$$
+* Equilibrio:
+  $$\frac{R_1}{R_3} = \frac{R_2}{R_4}$$
+
+### Desequilibrio
+Inicialmente
+en
+equilibrio
+($$R_i = R$$).
+* 1 Rama activa
+  (R3 varía):
+  $$V_o = \frac{E}{4} \frac{\delta}{1 + \frac{\delta}{2}}$$
+  * Aproximación
+    lineal:
+    $$V_o \approx \frac{E}{4} \cdot \delta$$
+    No es lineal.
+* 2 Ramas
+  activas (misma
+  variación):
+  opuestas
+  (R3 y R2).
+  $$V_o = \frac{E}{4} \frac{2\delta}{1 + \frac{\delta}{2}}$$
+  No es lineal.
+* 2 Ramas
+  activas
+  (variación
+  opuesta):
+  contiguas
+  (R3 y R1).
+  $$V_o = \frac{E}{2} \cdot \delta$$
+  Es lineal.
+* 4 Ramas
+  activas:
+  $$V_o = E \cdot \delta$$
+  Es lineal y
+  sensibilidad
+  máxima.
+
+### Linealización
+### 1 Rama
+1. Excitación
+   con fuente
+   de corriente
+   $$I$$
+   $$V_o = \frac{I\cdot R}{4} \frac{\delta}{1 + \frac{\delta}{4}}$$
+2. Circuitos
+   de lazo
+   cerrado con
+   operacional.
+   $$V_o = -\frac{V_{ref}}{2} \cdot \delta$$
+   Totalmente
+   lineal.
+
+### Ajuste de Cero
+Inyección de
+corriente con
+un POT de
+alta
+resistencia
+y resistencia
+limite
+$$R_a$$
+en paralelo.
+
+### Compensación
+* 3 Hilos:
+  compensa la
+  variación de
+  resistencia
+  en cables.
+* Galga
+  inactiva
+  (dummy):
+  cancela la
+  deriva
+  térmica
+  conectada
+  en rama
+  consecutiva.
+
+### Dinámica de
+### Galgas
+Longitud
+$$L$$
+de la galga
+promedia la
+deformación.
+* Límite de
+  exactitud:
+  $$L \le \frac{\lambda}{20}$$
+  donde
+  $$\lambda = \frac{V_s}{f}$$
+
+### Tipos de
+### Galgas
+* Por forma:
+  * Uniaxiales.
+  * Biaxiales.
+  * Rosetas
+    (3 ejes).
+  * Multiaxiales.
+* Por material:
+  * Metálicas.
+  * Semi-
+    conductoras
+    (silicio,
+    $$K_g \approx 100$$
+    pero no
+    lineales).
+
+### Problema
+* Voladizo:
+  $$\epsilon_L = F \cdot 10^{-6}$$
+  fuerza
+  $$\text{N}$$
+  $$K_g = 2$$
+  $$R_n = 500$$
+  ohmio
+  $$\Omega$$
+  $$F_{max} = 1000$$
+  newton
+  $$\text{N}$$
+* a) Circuito
+  con
+  $$E = 10$$
+  voltio
+  $$\text{V}$$
+  y ganancia
+  $$A_d = 1000$$
+  * Salida:
+    $$V_{out} \approx 2500 \cdot \delta$$
+    $$V_{out} \in (0 \to 5)$$
+    voltio
+    $$\text{V}$$
+* b) Alinealidad
+  real:
+  $$V_{out} = 2500 \frac{\delta}{1 + \frac{\delta}{2}}$$
+  $$\text{ALIN} \approx 0.1\%$$
+
+---
+
+## 5.3 <a name="3"></a>
+Transductores
+piezoeléctricos.
+
+### Concepto
+Aparición de
+cargas en las
+caras de un
+cristal
+(cuarzo) ante
+un esfuerzo.
+$$Q = S \cdot F$$
+* Reversible.
+
+### Tipos de
+### Efecto
+* Longitudinal:
+  carga en la
+  misma cara
+  de la fuerza.
+  $$Q_x = d_{11} \cdot F_x \cdot n$$
+  $$d_{11} = -2.3$$
+  picoculombio/N
+  $$\text{pC/N}$$
+* Transversal:
+  carga
+  perpendicular.
+  $$Q_x = -d_{11} \cdot F_y \cdot \frac{b}{a}$$
+* Cizalla:
+  $$Q_y = -2 \cdot d_{11} \cdot F_x \cdot n$$
+
+### Propiedades
+* Alta
+  impedancia.
+* La salida
+  DC es cero.
+  No sirven
+  para medidas
+  estáticas.
+* Resonancia
+  alta
+  (medidas
+  dinámicas).
+
+### Acondicionado
+* Amplificador
+  de Tensión:
+  * Entrada:
+    $$> 1$$
+    teraoohmio
+    $$\text{T}\Omega$$
+  * Sensibilidad:
+    depende de
+    la capacidad
+    del cable:
+    $$V_o \propto \frac{1}{C_{eq}}$$
+* Amplificador
+  de Carga:
+  * Condensador
+    $$C_2$$
+    en lazo de
+    realimentación.
+  * Tensión:
+    $$V_o(s) = \frac{-q(s)}{C_2} \frac{s}{s + \frac{1}{R_2 C_2}}$$
+  * No depende
+    de la
+    capacidad
+    del cable.
+
+### Comparativa
+* Ventajas:
+  * Alta rigidez.
+  * Fuerza
+    alta
+    (hasta 20000)
+    $$\text{psi}$$
+  * Tamaño y
+    masa muy
+    pequeños.
+* Inconvenientes:
+  * Solo para
+    medidas
+    dinámicas.
+  * Alta
+    impedancia.
