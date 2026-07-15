@@ -1,0 +1,306 @@
+# Práctica 2
+Proximidad
+
+## Índice
+* [Objetivos](#1)
+* [Instru.](#2)
+* [Comp.](#3)
+* [Teoría](#4)
+* [Inductivo](#5)
+* [Capacitivo](#6)
+* [Parámetros](#7)
+* [Fase A1](#8)
+* [Fase A2](#9)
+* [Fase A3](#10)
+* [Fase A4](#11)
+* [Fase B](#12)
+
+---
+
+## Objetivos <a name="1"></a>
+Estudio de
+detectores de
+proximidad
+inductivos y
+capacitivos.
+
+---
+
+## Instru. <a name="2"></a>
+Instrumentos
+necesarios:
+* Fuente de
+  alimentac.
+  estabiliz.
+* Multímetro
+  digital.
+* Calibre
+  digital.
+
+---
+
+## Comp. <a name="3"></a>
+Componentes:
+* Circuitos de
+  acondic.
+* Detector
+  inductivo
+  no amplif.
+  (2 niveles).
+* Detector
+  capacitivo
+  de CC.
+
+---
+
+## Teoría <a name="4"></a>
+Detectores sin
+contacto
+mecánico.
+* Lineales
+  (desplazam.)
+* Todo-nada
+  (ON-OFF).
+
+---
+
+## Inductivo <a name="5"></a>
+Usa la
+amortiguac.
+de un campo
+magnético por
+corrientes de
+Foucault en
+metales
+cercanos.
+Suministra dos
+niveles de
+corriente.
+Ideal para
+ambientes
+explosivos.
+* Símbolo:
+  ondas
+  (oscilador) y
+  escalón
+  (2 niveles).
+* Circuito:
+  fuente y
+  resistencia.
+  Comparador
+  da salida
+  ON-OFF.
+
+---
+
+## Capacitivo <a name="6"></a>
+Usa cambio de
+capacidad
+parásita
+entre sensor y
+objeto.
+* Funcionam:
+  al acercarse,
+  oscila. Un
+  detector de
+  umbral
+  (comparador
+  con
+  histéresis)
+  envía impulso
+  de mando.
+* Puede medir
+  objetos:
+  * metálicos.
+  * no
+    metálicos:
+    madera,
+    líquidos,
+    plásticos.
+* Lleva
+  acondicion.
+  incorporado.
+
+---
+
+## Parámetros <a name="7"></a>
+Datos:
+* Cota de
+  intervención
+  nominal:
+  distancia
+  de cambio de
+  estado lógico.
+* Histéresis:
+  carrera
+  diferencial
+  entre punto
+  de conexión
+  y de
+  desconexión.
+  Se expresa
+  en por ciento
+  $$\%$$
+  de la cota
+  nominal.
+* Repetibilid:
+  desviación en
+  un plazo de
+  $$8$$
+  horas, con:
+  * Temp. entre
+    $$15$$
+    grados
+    Celsius
+    $$^\circ\text{C}$$
+    y
+    $$30$$
+    grados
+    Celsius
+    $$^\circ\text{C}$$
+  * Tensión con
+    oscilación
+    máxima de
+    $$5$$
+    por ciento
+    $$\%$$
+* Corrientes de
+  salida
+  máxima y
+  mínima.
+
+---
+
+## Fase A1 <a name="8"></a>
+Corrientes:
+1. Alimentar
+   panel a
+   $$\pm 12$$
+   voltios
+   $$\text{V}$$
+   y masa.
+2. Conectar
+   $$12$$
+   voltios
+   $$\text{V}$$
+   a borne
+   $$8$$
+   (para LED).
+3. Conectar
+   voltímetro a
+   bornes
+   $$5$$
+   y
+   $$6$$
+   (tensión en
+   $$R_1$$
+   en presencia
+   y ausencia).
+4. Calcular
+   corrientes:
+   $$R_1 = 2200$$
+   ohmios
+   $$\Omega$$
+
+---
+
+## Fase A2 <a name="9"></a>
+Cota de
+intervención:
+1. Poner
+   actuador a
+   $$10$$
+   a
+   $$15$$
+   milímetros
+   $$\text{mm}$$
+   (LED
+   apagado).
+2. Acercar a S2
+   hasta que se
+   encienda
+   el LED.
+3. Medir
+   distancia con
+   calibre.
+
+---
+
+## Fase A3 <a name="10"></a>
+Histéresis:
+1. Actuador a
+   $$10$$
+   a
+   $$15$$
+   milímetros
+   $$\text{mm}$$
+   (LED
+   apagado).
+2. Acercar a S2
+   hasta encender
+   LED. Medir
+   cota de
+   intervención.
+3. Alejar
+   hasta apagar
+   LED. Medir
+   cota de
+   desconexión.
+4. Histéresis
+   es la resta
+   expresada en
+   por ciento
+   $$\%$$
+   de la cota
+   de
+   intervención.
+
+---
+
+## Fase A4 <a name="11"></a>
+Repetibilid:
+1. Realizar
+   $$7$$
+   u
+   $$8$$
+   medidas de
+   cota de
+   intervención.
+2. Rellenar
+   tabla con:
+   * Medida
+     $$N$$
+   * Cota
+     $$L$$
+     milímetros
+     $$\text{mm}$$
+   * Desviación
+     $$\Delta L = L - L_{\text{media}}$$
+3. El error de
+   repetibilid.
+   es el máximo
+   valor
+   absoluto de
+   $$\Delta L$$
+
+---
+
+## Fase B <a name="12"></a>
+D. Capacitivo:
+1. Repetir
+   cota de
+   intervención,
+   histéresis y
+   repetibilid.
+   con sensor
+   capacitivo.
+2. Comprobar
+   que el
+   capacitivo
+   detecta no
+   metálicos
+   (un dedo)
+   y el
+   inductivo no.
+   Razonar la
+   causa.
