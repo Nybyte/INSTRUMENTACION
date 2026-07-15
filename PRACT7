@@ -1,0 +1,225 @@
+# Práctica 7
+Ultrasonidos
+
+## Índice
+* [Objetivos](#1)
+* [Instru.](#2)
+* [Comp.](#3)
+* [Teoría](#4)
+* [Especific.](#5)
+* [Transmisión](#6)
+* [Recepción](#7)
+* [Fase 1](#8)
+* [Fase 2](#9)
+
+---
+
+## Objetivos <a name="1"></a>
+Estudiar la
+medida de
+distancias con
+ultrasonidos.
+
+---
+
+## Instru. <a name="2"></a>
+Instrumentos:
+* Fuente
+  alimentac.
+  estabiliz.
+* Generador de
+  señales.
+* Osciloscopio
+  digital.
+
+---
+
+## Comp. <a name="3"></a>
+Componentes:
+* Guía metrada
+  con sondas
+  (emisor/
+  receptor).
+* Tarjeta de
+  acondic. y
+  control.
+
+---
+
+## Teoría <a name="4"></a>
+Medida de
+distancia por
+tiempo de
+vuelo (TOF).
+Sonido por
+encima de
+$$20$$
+kilohercios
+$$\text{kHz}$$
+es ultrasonido.
+$$L = V_s \cdot \frac{t}{2}$$
+donde:
+* $$L$$
+  distancia
+  $$\text{m}$$
+* $$t$$
+  tiempo de
+  vuelo
+  $$\text{s}$$
+* $$V_s$$
+  velocidad del
+  sonido
+  $$\text{m/s}$$
+
+---
+
+## Especific. <a name="5"></a>
+Datos de
+sondas:
+* Frecuencia:
+  $$40 \pm 1$$
+  kilohercios
+  $$\text{kHz}$$
+* Sensibilidad
+  (receptor):
+  $$-64$$
+  decibelios
+  $$\text{dB}_{\text{min}}$$
+* Nivel SPL:
+  $$115$$
+  decibelios
+  $$\text{dB}_{\text{min}}$$
+* Directividad:
+  $$80$$
+  grados
+  $$^\circ$$
+* Capacidad:
+  $$2500 \pm 25\%$$
+  picofaradios
+  $$\text{pF}$$
+* Rango Temp:
+  $$-40$$
+  grados
+  Celsius
+  $$^\circ\text{C}$$
+  a
+  $$85$$
+  grados
+  Celsius
+  $$^\circ\text{C}$$
+* Distancia:
+  $$0.2$$
+  a
+  $$4$$
+  metros
+  $$\text{m}$$
+* Resolución:
+  $$9$$
+  milímetros
+  $$\text{mm}$$
+* Tensión máx:
+  $$20$$
+  voltios
+  pico a pico
+  $$\text{V}_{\text{pp}}$$
+
+---
+
+## Transmisión <a name="6"></a>
+Subsystem:
+1. Nivel (TTL):
+   adaptador a
+   $$10$$
+   voltios
+   $$\text{V}$$
+   con BC549B.
+2. Monoestable:
+   NE555 genera
+   pulso de
+   $$250$$
+   microseg.
+   $$\mu\text{s}$$
+3. Oscilador:
+   NE555 a
+   $$40$$
+   kilohercios
+   $$\text{kHz}$$
+   activo en
+   "1". Da tren
+   de
+   $$10$$
+   pulsos.
+
+---
+
+## Recepción <a name="7"></a>
+Subsystem:
+1. Filtros
+   (LF353):
+   dos etapas
+   de ganancia.
+   Modo low/
+   high.
+2. Rectificad:
+   doble onda
+   de precisión.
+3. Filtro bajo:
+   RC para
+   envolvente.
+4. Comparador
+   (LM311):
+   compara con
+   nivel de
+   potenciómet.
+5. Zona muerta:
+   monoestable
+   evita la onda
+   directa.
+
+---
+
+## Fase 1 <a name="8"></a>
+Circuitos:
+1. Alimentar a
+   $$\pm 15$$
+   voltios de
+   corriente
+   continua
+   $$\text{V}_{\text{dc}}$$
+2. Disparar con
+   $$30$$
+   hercios
+   $$\text{Hz}$$
+   en TTL.
+3. Ver señales
+   del emisor y
+   receptor en
+   osciloscopio.
+4. Comparar el
+   tren con la
+   detección de
+   salida.
+
+---
+
+## Fase 2 <a name="9"></a>
+Distancias:
+1. Medir tiempo
+   para rango de
+   $$90$$
+   a
+   $$200$$
+   centímetros
+   $$\text{cm}$$
+   en pasos de
+   $$10$$
+   centímetros
+   $$\text{cm}$$
+2. Representar
+   datos y
+   calcular
+   velocidad del
+   sonido
+   $$V_s$$
+3. Comparar con
+   teórica.
