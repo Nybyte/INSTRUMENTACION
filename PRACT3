@@ -1,0 +1,229 @@
+# Práctica 3
+Células Carga
+
+## Índice
+* [Objetivos](#1)
+* [Instru.](#2)
+* [Comp.](#3)
+* [Teoría](#4)
+* [Circuito](#5)
+* [Fase 1](#6)
+* [Fase 2](#7)
+* [Fase 3](#8)
+
+---
+
+## Objetivos <a name="1"></a>
+Estudiar las
+característ.
+de balanza
+electrónica con
+célula de
+carga.
+
+---
+
+## Instru. <a name="2"></a>
+Instrumentos:
+* Fuente
+  alimentac.
+  estabilizada
+  $$\pm 12$$
+  o
+  $$\pm 15$$
+  voltios de
+  corriente
+  continua
+  $$\text{V}_{\text{dc}}$$
+* Multímetro
+  digital.
+
+---
+
+## Comp. <a name="3"></a>
+Componentes:
+* Balanza con
+  célula y
+  pesas.
+* Circuito de
+  acondic.
+  (en Kit).
+
+---
+
+## Teoría <a name="4"></a>
+Célula de carga
+tiene una pieza
+elástica con
+galgas
+extensiómetr.
+en puente de
+Wheatstone.
+La fuerza se
+determina por
+la deformación
+de las galgas.
+
+### Modelo
+$$V_o = V_{\text{ref}} \cdot K \cdot F$$
+donde:
+* $$V_o$$
+  tensión de
+  salida
+  $$\text{V}$$
+* $$V_{\text{ref}}$$
+  tensión de
+  excitación
+  $$\text{V}$$
+* $$K$$
+  sensibilidad.
+* $$F$$
+  fuerza.
+
+### Parámetros
+* Rango:
+  $$0$$
+  a
+  $$30$$
+  kilogramos
+  fuerza
+  $$\text{kgp}$$
+* Sensibilidad:
+  $$2$$
+  milivoltios
+  por voltio
+  $$\text{mV/V}$$
+* Excitación:
+  $$8$$
+  voltios
+  $$\text{V}$$
+* Relación
+  estática:
+  $$V_o = 0.5333 \cdot F_p$$
+  * $$V_o$$ en
+    milivoltios
+    $$\text{mV}$$
+  * $$F_p$$ en
+    kilogramos
+    fuerza
+    $$\text{kgp}$$
+  * Rango de
+    salida de
+    $$0$$
+    a
+    $$16$$
+    milivoltios
+    $$\text{mV}$$
+
+---
+
+## Circuito <a name="5"></a>
+Estructura:
+1. Referencia:
+   fuente de
+   $$8.00$$
+   voltios
+   $$\text{V}$$
+   y etapa
+   inversora
+   para dar
+   $$-V_{\text{ref}}$$
+   (ajuste cero).
+2. Diferencial:
+   etapa de
+   ganancia
+   fija.
+3. Salida:
+   sumador
+   inversor con
+   ajustes de
+   cero y
+   ganancia.
+
+---
+
+## Fase 1 <a name="6"></a>
+Preparación:
+* ¡ATENCIÓN!
+  No aplicar
+  más de
+  $$20$$
+  kilogramos
+  fuerza
+  $$\text{kgp}$$
+* Conectar
+  célula al
+  circuito.
+* Conectar
+  fuente y
+  verificar
+  polaridad.
+
+---
+
+## Fase 2 <a name="7"></a>
+Calibración:
+1. Cero (RV2):
+   sin peso,
+   ajustar
+   RV2 hasta
+   $$0.000$$
+   voltios
+   $$\text{V}$$
+   con resoluc.
+   de
+   $$1$$
+   milivoltio
+   $$\text{mV}$$
+2. Fondo (RV3):
+   poner peso
+   (ej.
+   $$10$$
+   kilogramos
+   fuerza
+   $$\text{kgp}$$
+   para tener
+   $$4$$
+   voltios
+   $$\text{V}$$
+   a la salida,
+   ya que es
+   $$8$$
+   voltios
+   $$\text{V}$$
+   a
+   $$20$$
+   kilogramos
+   fuerza
+   $$\text{kgp}$$
+   ) y ajustar
+   RV3.
+3. Verificar
+   tensiones en
+   salidas
+   intermedias.
+
+---
+
+## Fase 3 <a name="8"></a>
+Medidas:
+1. Tomar puntos
+   de
+   $$1$$
+   en
+   $$1$$
+   kilogramo
+   $$\text{kg}$$
+   subiendo y
+   bajando para
+   comprobar
+   histéresis.
+   Pesas tienen
+   tolerancia:
+   $$\pm 0.2$$
+   gramos
+   $$\text{g}$$
+2. Obtener la
+   recta ideal y
+   calcular la
+   alinealidad.
