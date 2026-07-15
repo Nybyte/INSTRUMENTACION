@@ -1,0 +1,188 @@
+# Boletín 4
+Potenciómetros
+
+## Índice
+* [Problema 1](#1)
+* [Problema 2](#2)
+* [Problema 3](#3)
+
+---
+
+## Problema 1 <a name="1"></a>
+**Enunciado:**
+Medida de
+presión.
+Potenciómetro:
+$$R_t = 10$$
+$$\text{k}\Omega$$
+Excursión del
+cursor:
+$$\delta_x = 0.1$$
+a
+$$\delta_x = 0.9$$
+para presión:
+$$0$$
+a
+$$p_{\max}$$
+.
+Circuito con
+sumador
+inversor:
+$$V_{out} = -1.25 \cdot V_1 + 6.25$$
+$$\text{V}$$
+a) Relación
+$$V_{out}$$
+vs presión.
+b) Error de
+linealidad.
+
+**Solución:**
+a) Relación
+$$V_1$$
+vs
+$$\delta_x$$
+:
+$$V_1 = \frac{5(1-2\delta_x)}{\frac{\delta_x(1-\delta_x)}{8} + 1}$$
+Relación
+$$\delta_x$$
+vs presión:
+$$\delta_x = 0.8\delta_p + 0.1$$
+Sustituyendo:
+$$V_{out}(p) = \frac{-5(1-2\delta_p)}{0.08(0.125+\delta_p)(1.125-\delta_p)+1} + 6.25$$
+$$\text{V}$$
+Extremos:
+-
+$$\delta_p = 0 \to V_{out} = 1.3056$$
+$$\text{V}$$
+-
+$$\delta_p = 1 \to V_{out} = 11.1944$$
+$$\text{V}$$
+
+b) Alinealidad
+Recta ideal:
+$$V_{id} = 9.8888\delta_p + 1.3056$$
+Máxima
+diferencia en
+puntos medios:
+$$\Delta V = 0.0361$$
+$$\text{V}$$
+Alinealidad:
+$$\text{ALIN} = \frac{0.0361}{9.8888} \cdot 100$$
+$$\text{ALIN} \approx 0.36$$
+$$\%$$
+
+---
+
+## Problema 2 <a name="2"></a>
+**Enunciado:**
+Medida de
+nivel.
+Potenciómetro:
+$$R_t = 10$$
+$$\text{k}\Omega$$
+Cursor:
+$$\delta = 0$$
+(vacío) a
+$$\delta = 1$$
+(lleno).
+Circuito:
+$$V_{out} = -2 \cdot V_1 + 5$$
+$$\text{V}$$
+Cargas:
+$$R_3 = R_4 = 100$$
+$$\text{k}\Omega$$
+a) Relación
+$$V_{out}$$
+vs nivel.
+b) Error de
+linealidad.
+
+**Solución:**
+a) Tensión
+$$V_1$$
+:
+$$V_1 = \frac{5 \left[ (1-\delta) + \frac{\delta(1-\delta)}{10} \right]}{1 + \frac{2\delta(1-\delta)}{10}}$$
+Salida:
+$$V_{out}(\delta) = 5 - \frac{10 \left[ (1-\delta) + \frac{\delta(1-\delta)}{10} \right]}{1 + \frac{2\delta(1-\delta)}{10}}$$
+Extremos:
+-
+$$\delta = 0 \to V_{out} = -5$$
+$$\text{V}$$
+-
+$$\delta = 1 \to V_{out} = +5$$
+$$\text{V}$$
+
+b) Alinealidad
+Recta ideal:
+$$V_{id} = 10\delta - 5$$
+Diferencia
+máxima:
+$$\Delta V = 0.0904$$
+$$\text{V}$$
+Alinealidad:
+$$\text{ALIN} = \frac{0.0904}{10} \cdot 100$$
+$$\text{ALIN} \approx 0.9$$
+$$\%$$
+
+---
+
+## Problema 3 <a name="3"></a>
+**Enunciado:**
+Veleta.
+Potenciómetro:
+$$R_t = 2$$
+$$\text{k}\Omega$$
+Cables:
+$$R_{hilo} = 50$$
+$$\Omega$$
+Visualizador:
+$$R_{in} = 30$$
+$$\text{k}\Omega$$
+Salida:
+$$0$$
+a
+$$5$$
+$$\text{V}$$
+Fuentes:
+$$\pm 10$$
+$$\text{V}$$
+a) Diseñar
+$$R_1$$
+y
+$$R_2$$
+.
+b) Alinealidad.
+
+**Solución:**
+a) Diseño
+Ecuaciones de
+extremos para
+$$V_i = 0$$
+y
+$$5$$
+$$\text{V}$$
+dan:
+$$R_1 = 1.95$$
+$$\text{k}\Omega$$
+$$R_2 = 3.95$$
+$$\text{k}\Omega$$
+
+b) Alinealidad
+Modelo con
+carga:
+$$V_i(\delta) = \frac{5\delta}{1.002 + \frac{1-\delta^2/4}{15}}$$
+Diferencia
+máxima:
+$$\Delta V = 0.247$$
+$$\text{V}$$
+Alinealidad:
+$$\text{ALIN} = \frac{0.247}{5} \cdot 100$$
+$$\text{ALIN} \approx 5.0$$
+$$\%$$
+Se optimiza a
+menor error
+con:
+$$R_1 = 1.811$$
+$$\text{k}\Omega$$
+$$R_2 = 3.811$$
+$$\text{k}\Omega$$
