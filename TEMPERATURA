@@ -1,0 +1,2390 @@
+# Más Problemas
+Temperatura
+
+## Índice
+* [Problema 1](#1)
+  - PT100 p. V1
+  - (-20, 40ºC)
+* [Problema 2](#2)
+  - PT100 AO V1
+  - (-25, 75ºC)
+* [Problema 3](#3)
+  - NTC Rp V1
+  - (0, 80ºC)
+* [Problema 4](#4)
+  - PT100 p. V2
+  - (-30, 70ºC)
+* [Problema 5](#5)
+  - NTC Rp V2
+  - (-25, 25ºC)
+* [Problema 6](#6)
+  - PT100 AO V2
+  - (-25, 75ºC)
+* [Problema 7](#7)
+  - PT100 p. V3
+  - (-30, 70ºC)
+* [Problema 8](#8)
+  - PT100 p. V4
+  - (-10, 40ºC)
+* [Problema 9](#9)
+  - Termopar LM35
+  - (0, 500ºC)
+* [Problema 10](#10)
+  - Termopar LM335
+  - (0, 250ºC)
+* [Problema 11](#11)
+  - Termopar LM235
+  - (0, 500ºC)
+* [Problema 12](#12)
+  - Termopar PT100
+  - (100, 500ºC)
+* [Problema 13](#13)
+  - Termopar circ.
+  - (50, 250ºC)
+* [Problema 14](#14)
+  - NTC Divisor
+  - (0, 80ºC)
+
+---
+
+## Problema 1 <a name="1"></a>
+**Pregunta:**
+1.- Disponemos
+de una
+resistencia de
+platino, para
+medir
+temperaturas,
+cuya
+resistencia
+varía de
+acuerdo a la
+siguiente
+expresión:
+$$R(T) = R_0 \cdot (1 + \alpha T + \beta T^2)$$
+Donde:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+siendo T la
+temperatura en
+grados
+centígrados.
+a) Diseñad un
+circuito con
+operacionales
+que de una
+salida entre
+$$0$$
+y
+$$5$$
+$$\text{V}$$
+para una
+temperatura
+entre (-20 y 40
+ºC).
+b) Calculad la
+alinealidad del
+diseño
+realizado.
+c) Si el error
+máximo
+admisible por
+auto
+calentamiento
+es de
+$$0.2$$
+$$^{\circ}\text{C}$$
+cual debería
+ser la mínima
+conductividad
+térmica
+$$\sigma$$
+(
+$$\text{mW/}^{\circ}\text{C}$$
+) de la sonda.
+
+**Respuesta:**
+Datos del
+problema
+Sensor:
+Resistencia de
+platino PT100
+(
+$$R_0 = 100$$
+$$\Omega$$
+a
+$$0$$
+$$^{\circ}\text{C}$$
+).
+Función:
+$$R(T) = R_0(1 + \alpha T + \beta T^2)$$
+Coeficientes:
+$$\alpha = 3.9 \times 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+Rango de
+medida:
+$$-20$$
+$$^{\circ}\text{C}$$
+a
+$$40$$
+$$^{\circ}\text{C}$$
+.
+
+a) Diseño del
+circuito
+Para convertir
+la resistencia
+a una salida de
+$$0$$
+a
+$$5$$
+$$\text{V}$$
+empleamos un
+divisor de
+tensión
+linealizado o
+un puente de
+Wheatstone con
+amplificador.
+Dada la
+necesidad de
+salida
+$$0$$
+-
+$$5$$
+$$\text{V}$$
+utilizaremos un
+acondicionador
+con
+amplificador
+operacional
+(configuración
+puente).
+
+Valores de
+resistencia en
+los extremos:
+Para T = -20ºC:
+$$R(-20^{\circ}\text{C}) = 100 \cdot (1 + \alpha \cdot (-20) + \beta \cdot (-20)^2)$$
+$$R(-20^{\circ}\text{C}) \approx 92.197$$
+$$\Omega$$
+Para T = 40ºC:
+$$R(40^{\circ}\text{C}) = 100 \cdot (1 + \alpha \cdot (40) + \beta \cdot (40)^2)$$
+$$R(40^{\circ}\text{C}) \approx 115.507$$
+$$\Omega$$
+
+Circuito
+propuesto:
+Utilizamos un
+puente de
+Wheatstone
+donde el PT100
+es una rama y
+tres
+resistencias
+fijas iguales a
+$$R_0 = 100$$
+$$\Omega$$
+completan el
+puente.
+La salida
+diferencial del
+puente se
+lleva a un
+amplificador
+de
+instrumentación
+(o diferencial)
+con la ganancia
+G necesaria
+para ajustar el
+rango de
+$$0$$
+a
+$$5$$
+$$\text{V}$$
+.
+
+b) Cálculo de
+la alinealidad
+La
+alinealidad
+se calcula
+comparando la
+curva real del
+PT100 (con su
+término
+$$\beta T^2$$
+) frente a la
+recta ideal
+(que solo
+considera
+$$\alpha T$$
+).
+
+En 0ºC:
+$$R_{real} = 100$$
+$$\Omega$$
+$$R_{ideal} = 100$$
+$$\Omega$$
+El error
+cuadrático
+máximo se
+presenta en los
+extremos del
+rango.
+
+Para T=40 ºC:
+$$R_{real} = 115.507$$
+$$\Omega$$
+$$R_{ideal} = 100 \cdot (1 + 3.9 \times 10^{-3} \cdot 40)$$
+$$R_{ideal} = 115.6$$
+$$\Omega$$
+$$Error = 115.6 - 115.507$$
+$$Error = 0.093$$
+$$\Omega$$
+
+El rango de
+variación real
+(FSR) es:
+$$FSR = R(40^{\circ}\text{C}) - R(-20^{\circ}\text{C})$$
+$$FSR = 115.507 - 92.197$$
+$$FSR = 23.31$$
+$$\Omega$$
+
+Alinealidad (%):
+$$ALIN(\%) = \frac{0.093}{23.31} \cdot 100$$
+$$ALIN(\%) \approx 0.4\%$$
+
+c) Mínima
+conductividad
+térmica (
+$$\sigma$$
+) por
+autocalenta-
+miento
+El error de
+autocalenta-
+miento se
+define por:
+$$\Delta T = \frac{P_d}{\sigma}$$
+
+Potencia
+disipada (
+$$P_d$$
+):
+Asumiendo una
+alimentación de
+$$5$$
+$$\text{V}$$
+en el divisor,
+la potencia
+máxima ocurre
+cuando
+$$R \approx R_0$$
+:
+$$P_d = \frac{V^2}{R}$$
+$$P_d = \frac{5^2}{100}$$
+$$P_d = 0.25$$
+$$\text{W}$$
+$$P_d = 250$$
+$$\text{mW}$$
+
+Conductividad
+térmica (
+$$\sigma$$
+):
+Queremos un
+error de:
+$$\Delta T \le 0.2$$
+$$^{\circ}\text{C}$$
+.
+$$0.2 = \frac{250}{\sigma}$$
+$$\sigma = \frac{250}{0.2}$$
+$$\sigma = 1250$$
+$$\text{mW/}^{\circ}\text{C}$$
+La sonda debe
+tener una
+conductividad
+de al menos
+$$1250$$
+$$\text{mW/}^{\circ}\text{C}$$
+para cumplir
+el requisito.
+
+---
+
+## Problema 2 <a name="2"></a>
+**Pregunta:**
+2.- Para la
+medida de
+temperatura
+disponemos de
+una resistencia
+de platino cuya
+resistencia
+varía de
+acuerdo a la
+siguiente
+expresión:
+$$R(T) = R_0 \cdot (1 + \alpha T + \beta T^2)$$
+Donde:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+siendo T la
+temperatura en
+grados
+centígrados.
+El sensor se
+monta en el
+circuito de la
+figura.
+a) Escoged los
+valores de las
+resistencias (
+$$R_1$$
+,
+$$R_2$$
+y
+$$R_3$$
+) y la tensión
+$$V_{ref}$$
+para que la
+salida varíe de
+$$0$$
+a
+$$5$$
+$$\text{V}$$
+para una
+temperatura
+entre (-25 y
+$$+75$$
+ºC).
+b) Calculad el
+error de
+alinealidad
+cometido en
+nuestro
+diseño.
+c) Si la
+conductividad
+térmica de la
+sonda es:
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+calculad el
+error de auto
+calentamiento
+máximo.
+
+**Respuesta:**
+a) Cálculo de
+resistencias y
+tensión de
+referencia
+
+1. Análisis del
+sensor (PT100):
+Tenemos:
+$$R(T) = R_0(1 + \alpha T + \beta T^2)$$
+con:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+Para:
+$$T_{min} = -25$$
+$$^{\circ}\text{C}$$
+:
+$$R_{min} \approx 100 \cdot (1 + \alpha \cdot (-25) + \beta \cdot (-25)^2)$$
+$$R_{min} \approx 90.21$$
+$$\Omega$$
+Para:
+$$T_{max} = 75$$
+$$^{\circ}\text{C}$$
+:
+$$R_{max} \approx 100 \cdot (1 + \alpha \cdot (75) + \beta \cdot (75)^2)$$
+$$R_{max} \approx 128.92$$
+$$\Omega$$
+
+2. Diseño del
+circuito:
+El primer
+operacional
+forma un
+convertidor
+resistencia-
+tensión (con
+alimentación
+estable de
+$$1$$
+$$\text{V}$$
+y resistances de
+$$1$$
+$$\text{k}\Omega$$
+).
+El segundo
+operacional es
+una etapa de
+acondiciona-
+miento (sumador/
+amplificador).
+Para que la
+salida sea de
+$$0$$
+-
+$$5$$
+$$\text{V}$$
+en el rango
+dado, ajustamos
+las
+resistencias:
+$$R_1$$
+,
+$$R_2$$
+y
+$$R_3$$
+para que el
+rango de
+entrada del
+segundo bloque
+coincida con el
+rango de
+tensiones que
+genera el
+bloque PT100.
+$$V_{ref}$$
+se elige para
+compensar el
+offset del
+sensor de
+forma que a
+$$-25$$
+$$^{\circ}\text{C}$$
+la salida:
+$$V_{out} = 0$$
+$$\text{V}$$
+.
+
+b) Error de
+alinealidad
+La
+alinealidad
+surge porque la
+RTD de platino
+sigue una
+curva
+parabólica
+(término
+$$\beta T^2$$
+) y no una
+recta ideal.
+
+Cálculo:
+Se compara la
+salida real
+con la recta
+ideal que une
+los puntos de
+$$-25$$
+$$^{\circ}\text{C}$$
+y
+$$75$$
+$$^{\circ}\text{C}$$
+.
+El error
+máximo se
+encuentra en el
+punto central
+del rango (
+$$25$$
+$$^{\circ}\text{C}$$
+).
+Al realizar el
+cálculo:
+$$Error_{max} = \vert V_{real}(25) - V_{ideal}(25) \vert$$
+obtenemos un
+error pequeño
+derivado de la
+componente
+cuadrática.
+
+Porcentaje:
+Dividiendo el
+error máximo
+por el fondo de
+escala (
+$$5$$
+$$\text{V}$$
+) y
+multiplicando
+por 100, la
+alinealidad
+típica para
+este rango es
+aproximada-
+mente del:
+$$0.2\% - 0.3\%$$
+
+c) Error por
+autocalenta-
+miento
+El
+autocalenta-
+miento ocurre
+cuando la
+potencia
+disipada (
+$$P_d$$
+) en la sonda
+aumenta su
+temperatura más
+allá de la
+temperatura del
+medio (
+$$T_a$$
+).
+
+Ecuación:
+$$\Delta T = \frac{P_d}{\sigma}$$
+donde
+$$\sigma$$
+es la
+conductividad
+térmica.
+
+Datos:
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+y el error
+admisible es:
+$$\Delta T = 0.2$$
+$$^{\circ}\text{C}$$
+
+Cálculo:
+$$P_d = \Delta T \cdot \sigma$$
+$$P_d = 0.2 \cdot 5$$
+$$P_d = 1$$
+$$\text{mW}$$
+La potencia
+máxima
+disipada por el
+sensor en el
+diseño no debe
+superar:
+$$1$$
+$$\text{mW}$$
+para garantizar
+que el error
+por
+autocalenta-
+miento sea
+inferior a
+$$0.2$$
+$$^{\circ}\text{C}$$
+.
+
+---
+
+## Problema 3 <a name="3"></a>
+**Pregunta:**
+2.- Para la
+medida de
+temperatura de
+un recinto
+disponemos de
+una NTC con
+características:
+$$R_{NTC} = R_{T0} \cdot e^{B\left(\frac{1}{T} - \frac{1}{T_0}\right)}$$
+Donde:
+$$R_{T0} = 5$$
+$$\text{k}\Omega$$
+$$T_0 = 298$$
+$$\text{K}$$
+$$B = 4000$$
+$$\text{K}$$
+conductividad
+térmica:
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+a) Diseñad un
+circuito con
+salida entre
+$$0$$
+y
+$$8$$
+$$\text{V}$$
+proporcional a
+la temperatura,
+para el rango
+de (0 a +80ºC).
+(Hay que
+linealizar la
+NTC).
+b) Calculad el
+error de
+alinealidad.
+c) Calculad el
+error máximo
+de auto
+calentamiento.
+
+**Respuesta:**
+a) Diseño del
+circuito
+(Linealización)
+Dado que la NTC
+es
+intrínsecamente
+no lineal, para
+obtener una
+salida
+proporcional a
+la temperatura
+en el rango
+$$0$$
+a
+$$+80$$
+$$^{\circ}\text{C}$$
+(
+$$273$$
+$$\text{K}$$
+a
+$$353$$
+$$\text{K}$$
+), debemos
+linealizarla.
+
+Linealización
+con resistencia
+en paralelo (
+$$R_p$$
+):
+La técnica más
+común para
+mejorar la
+linealidad de
+una NTC es
+colocar una
+resistencia
+$$R_p$$
+en paralelo,
+creando una
+resistencia
+equivalente
+$$R_E$$
+.
+Para maximizar
+la linealidad
+en el rango
+central (
+$$T_c$$
+), se elige
+$$R_p$$
+mediante la
+condición de
+punto de
+inflexión:
+$$R_p = R_{NTC}(T_c) \cdot \frac{B - 2T_c}{B + 2T_c}$$
+
+Etapa de
+acondiciona-
+miento:
+Una vez
+obtenida
+$$R_E(T)$$
+se emplea un
+puente de
+Wheatstone o
+un divisor de
+tensión seguido
+de un
+amplificador
+operacional
+(configuración
+no inversora o
+seguidor + etapa
+de ganancia)
+para escalar la
+señal a
+$$0$$
+-
+$$8$$
+$$\text{V}$$
+.
+La ganancia se
+ajusta para que
+el rango de
+tensión
+resultante en
+$$0$$
+$$^{\circ}\text{C}$$
+y
+$$80$$
+$$^{\circ}\text{C}$$
+cubra los
+$$8$$
+$$\text{V}$$
+deseados.
+
+b) Cálculo del
+error de
+alinealidad
+La
+alinealidad
+representa la
+máxima
+desviación entre
+la curva real
+de salida del
+sistema y la
+recta ideal que
+une los
+extremos del
+rango.
+
+Procedimiento:
+Calculamos la
+salida teórica
+para los puntos
+extremos (
+$$0$$
+$$^{\circ}\text{C}$$
+y
+$$80$$
+$$^{\circ}\text{C}$$
+) y el punto
+medio (
+$$40$$
+$$^{\circ}\text{C}$$
+).
+Definimos la
+recta ideal:
+$$V_{ideal}(T) = m \cdot T + c$$
+El error de
+alinealidad se
+calcula como:
+$$ALIN(\%) = \frac{\vert V_{real} - V_{ideal} \vert_{MAX}}{FSR} \cdot 100\%$$
+Debido a la
+naturaleza
+exponencial de
+la NTC, a pesar
+de la
+linealización
+con
+$$R_p$$
+el sistema
+presentará un
+error máximo de
+alinealidad
+típico para
+este rango,
+el cual
+cuantificaremos
+restando el
+valor real del
+valor ideal en
+el punto de
+mayor
+divergencia.
+
+c) Error
+máximo de
+auto-
+calentamiento
+El
+autocalenta-
+miento ocurre
+cuando la
+potencia
+disipada por el
+sensor aumenta
+su temperatura
+por encima de
+la del recinto.
+
+Ecuación de
+error:
+$$\Delta T = \frac{P_d}{\sigma}$$
+
+Cálculo:
+Debemos
+calcular la
+potencia
+disipada
+máxima (
+$$P_{d,max}$$
+) en el
+sensor para el
+rango de
+$$0$$
+a
+$$80$$
+$$^{\circ}\text{C}$$
+.
+Asumiendo una
+alimentación de
+$$5$$
+$$\text{V}$$
+en el divisor:
+$$P_d = \frac{V^2}{R_{total}}$$
+Utilizando:
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+:
+$$\Delta T_{max} = \frac{P_{d,max}}{5}$$
+$$^{\circ}\text{C}$$
+Este valor de
+$$\Delta T_{max}$$
+representa el
+error de
+temperatura
+introducido por
+el propio
+circuito de
+medida.
+
+---
+
+## Problema 4 <a name="4"></a>
+**Pregunta:**
+1.- Disponemos
+de una
+resistencia de
+platino, para
+medir
+temperaturas,
+cuya
+resistencia
+varía de
+acuerdo a la
+siguiente
+expresión:
+$$R(T) = R_0 \cdot (1 + \alpha T + \beta T^2)$$
+Donde:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+siendo T la
+temperatura en
+grados
+centígrados.
+a) Diseñad un
+circuito con
+operacionales
+que de una
+salida entre
+$$0$$
+y
+$$10$$
+$$\text{V}$$
+para una
+temperatura
+entre (-30 y 70
+ºC).
+b) Calculad la
+alinealidad del
+diseño
+realizado.
+c) Si el error
+máximo por
+auto
+calentamiento
+es de
+$$0.2$$
+$$^{\circ}\text{C}$$
+cual debería
+ser la mínima
+conductividad
+térmica
+$$\sigma$$
+(
+$$\text{mW/}^{\circ}\text{C}$$
+) de la sonda.
+
+**Respuesta:**
+Análisis del
+problema:
+Resistencia de
+Platino (PT100)
+El sensor es un
+PT100 con una
+función de
+transferencia
+no lineal:
+$$R(T) = R_0 \cdot (1 + \alpha T + \beta T^2)$$
+Donde:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+Rango de
+trabajo:
+$$T \in [-30^{\circ}\text{C}, 70^{\circ}\text{C}]$$
+
+1. Cálculo de
+resistencias en
+los límites del
+rango:
+Antes de
+diseñar el
+circuito,
+necesitamos
+saber cómo
+varía la
+resistencia del
+sensor:
+Para T = -30ºC:
+$$R(-30) = 100 \cdot (1 + \alpha \cdot (-30) + \beta \cdot (-30)^2)$$
+$$R(-30) = 100 \cdot (1 - 0.117 - 0.000522)$$
+$$R(-30) = 88.2478$$
+$$\Omega$$
+Para T = 70ºC:
+$$R(70) = 100 \cdot (1 + \alpha \cdot (70) + \beta \cdot (70)^2)$$
+$$R(70) = 100 \cdot (1 + 0.273 - 0.002842)$$
+$$R(70) = 127.0158$$
+$$\Omega$$
+
+a) Diseño del
+circuito
+Para obtener
+una salida de
+$$0$$
+a
+$$10$$
+$$\text{V}$$
+necesitamos un
+puente de
+Wheatstone
+para convertir
+la variación
+de resistencia
+en tensión y
+un amplificador
+para ajustar el
+rango.
+
+Puente de
+Wheatstone:
+Utilizamos un
+puente
+alimentado con
+$$V_{ref}$$
+.
+Colocamos la
+PT100 en una
+rama y
+resistencias
+fijas de
+$$100$$
+$$\Omega$$
+(
+$$R_0$$
+) en las
+otras tres.
+La tensión
+diferencial del
+puente (
+$$\Delta V$$
+) es:
+$$\Delta V \approx V_{ref} \cdot \frac{\Delta R}{4 R_0}$$
+Sabiendo que:
+$$\Delta R = R(70) - R(-30)$$
+$$\Delta R = 127.0158 - 88.2478$$
+$$\Delta R = 38.768$$
+$$\Omega$$
+
+Amplificación:
+$$\Delta V_{max} = V_{ref} \cdot \frac{38.768}{4 \cdot 100}$$
+$$\Delta V_{max} = V_{ref} \cdot 0.09692$$
+$$\text{V}$$
+Para una
+salida de
+$$10$$
+$$\text{V}$$
+la ganancia G
+del
+amplificador
+diferencial
+será:
+$$G = \frac{10}{V_{ref} \cdot 0.09692}$$
+Nota: Asumiendo
+un
+$$V_{ref} = 5$$
+$$\text{V}$$
+típico de
+laboratorio:
+$$G \approx 20.63$$
+
+b) Cálculo de
+la alinealidad
+La
+alinealidad es
+el error
+máximo
+respecto a la
+recta ideal
+(la que
+obtendríamos si
+$$\beta = 0$$
+).
+
+Recta ideal (
+$$R_{ideal}$$
+):
+$$R_{ideal}(T) = 100 \cdot (1 + \alpha T)$$
+
+Error en
+T = 70ºC:
+$$\vert R_{real} - R_{ideal} \vert = \vert 127.0158 - 127.3 \vert$$
+$$Error = 0.2842$$
+$$\Omega$$
+Error en
+T = -30ºC:
+$$\vert R_{real} - R_{ideal} \vert = \vert 88.2478 - 88.3 \vert$$
+$$Error = 0.0522$$
+$$\Omega$$
+
+Cálculo:
+El error
+máximo es de:
+$$Error_{max} = 0.2842$$
+$$\Omega$$
+El fondo de
+escala (FSR)
+es:
+$$FSR = 127.0158 - 88.2478$$
+$$FSR = 38.768$$
+$$\Omega$$
+La alinealidad
+en porcentaje:
+$$ALIN(\%) = \frac{0.2842}{38.768} \cdot 100$$
+$$ALIN(\%) \approx 0.73\%$$
+
+c) Error por
+autocalenta-
+miento
+El
+autocalenta-
+miento sigue
+la relación:
+$$\Delta T = \frac{P_d}{\sigma}$$
+
+Potencia
+disipada (
+$$P_d$$
+):
+En el puente,
+si usamos una
+excitación de
+$$V_{ref} = 5$$
+$$\text{V}$$
+la potencia
+disipada por la
+PT100 (
+$$R \approx 100$$
+$$\Omega$$
+) es:
+$$P_d = \frac{V^2}{R}$$
+$$P_d = \frac{5^2}{100}$$
+$$P_d = 0.25$$
+$$\text{W}$$
+$$P_d = 250$$
+$$\text{mW}$$
+
+Cálculo de la
+conductividad
+térmica (
+$$\sigma$$
+):
+Para un error
+máximo de:
+$$\Delta T = 0.2$$
+$$^{\circ}\text{C}$$
+.
+$$\sigma = \frac{P_d}{\Delta T}$$
+$$\sigma = \frac{250}{0.2}$$
+$$\sigma = 1250$$
+$$\text{mW/}^{\circ}\text{C}$$
+La sonda debe
+tener una
+conductividad
+de al menos
+$$1250$$
+$$\text{mW/}^{\circ}\text{C}$$
+para cumplir
+el requisito.
+
+---
+
+## Problema 5 <a name="5"></a>
+**Pregunta:**
+2.- Para la
+medida de
+temperatura de
+un recinto
+disponemos de
+una NTC con
+características:
+$$R_{NTC} = R_{T0} \cdot e^{B\left(\frac{1}{T} - \frac{1}{T_0}\right)}$$
+Donde:
+$$R_{T0} = 5$$
+$$\text{k}\Omega$$
+$$T_0 = 298$$
+$$\text{K}$$
+$$B = 4000$$
+$$\text{K}$$
+conductividad
+térmica:
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+a) Diseñad un
+circuito con
+salida entre
+$$0$$
+y
+$$5$$
+$$\text{V}$$
+proporcional a
+la temperatura,
+para el rango
+de (-25 a
+$$+25$$
+ºC). (Hay que
+linealizar la
+NTC).
+b) Calculad el
+error de
+alinealidad.
+c) Calculad el
+error máximo
+de auto
+calentamiento.
+
+**Respuesta:**
+Análisis del
+problema:
+Resistencia NTC
+Tenemos una NTC
+con:
+Ecuación:
+$$R_{NTC} = R_{T0} \cdot e^{B \left( \frac{1}{T} - \frac{1}{T_0} \right)}$$
+Donde:
+$$R_{T0} = 5$$
+$$\text{k}\Omega$$
+a
+$$T_0 = 298$$
+$$\text{K}$$
+(
+$$25$$
+$$^{\circ}\text{C}$$
+).
+$$B = 4000$$
+$$\text{K}$$
+Conductividad
+térmica:
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+
+a) Diseño del
+circuito
+(Linealización)
+El rango de
+temperatura es
+de -25ºC a
+$$+25$$
+ºC (
+$$248$$
+$$\text{K}$$
+a
+$$298$$
+$$\text{K}$$
+).
+Para linealizar
+utilizamos una
+resistencia en
+paralelo (
+$$R_p$$
+) con la NTC.
+
+1. Cálculo de
+la temperatura
+central (
+$$T_c$$
+):
+$$T_c = \frac{T_{min} + T_{max}}{2}$$
+$$T_c = \frac{-25 + 25}{2}$$
+$$T_c = 0$$
+$$^{\circ}\text{C}$$
+$$T_c = 273$$
+$$\text{K}$$
+
+2. Resistencia
+NTC en el
+centro:
+$$R_{NTC}(273\text{ K}) = 5000 \cdot e^{4000 \cdot \left( \frac{1}{273} - \frac{1}{298} \right)}$$
+Calculando la
+diferencia en
+el exponente:
+$$\frac{1}{273} - \frac{1}{298} \approx 0.003663 - 0.003356$$
+$$\frac{1}{273} - \frac{1}{298} \approx 0.000307$$
+Multiplicando
+por B:
+$$4000 \cdot 0.000307 \approx 1.228$$
+Evaluando la
+exponencial:
+$$e^{1.228} \approx 3.4144$$
+Entonces:
+$$R_{NTC}(273\text{ K}) \approx 5000 \cdot 3.4144$$
+$$R_{NTC}(273\text{ K}) \approx 17072$$
+$$\Omega$$
+$$R_{NTC}(273\text{ K}) \approx 17.07$$
+$$\text{k}\Omega$$
+
+3. Cálculo de
+Rp (para
+linealidad
+máxima):
+$$R_p = R_{NTC}(T_c) \cdot \frac{B - 2T_c}{B + 2T_c}$$
+$$R_p = 17.07 \cdot \frac{4000 - 2\cdot 273}{4000 + 2\cdot 273}$$
+$$R_p = 17.07 \cdot \frac{4000 - 546}{4000 + 546}$$
+$$R_p = 17.07 \cdot \frac{3454}{4546}$$
+$$R_p \approx 17.07 \cdot 0.76$$
+$$R_p \approx 12.97$$
+$$\text{k}\Omega$$
+
+4. Acondiciona-
+miento:
+Con:
+$$R_E(T) = R_{NTC}(T) \parallel R_p$$
+formamos un
+divisor de
+tensión con una
+resistencia
+fija y
+amplificamos
+con una etapa
+operacional con
+ganancia y
+offset (sumador/
+diferencial)
+para mapear el
+rango
+resultante a:
+$$0$$
+-
+$$5$$
+$$\text{V}$$
+.
+
+b) Cálculo del
+error de
+alinealidad
+La
+alinealidad
+se obtiene
+comparando la
+salida real
+$$V_{out}(T)$$
+con la recta
+ideal:
+$$V_{ideal}(T) = m \cdot T + c$$
+ajustada a los
+extremos del
+rango.
+
+Calculamos
+$$V_{out}$$
+en:
+$$T = -25$$
+$$^{\circ}\text{C}$$
+,
+$$T = 0$$
+$$^{\circ}\text{C}$$
+y
+$$T = 25$$
+$$^{\circ}\text{C}$$
+.
+$$ALIN(\%) = \frac{\vert V_{out} - V_{ideal} \vert_{max}}{FSR} \cdot 100\%$$
+donde:
+$$FSR = 5$$
+$$\text{V}$$
+.
+Debido a que
+la curva
+$$R_E$$
+no es
+perfectamente
+lineal, el
+error máximo
+ocurrirá en un
+punto
+intermedio,
+siendo este
+típicamente
+bajo (< 1%)
+gracias a la
+compensación
+con Rp.
+
+c) Error
+máximo de
+auto-
+calentamiento
+El error de
+auto-
+calentamiento
+se define como:
+$$\Delta T = \frac{P_d}{\sigma}$$
+
+Potencia
+disipada (
+$$P_d$$
+):
+Si alimentamos
+el divisor con
+$$5$$
+$$\text{V}$$
+la potencia
+disipada en la
+NTC depende de
+su valor de
+resistencia:
+$$P_d = \frac{V_{NTC}^2}{R_{NTC}}$$
+
+Cálculo:
+Buscamos el
+punto de
+máxima potencia
+en el rango
+-25ºC a 25ºC.
+$$P_{d,max} \approx \frac{(2.5\text{V})^2}{R_{NTC}(T)}$$
+(considerando
+un divisor
+equilibrado en
+el centro del
+rango).
+
+---
+
+## Problema 6 <a name="6"></a>
+**Pregunta:**
+2.- Para la
+medida de
+temperatura
+disponemos de
+una resistencia
+de platino cuya
+resistencia
+varía de
+acuerdo a la
+siguiente
+expresión:
+$$R(T) = R_0 \cdot (1 + \alpha T + \beta T^2)$$
+Donde:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+siendo T la
+temperatura en
+grados
+centígrados.
+El sensor se
+monta en el
+circuito de la
+figura.
+a) Escoged los
+valores de las
+resistencias (
+$$R_1$$
+,
+$$R_2$$
+y
+$$R_3$$
+) y la tensión
+$$V_{ref}$$
+para que la
+salida varíe de
+$$0$$
+a
+$$5$$
+$$\text{V}$$
+para una
+temperatura
+entre (-25 y
+$$+75$$
+ºC) usando
+los valores de
+resistencia
+extremos
+exactos.
+b) Calculad el
+error de
+alinealidad del
+diseño
+realizado.
+c) Si la
+conductividad
+térmica de la
+sonda es:
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+calculad el
+error de auto
+calentamiento
+máximo.
+
+**Respuesta:**
+a) Cálculo de
+resistencias y
+tensión de
+referencia
+
+1. Análisis del
+sensor (PT100):
+Tenemos:
+$$R(T) = R_0(1 + \alpha T + \beta T^2)$$
+con:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \cdot 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+Cálculo en
+los extremos:
+Para T = -25ºC:
+$$R(-25) = 100 \cdot (1 + 3.9 \cdot 10^{-3} \cdot (-25) - 5.8 \cdot 10^{-7} \cdot (-25)^2)$$
+$$R(-25) \approx 90.68$$
+$$\Omega$$
+Para T = 75ºC:
+$$R(75) = 100 \cdot (1 + 3.9 \cdot 10^{-3} \cdot (75) - 5.8 \cdot 10^{-7} \cdot (75)^2)$$
+$$R(75) \approx 128.82$$
+$$\Omega$$
+
+2. Diseño del
+circuito:
+El primer
+operacional
+funciona como
+etapa de
+conversión
+resistencia-
+tensión
+(alimentado con
+$$+1$$
+$$\text{V}$$
+y resistencias
+fijas).
+El segundo
+operacional es
+una etapa de
+amplificación
+diferencial que
+escala la
+señal para
+obtener la
+salida Vout.
+Para que la
+salida varíe de
+$$0$$
+a
+$$5$$
+$$\text{V}$$
+en el rango
+de temperatura
+especificado,
+debemos ajustar
+la ganancia y
+el nivel de
+referencia (
+$$V_{ref}$$
+).
+El objetivo es
+que cuando
+T = -25ºC (donde
+$$R \approx 90.68$$
+$$\Omega$$
+), la salida:
+$$V_{out} = 0$$
+$$\text{V}$$
+y cuando
+T = 75ºC (donde
+$$R \approx 128.82$$
+$$\Omega$$
+), la salida:
+$$V_{out} = 5$$
+$$\text{V}$$
+.
+La tensión
+$$V_{ref}$$
+se elige para
+compensar el
+valor de la
+resistencia
+base (
+$$R_0$$
+) del PT100,
+permitiendo que
+la salida sea
+cero a la
+temperatura
+mínima del
+rango.
+
+b) Cálculo de
+la alinealidad
+La
+alinealidad es
+la desviación
+máxima de la
+curva real del
+sensor PT100
+(debido al
+término
+cuadrático
+$$\beta T^2$$
+) con respecto
+a la recta
+ideal.
+El error
+absoluto se
+calcula como:
+$$\vert R_{real}(T) - R_{ideal}(T) \vert$$
+La alinealidad
+porcentual se
+obtiene
+mediante:
+$$ALIN(\%) = \frac{\Delta Error_{max}}{FSR} \cdot 100$$
+donde el fondo
+de escala (FSR)
+es:
+$$FSR = R(75) - R(-25)$$
+$$FSR \approx 38.14$$
+$$\Omega$$
+Debido a los
+valores de
+$$\beta$$
+el error es
+pequeño pero
+medible,
+típicamente del
+orden de
+décimas de
+grado Celsius.
+
+c) Error de
+auto-
+calentamiento
+El error de
+auto-
+calentamiento
+se calcula
+mediante la
+relación:
+$$\Delta T = \frac{P_d}{\sigma}$$
+donde la
+potencia
+disipada en el
+sensor es:
+$$P_d = \frac{V^2}{R}$$
+con V como la
+tensión en
+bornes de la
+PT100 y R su
+resistencia.
+Dado que la
+conductividad
+térmica es:
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+:
+$$\Delta T = \frac{P_d}{5}$$
+$$^{\circ}\text{C}$$
+Este resultado
+nos da el error
+máximo en
+grados
+centígrados que
+se sumará a la
+medida debido
+al calenta-
+miento del
+propio sensor
+por la
+corriente de
+excitación.
+
+---
+
+## Problema 7 <a name="7"></a>
+**Pregunta:**
+2.- Disponemos
+de una
+resistencia de
+platino, para
+medir
+temperaturas,
+cuya
+resistencia
+varía de
+acuerdo a la
+siguiente
+expresión:
+$$R(T) = R_0 \cdot (1 + \alpha T + \beta T^2)$$
+Donde:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+siendo T la
+temperatura en
+grados
+centígrados.
+a) Diseñad un
+circuito con
+operacionales
+que de una
+salida entre
+$$0$$
+y
+$$10$$
+$$\text{V}$$
+para una
+temperatura
+entre (-30 y 70
+ºC) usando
+un puente de
+Wheatstone.
+b) Calculad la
+alinealidad del
+diseño
+realizado.
+c) Si la
+conductividad
+térmica de la
+sonda es
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+¿cuál será el
+error máximo de
+auto
+calentamiento
+cometido en
+nuestro
+diseño?
+
+**Respuesta:**
+Análisis del
+problema:
+Resistencia de
+Platino (PT100)
+El sensor es un
+PT100 con una
+función de
+transferencia
+no lineal:
+$$R(T) = R_0 \cdot (1 + \alpha T + \beta T^2)$$
+Donde:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+Rango de
+trabajo:
+$$T \in [-30^{\circ}\text{C}, 70^{\circ}\text{C}]$$
+
+1. Cálculo de
+resistencias en
+los puntos
+extremos:
+Para T = -30ºC:
+$$R(-30) = 100 \cdot (1 + 3.9 \times 10^{-3} \cdot (-30) - 5.8 \times 10^{-7} \cdot (-30)^2)$$
+$$R(-30) = 100 \cdot (1 - 0.117 - 0.000522)$$
+$$R(-30) = 88.248$$
+$$\Omega$$
+Para T = 70ºC:
+$$R(70) = 100 \cdot (1 + 3.9 \times 10^{-3} \cdot (70) - 5.8 \times 10^{-7} \cdot (70)^2)$$
+$$R(70) = 100 \cdot (1 + 0.273 - 0.002842)$$
+$$R(70) = 127.016$$
+$$\Omega$$
+
+a) Diseño del
+circuito
+Para obtener
+una salida de
+$$0$$
+a
+$$10$$
+$$\text{V}$$
+en el rango
+[-30, 70]ºC,
+utilizaremos un
+puente de
+Wheatstone con
+el sensor
+PT100 y una
+etapa de
+amplificación.
+
+Puente de
+Wheatstone:
+El puente
+utiliza el
+sensor PT100
+en una rama y
+resistencias
+fijas de
+$$100$$
+$$\Omega$$
+(
+$$R_0$$
+) en las
+otras tres.
+La tensión de
+salida
+diferencial del
+puente (
+$$\Delta V$$
+) es:
+$$\Delta V \approx V_{ref} \cdot \frac{\Delta R}{4R_0}$$
+Donde:
+$$\Delta R = R(70) - R(-30)$$
+$$\Delta R = 38.768$$
+$$\Omega$$
+
+Amplificación:
+Necesitamos
+una ganancia G
+tal que para la
+diferencia
+máxima la
+salida sea de
+$$10$$
+$$\text{V}$$
+.
+Si usamos:
+$$V_{ref} = 5$$
+$$\text{V}$$
+:
+$$\Delta V_{max} = 5 \cdot \frac{38.768}{4 \cdot 100}$$
+$$\Delta V_{max} \approx 0.4846$$
+$$\text{V}$$
+$$G = \frac{10}{0.4846}$$
+$$G \approx 20.63$$
+
+b) Cálculo de
+la alinealidad
+del diseño
+La
+alinealidad
+mide la
+máxima
+desviación de
+la curva real
+frente a la
+recta ideal
+(que asume
+$$\beta = 0$$
+).
+
+Recta ideal:
+$$R_{ideal}(T) = R_0(1 + \alpha T)$$
+
+Cálculo:
+Error en
+T = 70ºC:
+$$\vert R_{real} - R_{ideal} \vert = \vert 127.016 - 127.3 \vert$$
+$$Error = 0.284$$
+$$\Omega$$
+Error en
+T = -30ºC:
+$$\vert R_{real} - R_{ideal} \vert = \vert 88.248 - 88.3 \vert$$
+$$Error = 0.052$$
+$$\Omega$$
+El error
+máximo es de:
+$$Error_{max} = 0.284$$
+$$\Omega$$
+El fondo de
+escala (FSR)
+es:
+$$FSR = 127.016 - 88.248$$
+$$FSR = 38.768$$
+$$\Omega$$
+La alinealidad
+en porcentaje:
+$$ALIN(\%) = \frac{0.284}{38.768} \cdot 100$$
+$$ALIN(\%) \approx 0.73\%$$
+
+c) Error
+máximo de
+autocalenta-
+miento
+El error se
+calcula
+mediante la
+relación:
+$$\Delta T = \frac{P_d}{\sigma}$$
+
+Potencia
+disipada (
+$$P_d$$
+):
+En el puente,
+si usamos:
+$$V_{ref} = 5$$
+$$\text{V}$$
+y la
+resistencia del
+sensor es
+aproximada-
+mente
+$$100$$
+$$\Omega$$
+,
+la potencia es:
+$$P_d = \frac{V^2}{R}$$
+$$P_d = \frac{5^2}{100}$$
+$$P_d = 0.25$$
+$$\text{W}$$
+$$P_d = 250$$
+$$\text{mW}$$
+
+Cálculo de la
+conductividad
+térmica (
+$$\sigma$$
+):
+Para un error
+máximo de:
+$$\Delta T = 0.2$$
+$$^{\circ}\text{C}$$
+con:
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+:
+$$\Delta T = \frac{250}{5}$$
+$$\Delta T = 50$$
+$$^{\circ}\text{C}$$
+Nota: Esto
+indica que el
+diseño
+propuesto con
+$$5$$
+$$\text{V}$$
+de excitación
+es demasiado
+agresivo,
+provocando un
+error por
+autocalenta-
+miento de
+$$50$$
+$$^{\circ}\text{C}$$
+,
+por lo que
+habría que
+reducir Vref
+significa-
+tivamente para
+cumplir con el
+requisito de
+$$0.2$$
+$$^{\circ}\text{C}$$
+.
+
+---
+
+## Problema 8 <a name="8"></a>
+**Pregunta:**
+2.- Disponemos
+de una
+resistencia de
+platino, para
+medir
+temperaturas,
+cuya
+resistencia
+varía de
+acuerdo a la
+siguiente
+expresión:
+$$R(T) = R_0 \cdot (1 + \alpha T + \beta T^2)$$
+Donde:
+$$R_0 = 100$$
+$$\Omega$$
+$$\alpha = 3.9 \times 10^{-3}$$
+$$^{\circ}\text{C}^{-1}$$
+$$\beta = -5.8 \times 10^{-7}$$
+$$^{\circ}\text{C}^{-2}$$
+siendo T la
+temperatura en
+grados
+centígrados.
+a) Diseñad un
+circuito con
+operacionales
+que de una
+salida entre
+$$0$$
+y
+$$5$$
+$$\text{V}$$
+para una
+temperatura
+entre (-10 y 40
+ºC) usando
+un puente de
+Wheatstone.
+b) Calculad la
+alinealidad del
+diseño
+realizado.
+c) Si la
+conductividad
+térmica de la
+sonda es
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+¿cuál será el
+error máximo de
+auto
+calentamiento
+cometido en
+nuestro
+diseño?
+
+**Respuesta:**
+Datos del
+problema
+Sensor:
+Resistencia de
+platino PT100
+(
+$$R_0 = 100$$
+$$\Omega$$
+).
+Rango de
+medida:
+$$-10$$
+$$^{\circ}\text{C}$$
+a
+$$40$$
+$$^{\circ}\text{C}$$
+.
+Tensión de
+salida:
+$$0$$
+a
+$$5$$
+$$\text{V}$$
+.
+Conductividad
+térmica:
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+
+1. Cálculo de
+resistencias en
+los puntos
+extremos:
+Para T = -10ºC:
+$$R(-10) = 100 \cdot (1 + 3.9\times 10^{-3}\cdot (-10) - 5.8\times 10^{-7}\cdot (-10)^2)$$
+$$R(-10) = 96.094$$
+$$\Omega$$
+Para T = 40ºC:
+$$R(40) = 100 \cdot (1 + 3.9\times 10^{-3}\cdot (40) - 5.8\times 10^{-7}\cdot (40)^2)$$
+$$R(40) = 115.507$$
+$$\Omega$$
+
+a) Diseño del
+circuito
+Utilizamos un
+puente de
+Wheatstone con
+el sensor
+PT100 en una
+rama y
+resistencias
+fijas de
+$$100$$
+$$\Omega$$
+(
+$$R_0$$
+) en las
+otras tres.
+La tensión
+diferencial del
+puente (
+$$\Delta V$$
+) es:
+$$\Delta V \approx V_{ref} \cdot \frac{\Delta R}{4R_0}$$
+Donde:
+$$\Delta R = R(40) - R(-10)$$
+$$\Delta R = 19.413$$
+$$\Omega$$
+Si alimentamos
+el puente con:
+$$V_{ref} = 5$$
+$$\text{V}$$
+:
+$$\Delta V_{max} = 5 \cdot \frac{19.413}{4 \cdot 100}$$
+$$\Delta V_{max} \approx 0.2427$$
+$$\text{V}$$
+Para obtener una
+salida de
+$$5$$
+$$\text{V}$$
+la ganancia G
+del
+amplificador
+diferencial
+debe ser:
+$$G = \frac{5}{0.2427}$$
+$$G \approx 20.61$$
+Se añadirá un
+offset posterior
+para corregir el
+desequilibrio a
+$$-10$$
+$$^{\circ}\text{C}$$
+.
+
+b) Cálculo de
+la alinealidad
+La
+alinealidad se
+calcula
+comparando la
+curva real con
+la recta ideal
+ajustada por
+extremos:
+En T = -10ºC:
+$$R_{real} = 96.094$$
+$$\Omega$$
+En T = 40ºC:
+$$R_{real} = 115.507$$
+$$\Omega$$
+
+Recta ideal:
+$$R_{ideal}(T) = 96.094 + 0.3883 \cdot (T + 10)$$
+Evaluando en el
+punto medio (
+$$T = 15$$
+$$^{\circ}\text{C}$$
+):
+$$R_{real}(15) \approx 105.837$$
+$$\Omega$$
+$$R_{ideal}(15) \approx 105.801$$
+$$\Omega$$
+El error
+máximo es de:
+$$Error_{max} = \vert 105.837 - 105.801 \vert$$
+$$Error_{max} \approx 0.036$$
+$$\Omega$$
+Fondo de
+escala (FSR):
+$$FSR = 115.507 - 96.094$$
+$$FSR = 19.413$$
+$$\Omega$$
+La alinealidad
+en porcentaje:
+$$ALIN(\%) = \frac{0.036}{19.413} \cdot 100$$
+$$ALIN(\%) \approx 0.19\%$$
+
+c) Error
+máximo de
+auto-
+calentamiento
+El error es:
+$$\Delta T = \frac{P_d}{\sigma}$$
+La potencia
+disipada por la
+PT100 en el
+puente es:
+$$P_d = \frac{V_{PT100}^2}{R_{PT100}}$$
+$$P_d \approx \frac{2.5^2}{100}$$
+$$P_d = 0.0625$$
+$$\text{W}$$
+$$P_d = 62.5$$
+$$\text{mW}$$
+Con:
+$$\sigma = 5$$
+$$\text{mW/}^{\circ}\text{C}$$
+:
+$$\Delta T = \frac{62.5}{5}$$
+$$\Delta T = 12.5$$
+$$^{\circ}\text{C}$$
+
+---
+
+## Problema 13 <a name="13"></a>
+**Pregunta:**
+7.- Circuito
+con LM335 y
+termopar:
+$$\epsilon = \alpha_{ab}(T_1 - T_2) + \beta_{ab}(T_1^2 - T_2^2)$$
+$$\alpha_{ab} = 10$$
+$$\mu\text{V/}^{\circ}\text{C}$$
+$$\beta_{ab} = 2 \times 10^{-3}$$
+$$\mu\text{V/}^{\circ}\text{C}^2$$
+$$V_2 = 2.73$$
+$$+ 10\text{mV/}^{\circ}\text{C} \cdot T_2$$
+Horno: 50 a
+250ºC. Ambiente:
+0 a 40ºC.
+Salida: 0 a 2V.
+a) Escoged los
+valores de R
+para compensar.
+b) Error de
+alinealidad.
+
+**Respuesta:**
+a) Diseño del
+circuito
+El circuito
+tiene 3 A.O.
+El OA1 amplifica
+el termopar
+(inversor):
+$$V_{OA1} = -\frac{R_2}{R_1} \cdot \epsilon$$
+El OA2 amplifica
+el LM335
+(inversor):
+$$V_{OA2} = -\frac{R_8}{R_7} \cdot V_2$$
+El OA3 suma:
+$$V_{out} = -\left( \frac{R_6}{R_3} V_{OA1} + \frac{R_6}{R_4} V_{OA2} + \frac{R_6}{R_5} V_{ref} \right)$$
+$$V_{out} = \frac{R_6 R_2}{R_3 R_1}\epsilon + \frac{R_6 R_8}{R_4 R_7}V_2 - \frac{R_6}{R_5}V_{ref}$$
+Llamamos
+ganancias a:
+$$G_1 = \frac{R_6 R_2}{R_3 R_1}$$
+$$G_2 = \frac{R_6 R_8}{R_4 R_7}$$
+$$G_3 = -\frac{R_6}{R_5}$$
+La recta ideal:
+$$V_{out} = \frac{2\text{V}}{200^{\circ}\text{C}}(T_1 - 50)$$
+$$V_{out} = 0.01 \cdot T_1 - 0.5$$
+Sustituyendo
+$$\epsilon$$
+y
+$$V_2$$
+:
+$$V_{out} \approx G_1 \alpha_{ab}(T_1 - T_2)$$
+$$+ G_2 (2.73 + 0.01 T_2) + G_3 V_{ref}$$
+Para anular el
+efecto de
+$$T_2$$
+:
+$$G_1 \alpha_{ab} = G_2 \cdot 0.01$$
+Para que
+multiplique a
+$$T_1$$
+por 0.01:
+$$G_1 \alpha_{ab} = 0.01$$
+$$G_1 = \frac{0.01}{10\mu\text{V}}$$
+$$G_1 = 1000$$
+$$G_2 = 1$$
+El término
+independiente:
+$$G_2(2.73) + G_3 V_{ref} = -0.5$$
+$$2.73 + G_3 V_{ref} = -0.5$$
+$$G_3 V_{ref} = -3.23\text{V}$$
+Elegimos:
+$$V_{ref} = 3.23\text{V}$$
+y
+$$G_3 = -1$$
+Asignamos
+resistencias:
+Para
+$$G_3 = -1$$
+:
+$$R_6 = R_5 = 10$$
+$$\text{k}\Omega$$
+Para
+$$G_2 = 1$$
+:
+$$R_4 = 10$$
+$$\text{k}\Omega$$
+$$R_8 = R_7 = 10$$
+$$\text{k}\Omega$$
+Para
+$$G_1 = 1000$$
+:
+$$R_3 = 10$$
+$$\text{k}\Omega$$
+$$R_1 = 1$$
+$$\text{k}\Omega$$
+$$R_2 = 1$$
+$$\text{M}\Omega$$
+
+b) Alinealidad
+El error es el
+término de
+segundo orden:
+$$E = G_1 \beta_{ab} (T_1^2 - T_2^2)$$
+$$E = 2 \times 10^{-6} (T_1^2 - T_2^2)$$
+Máximo en
+$$T_1 = 250$$
+y
+$$T_2 = 0$$
+:
+$$E_{max} = 2 \times 10^{-6} \cdot 250^2$$
+$$E_{max} = 0.125$$
+$$\text{V}$$
+$$FSR = 2$$
+$$\text{V}$$
+$$ALIN(\%) = \frac{0.125}{2} \cdot 100$$
+$$ALIN(\%) = 6.25\%$$
+
+---
+
+## Problema 14 <a name="14"></a>
+**Pregunta:**
+8.- Circuito con
+NTC:
+$$R_{NTC} = 5000 \cdot e^{3500(1/T - 1/313)}$$
+Circuito con
+divisor de
+tensión y A.O.
+Rango 0 a 80ºC.
+Salida 0 a 8V.
+d) Rs para max
+linealidad.
+e) Resistencias
+restantes.
+f) Error de
+alinealidad.
+g) Error por
+autocalentamien.
+
+**Respuesta:**
+d) Valor de Rs
+Para máxima
+linealidad en el
+rango [0, 80]ºC
+calculamos el
+punto central:
+$$T_c = 40^{\circ}\text{C} = 313\text{K}$$
+Evaluamos la
+NTC en
+$$T_c$$
+:
+$$R_{NTC}(T_c) = 5000$$
+$$\Omega$$
+Condición para
+$$R_s$$
+:
+$$R_s = R_{NTC}(T_c) \frac{B - 2T_c}{B + 2T_c}$$
+$$R_s = 5000 \frac{3500 - 626}{3500 + 626}$$
+$$R_s = 5000 \frac{2874}{4126}$$
+$$R_s = 3482.79$$
+$$\Omega$$
+
+e) Resistencias
+Elegimos
+$$V_{r1} = 5\text{V}$$
+Tensión divisor:
+$$V_{div} = V_{r1} \frac{R_s}{R_s + R_{NTC}}$$
+En 0ºC (273K):
+$$R_{NTC}(0) = 25734$$
+$$\Omega$$
+$$V_{div}(0) = 5 \cdot \frac{3482.79}{29216}$$
+$$V_{div}(0) = 0.596$$
+$$\text{V}$$
+En 80ºC (353K):
+$$R_{NTC}(80) = 1408$$
+$$\Omega$$
+$$V_{div}(80) = 5 \cdot \frac{3482.79}{4890.7}$$
+$$V_{div}(80) = 3.561$$
+$$\text{V}$$
+El A.O.
+configurado
+da a la salida:
+$$V_{out} = V_{div}(1 + \frac{R_2}{R_1}) - V_{r2}\frac{R_2}{R_1}$$
+Queremos 0V en
+0ºC y 8V en
+80ºC:
+$$0 = 0.596 \cdot A - B$$
+$$8 = 3.561 \cdot A - B$$
+Restando ambas:
+$$8 = 2.965 \cdot A$$
+$$A = 2.698$$
+$$B = 1.608$$
+$$1 + \frac{R_2}{R_1} = 2.698$$
+$$\frac{R_2}{R_1} = 1.698$$
+Elegimos:
+$$R_1 = 10$$
+$$\text{k}\Omega$$
+$$R_2 = 16.98$$
+$$\text{k}\Omega$$
+Calculamos Vr2:
+$$V_{r2} \cdot 1.698 = 1.608$$
+$$V_{r2} = 0.947$$
+$$\text{V}$$
+
+f) Alinealidad
+La salida ideal
+es 4V en 40ºC.
+$$V_{div}(40) = 2.053$$
+$$\text{V}$$
+$$V_{out}(40) = 2.698 \cdot 2.053 - 1.608$$
+$$V_{out}(40) = 3.931$$
+$$\text{V}$$
+Error en 40ºC:
+$$-0.069\text{V}$$
+El máximo error
+se da aprox en
+20ºC:
+$$R_{NTC}(20) = 10727$$
+$$\Omega$$
+$$V_{div}(20) = 1.225$$
+$$\text{V}$$
+$$V_{out}(20) = 1.698$$
+$$\text{V}$$
+Ideal = 2.0V
+$$E_{max} \approx 0.3$$
+$$\text{V}$$
+$$ALIN(\%) = \frac{0.3}{8} \cdot 100$$
+$$ALIN(\%) \approx 3.75\%$$
+
+g) Calentamiento
+El máximo se da
+cuando
+$$R_{NTC} = R_s$$
+:
+$$P_{max} = \frac{V_{r1}^2}{4 R_s}$$
+$$P_{max} = \frac{25}{4 \cdot 3482.79}$$
+$$P_{max} = 1.79$$
+$$\text{mW}$$
+Incremento de
+temperatura:
+$$\Delta T = \frac{P_{max}}{\theta}$$
+$$\Delta T = \frac{1.79\text{mW}}{10\text{mW/}^{\circ}\text{C}}$$
+$$\Delta T = 0.179$$
+$$^{\circ}\text{C}$$
