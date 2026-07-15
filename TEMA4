@@ -1,0 +1,727 @@
+# Tema 4
+Posición,
+distancia y
+desplazamiento
+
+## Índice
+* [4.1](#1)
+* [4.2](#2)
+* [4.3](#3)
+* [4.4](#4)
+* [4.5](#5)
+* [4.6](#6)
+* [4.7](#7)
+* [4.8](#8)
+
+---
+
+## 4.1 <a name="1"></a>
+Introducción.
+
+### Medida de
+### Posición
+* Punto en 3D:
+  3 coordenadas
+  y 3 grados de
+  libertad.
+* Sólido rígido:
+  5 grados de
+  libertad.
+* Son
+  magnitudes
+  vectoriales.
+* En
+  instrumentos,
+  se usa un
+  sensor por
+  cada grado de
+  libertad.
+
+### Clasificación
+* Con contacto:
+  vástago o
+  engranaje
+  unido al
+  sensor.
+  * Ejemplos:
+    potenciómetro,
+    LVDT,
+    encoders,
+    sincros.
+* Sin contacto:
+  transductores
+  de distancia
+  por ondas.
+  * Ejemplos:
+    inductivos,
+    capacitivos,
+    ultrasonidos,
+    láser,
+    radar.
+
+---
+
+## 4.2 <a name="2"></a>
+Potenciómetros.
+
+### Concepto
+Resistencia
+total constante
+$$R_t$$
+entre bornes.
+Cursor móvil
+que varía la
+resistencia.
+
+### F. Transferencia
+* Lineal:
+  $$R_1(x) = R_t \frac{x}{L}$$
+  $$R_2(x) = R_t \left(1 - \frac{x}{L}\right)$$
+  * Parámetro
+    metro
+    $$\text{m}$$
+* Angular:
+  $$R_1(\omega) = R_t \frac{\omega}{\Omega}$$
+  $$R_2(\omega) = R_t \left(1 - \frac{\omega}{\Omega}\right)$$
+  * Parámetro
+    radián
+    $$\text{rad}$$
+
+### Tipos según
+### Elemento
+* Hilo
+  enrollado:
+  * Tolerancia:
+    $$\pm 3\%$$
+  * Muy buena
+    linealidad.
+  * Pobre
+    resolución
+    (saltos de
+    hilo).
+  * Vida corta.
+  * Coste bajo.
+* Híbrido:
+  * Tolerancia:
+    $$\pm 5\%$$
+  * Buena
+    linealidad y
+    resolución.
+  * Vida larga.
+  * Coste medio.
+* Plástico
+  conductor:
+  * Tolerancia:
+    $$\pm 10\%$$
+  * Resolución
+    excelente.
+  * Vida muy
+    larga.
+  * Coste alto.
+
+### Comparativa
+* Ventajas:
+  * Simple y
+    barato.
+  * Robusto.
+  * Gran señal
+    de salida.
+* Inconvenientes:
+  * Rozamiento
+    e inercia.
+  * Ruido de
+    contacto.
+  * Ancho de
+    banda bajo.
+
+### Efecto de
+### Carga
+Si se conecta
+impedancia
+$$R_L$$
+en la salida,
+tensión real:
+$$V_o(\delta) = V_{ref} \frac{\delta}{1 + \frac{\delta (1 - \delta)}{K}}$$
+* Relación:
+  $$K = \frac{R_L}{R_t}$$
+* Posición
+  relativa:
+  $$\delta = \frac{x}{L}$$
+* Error de
+  linealidad:
+  para
+  $$K > 10$$
+  $$\text{ALIN} \approx \frac{15}{K}\%$$
+
+### Compensación
+### de Carga
+Se añade una
+resistencia
+$$R_L$$
+entre la
+alimentación
+y el cursor.
+* Reduce la
+  alinealidad
+  al
+  $$0.9\%$$
+  para
+  $$K = 10$$
+
+### Adaptación
+### de Niveles
+Uso de
+amplificadores
+operacionales:
+* Inversor:
+  $$V_o = -\frac{R_2}{R_1} V_1$$
+* Sumador:
+  $$V_o = -\frac{R_3}{R_1} V_1 - \frac{R_3}{R_2} V_2$$
+* Seguidor:
+  $$V_o = V_1$$
+
+### Diseño de
+### Niveles
+Ecuación:
+$$V_o = A \cdot V_i + B$$
+* Resolviendo:
+  $$V_{o1} = A \cdot V_{i1} + B$$
+  $$V_{o2} = A \cdot V_{i2} + B$$
+
+* Ejemplo:
+  $$V_i \in (0 \to 1)$$
+  voltio
+  $$\text{V}$$
+  $$V_o \in (-5 \to 5)$$
+  voltio
+  $$\text{V}$$
+  * Resolviendo:
+    $$A = 10$$
+    $$B = -5$$
+    voltio
+    $$\text{V}$$
+  * Ecuación:
+    $$V_o = 10 \cdot V_i - 5$$
+    voltio
+    $$\text{V}$$
+  * Diseño con
+    2 etapas:
+    * Primera:
+      sumador
+      inversor.
+    * Segunda:
+      inversor.
+    * Con:
+      $$V_{ref} = -5$$
+      voltio
+      $$\text{V}$$
+      $$R_4 = R_5 = R_1 = 10$$
+      kiloohmio
+      $$\text{k}\Omega$$
+      $$R_3 = R_2 = 100$$
+      kiloohmio
+      $$\text{k}\Omega$$
+
+### Compensar
+### Hilos
+En distancias
+largas, la
+resistencia
+del cable
+$$R_{hilo}$$
+induce error.
+* Solución:
+  conexión a 5
+  hilos con
+  operacionales
+  de guarda.
+  Excursión de
+  $$0$$
+  a
+  $$V_{ref}$$
+
+---
+
+## 4.3 <a name="3"></a>
+LVDT (Transformador
+diferencial).
+
+### Concepto
+Transformador
+variable.
+Bobinado
+primario
+alimentado
+con alterna.
+Dos bobinados
+secundarios
+idénticos
+conectados en
+oposición.
+Núcleo móvil
+ferromagnético.
+
+### F. Transferencia
+Tensión de
+salida:
+$$u_o(t) = A \cdot S_{LVDT} \cdot x \cdot \sin(\omega t + \phi)$$
+* Salida es
+  una señal
+  modulada en
+  amplitud
+  (AM).
+* La fase
+  cambia en
+  $$180^\circ$$
+  según el
+  sentido de
+  desplazamiento.
+* Sensibilidad
+  $$S_{LVDT}$$
+  unidad
+  $$\text{V}_{\text{out}}/(\text{V}_{\text{in}}\cdot\text{mm})$$
+
+### Tipos
+* AC: solo
+  bobinas.
+  Soporta
+  más calor.
+* DC: lleva
+  electrónica
+  dentro.
+  Más sensible
+  al calor.
+* Guías:
+  cautivo,
+  libre, con
+  retorno.
+
+### Comparativa
+* Ventajas:
+  * Muy robusto
+    y fiable.
+  * Gran
+    linealidad.
+  * Resolución
+    teórica
+    infinita.
+* Inconvenientes:
+  * Caro.
+  * Demodulador
+    complejo.
+  * No tiene
+    cero
+    perfecto.
+
+### Acondicionamiento
+* Demodulador
+  Asíncrono:
+  rectificador
+  y filtro.
+  * No detecta
+    el signo
+    de la
+    posición.
+  * Requiere
+    rectificar
+    ambos
+    secundarios
+    por
+    separado y
+    restar.
+* Demodulador
+  Síncrono:
+  multiplica
+  la salida
+  por la
+  portadora.
+  * Detecta el
+    signo.
+  * Salida tras
+    filtrado:
+    $$u_o' = \frac{1}{2} A \cdot B(z) \cdot \cos(\phi)$$
+* Síncrono
+  simplificado:
+  multiplica
+  por una
+  señal
+  cuadrada
+  $$\pm 1$$
+  usando un
+  inversor y
+  un
+  multiplexor
+  (AMUX).
+
+---
+
+## 4.4 <a name="4"></a>
+Encoders (Reglas
+codificadas).
+
+### Concepto
+Cuerpo graduado
+con marcas
+ópticas
+(paso de luz o
+reflexión) y
+cabezal lector.
+
+### Encoders
+### Absolutos
+* N bits para
+  $$2^N$$
+  posiciones.
+* Código Gray:
+  código
+  continuo
+  donde solo
+  cambia un
+  bit por
+  paso. Evita
+  errores en
+  fronteras.
+* Salida
+  digital
+  directa.
+
+### Encoders
+### Incrementales
+* Cuentan
+  pulsos de
+  una pista.
+* Dos sensores
+  desfasados
+  en cuadratura
+  (A y B a
+  $$90^\circ$$)
+  para saber el
+  sentido de
+  giro.
+* Canal de
+  cero (Z)
+  para
+  referencia
+  absoluta.
+* Circuito:
+  detector de
+  cuadratura y
+  contador de
+  pulsos.
+* Incrementales
+  analógicos:
+  salidas en
+  seno y
+  coseno.
+  Permiten
+  interpolar
+  obteniendo
+  resoluciones
+  $$< 0.01$$
+  milímetro
+  $$\text{mm}$$
+
+### Comparativa
+* Ventajas:
+  * Salida
+    digital.
+  * Gran
+    resolución.
+* Inconvenientes:
+  * Sensibles
+    a polvo y
+    humedad.
+  * Pérdida de
+    posición
+    si se apaga
+    (incrementales).
+
+---
+
+## 4.5 <a name="5"></a>
+Sincros y
+Resolvers.
+
+### Sincros
+* Posición
+  angular por
+  transformador
+  variable.
+* Rotor
+  alimentado
+  con alterna
+  (R1-R2).
+* Estator en
+  estrella
+  desfasado
+  $$120^\circ$$
+  (S1,S2,S3).
+* Salidas:
+  $$V_{S1-S3} = A \sin(\omega t) \sin(\theta)$$
+  $$V_{S3-S2} = A \sin(\omega t) \sin(\theta + 120^\circ)$$
+  $$V_{S2-S1} = A \sin(\omega t) \sin(\theta + 240^\circ)$$
+* Muy
+  robustos
+  (náutica y
+  aeroespacial).
+
+### Resolver
+* Similar al
+  sincro pero
+  con dos
+  devanados en
+  cuadraura
+  ($$90^\circ$$).
+* Salidas
+  seno y
+  coseno:
+  $$V_{seno} = B \sin(\omega t + \phi) \sin(\theta)$$
+  $$V_{coseno} = B \sin(\omega t + \phi) \cos(\theta)$$
+
+### Conversión
+### Sincro-Resolver
+* Transformador
+  de Scott:
+  conversión
+  pasiva y
+  bidireccional.
+  * Superior:
+    $$V_1 = V \sin(\omega t) \sin(\theta)$$
+  * Inferior:
+    $$V_2 = V \sin(\omega t) \cos(\theta)$$
+    con
+    $$R_2 = \frac{2}{\sqrt{3}}$$
+
+---
+
+## 4.6 <a name="6"></a>
+Detectores de
+proximidad.
+
+### Concepto
+Salida digital
+todo o nada
+ante presencia
+de un objeto.
+Rango de mm
+a cm.
+
+### Tecnologías
+* Electromecánico:
+  por contacto,
+  desgaste, no
+  requiere
+  alimentación.
+* Óptico:
+  por infrarrojo
+  (IR), sensible
+  al polvo.
+* Efecto Hall:
+  tensión Hall
+  por campo
+  magnético
+  perpendicular.
+  Detecta imán.
+  Atrae virutas.
+* Relé Reed:
+  contactos
+  magnéticos
+  en ampolla de
+  vidrio.
+* Inductivo:
+  metales.
+* Capacitivo:
+  cualquier
+  material.
+
+### Detector
+### Inductivo
+Bobina en
+oscilador. El
+campo EM
+genera
+corrientes de
+Foucault en
+el metal
+cercano. Esto
+amortigua la
+oscilación,
+variando el
+consumo.
+
+* Alcance
+  Nominal
+  $$S_n$$
+  (para acero).
+* Factores de
+  corrección:
+  * Acero:
+    $$1.0$$
+  * Cr-Ni:
+    $$0.8$$
+  * Latón:
+    $$0.5$$
+  * Aluminio:
+    $$0.5$$
+  * Cobre:
+    $$0.3$$
+* Salida:
+  * NAMUR (2
+    hilos CC):
+    consumo
+    $$\le 1$$
+    miliamperio
+    $$\text{mA}$$
+    (activo) o
+    $$\ge 2.2$$
+    miliamperio
+    $$\text{mA}$$
+    (no activo).
+  * Colector
+    abierto (3
+    hilos CC):
+    PNP o NPN.
+  * CA (2 hilos).
+  * Relé (5
+    hilos).
+
+### Detector
+### Capacitivo
+Cara sensible
+actúa como
+condensador. El
+objeto varía
+la constante
+dieléctrica y
+la capacidad.
+* Detecta no
+  metales
+  (agua,
+  plástico,
+  madera).
+
+---
+
+## 4.7 <a name="7"></a>
+Ultrasonidos.
+
+### Sonido
+Onda
+longitudinal de
+presión.
+* Velocidades:
+  * Aire:
+    $$343$$
+    metro/segundo
+    $$\text{m/s}$$
+  * Agua:
+    $$1543$$
+    metro/segundo
+    $$\text{m/s}$$
+  * Acero:
+    $$6100$$
+    metro/segundo
+    $$\text{m/s}$$
+* Variación en
+  aire con T:
+  $$V_s \approx 331.5 + 0.6 \cdot T$$
+  * Grados Celsius
+    $$^\circ\text{C}$$
+
+### Tiempo de
+### Vuelo (TOF)
+Distancia:
+$$L = \frac{1}{2} V_s \cdot t_v$$
+* Frecuencia
+  típica en
+  aire:
+  $$40$$
+  a
+  $$50$$
+  kilohertz
+  $$\text{kHz}$$
+  (compromiso
+  resolución /
+  atenuación).
+* El haz
+  tiende a
+  abrirse,
+  creando ecos
+  falsos.
+* Sensor
+  piezoeléctrico
+  reversible.
+
+---
+
+## 4.8 <a name="8"></a>
+Láser.
+
+### Concepto
+Luz coherente,
+monocroma y
+directiva.
+
+### Láser TOF
+$$d = \frac{1}{2} C \cdot t_v$$
+* Constante
+  $$C \approx 300000$$
+  km/s
+  $$\text{km/s}$$
+* Un error de
+  $$1$$
+  nanosegundo
+  $$\text{ns}$$
+  desvía
+  $$30$$
+  centímetros
+  $$\text{cm}$$
+* Rango:
+  cm a km.
+* Resolución:
+  $$1$$
+  a
+  $$5$$
+  milímetro
+  $$\text{mm}$$
+
+### Láser
+### Triangulación
+Proyecta spot.
+Lente enfoca
+sobre CCD. La
+posición en
+el CCD da la
+distancia.
+* Preciso
+  (resolución
+  sub-milímetro).
+* Rango
+  $$\le 10$$
+  metro
+  $$\text{m}$$
+
+### Láser
+### Interferometría
+Interferencia
+entre haz de
+referencia y
+medida.
+* Salida:
+  $$S_{out} = k' [1 + \cos(\phi)]$$
+* Desfase:
+  $$\phi = \frac{\Delta x}{2\pi\lambda}$$
+* Resolución
+  inmejorable:
+  $$< 1$$
+  micrómetro
+  $$\mu\text{m}$$
+* Homodino:
+  usa 4
+  señales para
+  saber sentido.
+  Resolución
+  $$\lambda/2$$
+* Sistema de
+  laboratorio,
+  muy caro.
