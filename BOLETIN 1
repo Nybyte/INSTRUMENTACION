@@ -1,0 +1,529 @@
+# Boletín 1
+Errores
+
+## Índice
+* [Problema 1](#1)
+* [Problema 2](#2)
+* [Problema 3](#3)
+* [Problema 4](#4)
+* [Problema 5](#5)
+* [Problema 6](#6)
+
+---
+
+## Problema 1 <a name="1"></a>
+**Enunciado:**
+Estamos analizan-
+do el comporta-
+miento de un
+voltímetro.
+Disponemos de
+una pila patrón
+de referencia:
+$$V_{ref} = 10.0000$$
+$$\text{V}$$
+con:
+$$U_{Vref} = \pm 0.0001$$
+$$\text{V}$$
+Tomamos 10
+valores de
+medida:
+9.965, 10.070,
+9.825, 10.005,
+9.930, 9.880,
+10.115, 10.030,
+9.995, 10.175.
+Estimar el
+error aleatorio
+(desviación
+típica) y
+sistemático.
+Discutir
+validez.
+
+**Solución:**
+1. Datos:
+$$N = 10$$
+$$X_r = 10.0000$$
+$$\text{V}$$
+
+2. Valor medio
+$$\overline{X}_m = \frac{\sum X_{mi}}{N}$$
+Suma:
+$$99.9900$$
+Media:
+$$\overline{X}_m = 9.9990$$
+$$\text{V}$$
+
+3. Error
+sistemático
+$$\beta = \overline{X}_m - X_r$$
+$$\beta = 9.9990 - 10.0000$$
+$$\beta = -0.0010$$
+$$\text{V}$$
+
+4. Errores
+aleatorios
+(residuos
+$$\delta_i = X_{mi} - \overline{X}_m$$
+)
+-
+$$\delta_1 = -0.034$$
+-
+$$\delta_2 = 0.071$$
+-
+$$\delta_3 = -0.174$$
+-
+$$\delta_4 = 0.006$$
+-
+$$\delta_5 = -0.069$$
+-
+$$\delta_6 = -0.119$$
+-
+$$\delta_7 = 0.116$$
+-
+$$\delta_8 = 0.031$$
+-
+$$\delta_9 = -0.004$$
+-
+$$\delta_{10} = 0.176$$
+
+Cuadrados
+$$\delta_i^2$$
+-
+$$\delta_1^2 = 0.001156$$
+-
+$$\delta_2^2 = 0.005041$$
+-
+$$\delta_3^2 = 0.030276$$
+-
+$$\delta_4^2 = 0.000036$$
+-
+$$\delta_5^2 = 0.004761$$
+-
+$$\delta_6^2 = 0.014161$$
+-
+$$\delta_7^2 = 0.013456$$
+-
+$$\delta_8^2 = 0.000961$$
+-
+$$\delta_9^2 = 0.000016$$
+-
+$$\delta_{10}^2 = 0.030976$$
+
+Suma de
+cuadrados:
+$$\sum \delta_i^2 = 0.10084$$
+
+5. Desviación
+típica
+estimada
+$$\sigma_s = \sqrt{\frac{\sum \delta_i^2}{N - 1}}$$
+$$\sigma_s = \sqrt{\frac{0.10084}{9}}$$
+$$\sigma_s = 0.1058$$
+$$\text{V}$$
+$$\sigma_s \approx 0.1$$
+$$\text{V}$$
+
+6. Discusión
+Aunque la
+media se
+acerca al
+valor real, la
+desviación
+$$\sigma_s$$
+es muy alta.
+La estimación
+de
+$$\beta$$
+es de:
+$$-0.01$$
+(pequeña),
+pero la
+confianza en
+este resultado
+es baja.
+Se requiere un
+número de
+muestras mayor
+para asegurar
+la validez del
+sesgo
+sistemático.
+
+---
+
+## Problema 2 <a name="2"></a>
+**Enunciado:**
+Instrumento
+con
+incertidumbre
+típica:
+$$\sigma = 0.005$$
+Tomamos:
+$$N = 5$$
+medidas.
+Media:
+$$\overline{X}_s = 1.123$$
+Asumiendo
+$$\beta = 0$$
+Calculad el
+rango del
+valor real con
+confianza del
+$$99.7\%$$
+Usad dos
+modelos:
+Gaussiano y
+Student.
+
+**Solución:**
+a) Modelo de
+Gauss
+Para
+$$99.7\%$$
+el factor de
+cobertura es:
+$$k = 3$$
+Intervalo:
+$$\mu = \overline{X}_m \pm k \cdot \frac{\sigma}{\sqrt{N}}$$
+$$\mu = 1.123 \pm 3 \cdot \frac{0.005}{\sqrt{5}}$$
+$$\mu = 1.123 \pm 0.0067$$
+$$1.116 \le X_r \le 1.130$$
+
+b) Student
+Para
+$$N = 5$$
+grados de
+libertad:
+$$\nu = 4$$
+Factor de
+cobertura para
+$$99.7\%$$
+segun tabla es:
+$$t = 4.604$$
+Intervalo:
+$$\mu = 1.123 \pm 4.604 \cdot \frac{0.005}{\sqrt{5}}$$
+$$\mu = 1.123 \pm 0.0103$$
+$$1.113 \le X_r \le 1.133$$
+
+---
+
+## Problema 3 <a name="3"></a>
+**Enunciado:**
+Expresad
+correctamente
+las medidas:
+
+a)
+$$9.9812 \pm 0.123$$
+b)
+$$0.00234 \pm 0.000657$$
+c)
+$$45679 \pm 54$$
+d)
+$$654.23 \pm 3.68$$
+e)
+$$23.657 \times 10^{-9} \pm 120 \times 10^{-12}$$
+f)
+$$125.003 \pm 0.028$$
+g)
+$$109.0045 \pm 0.0089$$
+
+**Solución:**
+a) Redondeo
+de
+incertidumbre a
+dos cifras:
+$$0.12$$
+Redondeo de
+medida:
+$$9.98$$
+Resultado:
+$$9.98 \pm 0.12$$
+
+b) Redondeo de
+incertidumbre:
+$$0.0007$$
+Medida:
+$$0.0023$$
+Científica:
+$$(2.3 \pm 0.7) \times 10^{-3}$$
+
+c) Redondeo de
+incertidumbre:
+$$50$$
+Medida:
+$$45680$$
+Científica:
+$$(456.8 \pm 0.5) \times 10^2$$
+
+d) Redondeo de
+incertidumbre:
+$$4$$
+Medida:
+$$654$$
+Científica:
+$$(65.4 \pm 0.4) \times 10^1$$
+
+e) Misma
+potencia
+$$10^{-9}$$
+$$23.657 \pm 0.120$$
+Redondeo:
+$$(23.66 \pm 0.12) \times 10^{-9}$$
+
+f) Redondeo de
+incertidumbre:
+$$0.03$$
+Medida:
+$$125.00$$
+Científica:
+$$(1250.0 \pm 0.3) \times 10^{-1}$$
+
+g) Redondeo de
+incertidumbre:
+$$0.009$$
+Medida:
+$$109.004$$
+Científica:
+$$(10900.4 \pm 0.9) \times 10^{-2}$$
+
+---
+
+## Problema 4 <a name="4"></a>
+**Enunciado:**
+Estimación de
+incertidumbre
+con 10 puntos
+subiendo y
+10 bajando.
+
+a) Proc. 1:
+Único valor.
+Gauss.
+Confianza
+$$95\%$$
+b) Proc. 2:
+Recta de
+calibración y
+excluir sesgo.
+c) Calcular
+intervalo de
+medidas:
+7.66, 2.14,
+9.81.
+
+**Solución:**
+a) Proc. 1
+Sesgo máximo
+de parejas:
+$$\beta_{\max} = 0.0900$$
+Residuos
+$$\delta_i$$
+Suma
+cuadrados:
+$$\sum \delta_i^2 = 0.0258$$
+Desviación:
+$$\sigma_s = 0.0210$$
+Expandida:
+$$U = \beta_{\max} + 2 \cdot \sigma_s$$
+$$U = 0.0900 + 0.0420$$
+$$U = 0.1320 \approx 0.13$$
+Incertidumbre:
+$$U_c = \pm 0.13$$
+
+b) Proc. 2
+Recta de
+regresión:
+$$X_{mc} = 0.9889 \cdot X_m + 0.03702$$
+Desviación de
+residuos:
+$$\sigma_s = 0.0351$$
+Incertidumbre:
+$$U = \pm 2 \cdot \sigma_s$$
+$$U = \pm 0.07$$
+
+c) Ejemplos
+
+c1) Medida
+$$7.66$$
+- Proc. 1:
+$$7.66 \pm 0.13$$
+$$7.53 \le X_r \le 7.79$$
+- Proc. 2:
+$$X_{mc} = 7.612$$
+$$7.61 \pm 0.07$$
+$$7.54 \le X_r \le 7.68$$
+
+c2) Medida
+$$2.14$$
+- Proc. 1:
+$$2.14 \pm 0.13$$
+$$2.01 \le X_r \le 2.27$$
+- Proc. 2:
+$$X_{mc} = 2.153$$
+$$2.15 \pm 0.07$$
+$$2.08 \le X_r \le 2.22$$
+
+c3) Medida
+$$9.81$$
+- Proc. 1:
+$$9.81 \pm 0.13$$
+$$9.68 \le X_r \le 9.94$$
+- Proc. 2:
+$$X_{mc} = 9.738$$
+$$9.74 \pm 0.07$$
+$$9.67 \le X_r \le 9.81$$
+
+---
+
+## Problema 5 <a name="5"></a>
+**Enunciado:**
+Medir
+coeficiente
+$$\theta$$
+con:
+$$P = I \cdot V = \theta(T_d - T_a)$$
+Datos:
+$$I = 25.23 \pm 0.04$$
+$$\text{mA}$$
+$$V = 5.234 \pm 0.002$$
+$$\text{V}$$
+$$T_a = 25.2 \pm 0.5$$
+$$^{\circ}\text{C}$$
+$$T_d = 67.2 \pm 1.5$$
+$$^{\circ}\text{C}$$
+Cálculo de
+$$\theta$$
+y su
+incertidumbre.
+
+**Solución:**
+1. Fórmula:
+$$\theta = \frac{I \cdot V}{T_d - T_a}$$
+
+2. Valor medio:
+$$\theta = \frac{25.23 \times 10^{-3} \cdot 5.234}{67.2 - 25.2}$$
+$$\theta = \frac{0.13205382}{42}$$
+$$\theta = 0.003144$$
+$$\text{W/}^{\circ}\text{C}$$
+$$\theta = 3.144$$
+$$\text{mW/}^{\circ}\text{C}$$
+
+3. Incertidum-
+bre
+Derivadas:
+- Corriente
+$$\frac{\partial \theta}{\partial I} = \frac{V}{T_d - T_a}$$
+$$\frac{\partial \theta}{\partial I} = 0.1246$$
+Aportación:
+$$u_I = 0.1246 \cdot 0.04$$
+$$u_I = 0.00498$$
+- Tensión
+$$\frac{\partial \theta}{\partial V} = \frac{I}{T_d - T_a}$$
+$$\frac{\partial \theta}{\partial V} = 0.6007$$
+Aportación:
+$$u_V = 0.6007 \cdot 0.002$$
+$$u_V = 0.00120$$
+- Temp Td
+$$\frac{\partial \theta}{\partial T_d} = -\frac{I \cdot V}{(T_d - T_a)^2}$$
+$$\frac{\partial \theta}{\partial T_d} = -0.07486$$
+Aportación:
+$$u_{Td} = -0.07486 \cdot 1.5$$
+$$u_{Td} = -0.11229$$
+- Temp Ta
+$$\frac{\partial \theta}{\partial T_a} = \frac{I \cdot V}{(T_d - T_a)^2}$$
+$$\frac{\partial \theta}{\partial T_a} = 0.07486$$
+Aportación:
+$$u_{Ta} = 0.07486 \cdot 0.5$$
+$$u_{Ta} = 0.03743$$
+
+Suma de
+cuadrados:
+$$U_\theta^2 = u_I^2 + u_V^2 + u_{Td}^2 + u_{Ta}^2$$
+$$U_\theta^2 = 0.00498^2 + 0.00120^2 + (-0.11229)^2 + 0.03743^2$$
+$$U_\theta^2 = 0.000025 + 0.000001 + 0.012609 + 0.001401$$
+$$U_\theta^2 = 0.014036$$
+Desviación:
+$$U_\theta = 0.1185 \approx 0.13$$
+$$\text{mW/}^{\circ}\text{C}$$
+
+Resultado:
+$$\theta = 3.14 \pm 0.13$$
+$$\text{mW/}^{\circ}\text{C}$$
+
+---
+
+## Problema 6 <a name="6"></a>
+**Enunciado:**
+Potencia
+motor:
+$$P = F \cdot l \cdot 2\pi \cdot \frac{\theta}{t}$$
+Datos:
+$$F = 983 \pm 2$$
+$$\text{N}$$
+$$l = 30.02 \pm 0.01$$
+$$\text{cm}$$
+$$\theta = 520.02 \pm 0.07$$
+$$\text{rev}$$
+$$t = 50.02 \pm 0.015$$
+$$\text{s}$$
+Calcular
+potencia e
+incertidumbre.
+
+**Solución:**
+1. Conversión:
+$$l = 0.3002 \pm 0.0001$$
+$$\text{m}$$
+$$\theta = 520.02 \cdot 2\pi$$
+$$\text{rad}$$
+Portanto
+$$P = F \cdot l \cdot \omega$$
+donde:
+$$\omega = \frac{\theta \cdot 2\pi}{t}$$
+$$\omega = \frac{520.02 \cdot 2\pi}{50.02}$$
+$$\omega \approx 65.318$$
+$$\text{rad/s}$$
+
+2. Valor medio:
+$$P = 983 \cdot 0.3002 \cdot 65.318$$
+$$P = 19275.25$$
+$$\text{W}$$
+
+3. Incertidum-
+bre
+Aportación
+relativa de
+cada término:
+- Fuerza
+$$\frac{u_F}{F} = \frac{2}{983} = 0.00203$$
+- Longitud
+$$\frac{u_l}{l} = \frac{0.01}{30.02} = 0.00033$$
+- Vueltas
+$$\frac{u_\theta}{\theta} = \frac{0.07}{520.02} = 0.00013$$
+- Tiempo
+$$\frac{u_t}{t} = \frac{0.015}{50.02} = 0.00030$$
+
+Incertidumbre
+relativa de
+potencia:
+$$\frac{u_P}{P} = \sqrt{ \left(\frac{u_F}{F}\right)^2 + \left(\frac{u_l}{l}\right)^2 + \left(\frac{u_\theta}{\theta}\right)^2 + \left(\frac{u_t}{t}\right)^2 }$$
+$$\frac{u_P}{P} = \sqrt{ 0.00203^2 + 0.00033^2 + 0.00013^2 + 0.00030^2 }$$
+$$\frac{u_P}{P} = \sqrt{ 4.12 \times 10^{-6} + 1.09 \times 10^{-7} + 1.69 \times 10^{-8} + 9 \times 10^{-8} }$$
+$$\frac{u_P}{P} = \sqrt{ 4.33 \times 10^{-6} }$$
+$$\frac{u_P}{P} = 0.00208$$
+
+Incertidumbre
+absoluta:
+$$u_P = 19275.25 \cdot 0.00208$$
+$$u_P \approx 40.1$$
+$$\text{W}$$
+
+Redondeo:
+$$P = (19.28 \pm 0.04) \times 10^3$$
+$$\text{W}$$
+o:
+$$P = 19280 \pm 40$$
+$$\text{W}$$
