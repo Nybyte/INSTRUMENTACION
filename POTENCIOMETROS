@@ -1,0 +1,1752 @@
+# Más Problemas
+Potenciómetros
+
+## Índice
+* [Problema 1](#1)
+  - Presión
+  - Bourdon
+* [Problema 2](#2)
+  - Nivel
+  - Depósito
+* [Problema 3](#3)
+  - Desplazam.
+  - Carga (ex.)
+* [Problema 4](#4)
+  - Veleta
+  - Viento
+* [Problema 5](#5)
+  - Desplazam.
+  - Carga (ap.)
+
+---
+
+## Problema 1 <a name="1"></a>
+**Pregunta:**
+1.- Para la
+medida de una
+presión (rango
+$$0 < p < p_{max}$$
+) disponemos de
+un tubo Bourdon
+que genera un
+desplazamiento
+angular
+(
+$$\alpha$$
+), que
+asociamos a un
+potenciómetro
+(
+$$R_t=10\text{K}$$
+) de una vuelta
+(
+$$0^\circ < \alpha < 360^\circ$$
+).
+El conjunto
+está montado de
+forma que para
+$$p=0$$
+el ángulo es
+$$\alpha=72^\circ$$
+y para
+$$p=p_{max}$$
+el ángulo
+alcanzado es
+$$\alpha=288^\circ$$
+.
+Por otra parte
+los terminales
+del
+potenciómetro
+se encuentran
+conectados al
+circuito de la
+figura.
+a) Calcule los
+valores de
+$$V_{ref}$$
+y
+$$R_2$$
+para que la
+salida del
+circuito
+$$V_o$$
+varíe entre
+$$0$$
+y
+$$5$$
+$$\text{V}$$
+para el rango
+de presiones
+(
+$$p=0$$
+a
+$$p=p_{max}$$
+).
+b) Calcule la
+alinealidad
+del sistema
+para este
+rango.
+
+**Respuesta:**
+1. Análisis del
+Sensor
+(Entrada del
+sistema)
+El tubo Bourdon
+mueve un
+potenciómetro.
+Posiciones:
+-
+$$P=0$$
+$$\implies$$
+$$\alpha=72^\circ$$
+-
+$$P=P_{max}$$
+$$\implies$$
+$$\alpha=288^\circ$$
+Potenciómetro:
+$$R_t = 10$$
+$$\text{k}\Omega$$
+El cursor se
+mueve entre
+$$0^\circ$$
+y
+$$360^\circ$$
+alimentado por
+$$5$$
+$$\text{V}$$
+.
+Cálculo de la
+tensión del
+cursor:
+$$V_{cursor}$$
+El
+potenciómetro
+actúa como un
+divisor de
+tensión lineal.
+$$V_{cursor} = 5$$
+$$\text{V}$$
+$$\cdot \frac{\alpha}{360^\circ}$$
+Para
+$$P=0$$
+:
+$$V_{min} = 5$$
+$$\text{V}$$
+$$\cdot \frac{72^\circ}{360^\circ}$$
+$$V_{min} = 5 \cdot 0.2$$
+$$V_{min} = 1$$
+$$\text{V}$$
+Para
+$$P=P_{max}$$
+:
+$$V_{max} = 5$$
+$$\text{V}$$
+$$\cdot \frac{288^\circ}{360^\circ}$$
+$$V_{max} = 5 \cdot 0.8$$
+$$V_{max} = 4$$
+$$\text{V}$$
+
+2. Análisis del
+Circuito de
+Acondiciona-
+miento
+(Amplificador)
+El circuito es
+un sumador
+inversor usando
+un amplificador
+operacional.
+La fórmula de
+salida es:
+$$V_{out} = -\left( \frac{R_2}{R_1} V_{cursor} + \frac{R_2}{R_3} V_{ref} \right)$$
+Como en el
+esquema
+$$R_1 = R_3 = 100$$
+$$\text{k}\Omega$$
+la ecuación se
+simplifica a:
+$$V_{out} = -\frac{R_2}{100\text{k}} \cdot (V_{cursor} + V_{ref})$$
+
+3. Resolución
+de los
+apartados
+
+a) Calcule
+$$V_{ref}$$
+y
+$$R_2$$
+Queremos que el
+rango de
+entrada
+$$[1\text{ V}, 4\text{ V}]$$
+se convierta en
+un rango de
+salida
+$$[0\text{ V}, 5\text{ V}]$$
+.
+Debido a que es
+un inversor,
+asociamos:
+- Cuando
+$$V_{cursor} = 1$$
+$$\text{V}$$
+queremos
+$$V_{out} = 0$$
+$$\text{V}$$
+.
+- Cuando
+$$V_{cursor} = 4$$
+$$\text{V}$$
+queremos
+$$V_{out} = -5$$
+$$\text{V}$$
+(la magnitud
+es
+$$5$$
+$$\text{V}$$
+).
+
+Paso 1: Hallar
+$$V_{ref}$$
+Usamos la
+primera
+condición
+(
+$$V_{out}=0$$
+):
+$$0 = -\frac{R_2}{100\text{k}} \cdot (1 + V_{ref})$$
+Para que esto
+sea cero, el
+término
+$$(1 + V_{ref})$$
+debe ser cero:
+$$V_{ref} = -1$$
+$$\text{V}$$
+
+Paso 2: Hallar
+$$R_2$$
+Usamos la
+segunda
+condición
+(
+$$V_{out} = -5$$
+$$\text{V}$$
+cuando
+$$V_{cursor} = 4$$
+$$\text{V}$$
+):
+$$-5 = -\frac{R_2}{100\text{k}} \cdot (4 + (-1))$$
+$$5 = \frac{R_2}{100\text{k}} \cdot 3$$
+$$R_2 = \frac{500000}{3}$$
+$$R_2 \approx 166.67$$
+$$\text{k}\Omega$$
+
+b) Cálculo de
+la alinealidad
+La alinealidad
+nos dice cuánto
+se desvía
+nuestro
+sistema real de
+la línea recta
+ideal que hemos
+diseñado.
+¿Por qué es
+cero?:
+En este
+problema, tanto
+el sensor
+(potenciómetro
+lineal) como
+el circuito
+(amplificador
+lineal) tienen
+funciones de
+transferencia
+descritas por
+ecuaciones de
+primer grado:
+$$y = m \cdot x + n$$
+Cálculo:
+Si la función
+de
+transferencia
+del sensor es
+$$V_{cursor} = f(\alpha)$$
+(lineal) y la
+del
+amplificador es
+$$V_{out} = g(V_{cursor})$$
+(lineal), la
+composición
+$$V_{out} = g(f(\alpha))$$
+es estrictamente
+una línea
+recta.
+Conclusión:
+Al no haber
+elementos no
+lineales (como
+curvas de
+magnetización,
+termistores
+NTC o
+saturaciones),
+la desviación
+respecto a la
+recta ideal es
+nula.
+$$\text{Alinealidad} = 0$$
+$$\%$$
+
+Nota para el
+examen:
+Si te preguntan
+por qué sería
+distinta de
+cero en la
+vida real,
+deberías
+mencionar:
+- Tolerancias
+de las
+resistencias
+(
+$$R_1$$
+$$R_2$$
+$$R_3$$
+).
+- Carga del
+amplificador
+operacional (si
+la carga
+$$R_L$$
+no es
+suficiente-
+mente grande,
+afecta al
+divisor de
+tensión).
+- No linealidad
+geométrica del
+potenciómetro
+real.
+
+---
+
+## Problema 2 <a name="2"></a>
+**Pregunta:**
+2.- Para la
+medida del
+nivel de
+líquido (h)
+en un depósito
+utilizamos un
+sistema de
+flotador/polea
+asociado a un
+potenciómetro
+de 10 K de
+forma que para
+h=0 el
+potenciómetro
+se encuentra en
+uno de sus
+extremos y para
+h=hmax alcanza
+el otro
+extremo. El
+potenciómetro
+se conecta al
+circuito de la
+figura.
+a) Analizad el
+circuito y
+obtened la
+salida Vout (h)
+en función del
+nivel.
+b) Calculad la
+alinealidad del
+sistema.
+
+**Respuesta:**
+1. Análisis del
+Sistema y
+Circuito
+Tenemos un
+sensor de
+nivel basado
+en un
+flotador y una
+polea que
+mueve un
+potenciómetro
+de:
+$$R_t = 10$$
+$$\text{k}\Omega$$
+Funcionamiento
+del Sensor:
+El
+potenciómetro
+actúa como un
+divisor de
+tensión
+alimentado a
+$$+5$$
+$$\text{V}$$
+y conectado a
+masa (GND).
+La tensión en
+el cursor:
+$$V_{cursor}$$
+que es la que
+se conecta al
+circuito a
+través de
+$$R_3$$
+y
+$$R_1$$
+depende
+linealmente de
+la altura h.
+Si
+$$h=0$$
+el
+potenciómetro
+está en uno de
+sus extremos:
+$$0$$
+$$\text{V}$$
+Si
+$$h=h_{max}$$
+el
+potenciómetro
+está en el
+otro extremo:
+$$5$$
+$$\text{V}$$
+Por tanto:
+$$V_{cursor}(h) = 5 \cdot \frac{h}{h_{max}}$$
+$$\text{V}$$
+
+Análisis del
+Circuito
+Acondicionador
+(Basado en OP):
+El circuito es
+un
+amplificador
+operacional en
+configuración
+de sumador
+inversor.
+Tenemos dos
+entradas:
+$$V_{cursor}$$
+(a través de
+$$R_3$$
+) y una
+tensión de
+referencia
+$$-1$$
+$$\text{V}$$
+(a través de
+$$R_5$$
+).
+La tensión de
+salida
+$$V_{out}$$
+para un
+sumador
+inversor es:
+$$V_{out} = -\left( \frac{R_4}{R_3} V_{cursor} + \frac{R_4}{R_5} V_{ref} \right)$$
+con:
+$$R_3 = 100$$
+$$\text{k}\Omega$$
+$$R_4 = 200$$
+$$\text{k}\Omega$$
+$$R_5 = 40$$
+$$\text{k}\Omega$$
+$$V_{ref} = -1$$
+$$\text{V}$$
+
+a) Obtención de
+la salida
+$$V_{out}(h)$$
+Sustituyendo
+los valores de
+las
+resistencias
+en la
+ecuación del
+sumador:
+$$V_{out} = -\left( \frac{200\text{k}}{100\text{k}} V_{cursor} + \frac{200\text{k}}{40\text{k}} (-1) \right)$$
+Simplificando
+las
+constantes:
+$$V_{out} = -\left( 2 \cdot V_{cursor} - 5 \right)$$
+$$V_{out} = 5 - 2 \cdot V_{cursor}$$
+Ahora,
+sustituimos:
+$$V_{cursor}(h) = 5 \cdot \frac{h}{h_{max}}$$
+obteniendo:
+$$V_{out}(h) = 5 - 2 \cdot \left( 5 \cdot \frac{h}{h_{max}} \right)$$
+$$V_{out}(h) = 5 - 10 \cdot \frac{h}{h_{max}}$$
+Comprobación:
+Para
+$$h=0$$
+:
+$$V_{out} = 5 - 10(0)$$
+$$V_{out} = 5$$
+$$\text{V}$$
+Para
+$$h=h_{max}$$
+:
+$$V_{out} = 5 - 10(1)$$
+$$V_{out} = -5$$
+$$\text{V}$$
+
+Cálculo de la
+Alinealidad
+(Apartado b)
+La
+alinealidad
+mide la
+desviación
+máxima de la
+curva real
+respecto a la
+recta ideal,
+referida al
+fondo de
+escala (FSR).
+
+Recta ideal:
+Es la recta
+que conecta el
+punto de
+origen (0,0)
+con el punto
+de fondo de
+escala
+(30 Kgp, 16 mV)
+o el ajustado:
+$$(20\text{ Kgp}, 8\text{ V})$$
+
+Cálculo
+experimental:
+Tras medir la
+nube de
+puntos:
+$$(P_i, V_i)$$
+aplicamos el
+método de
+mínimos
+cuadrados para
+obtener la
+recta de mejor
+ajuste.
+Calculamos el
+error en cada
+punto:
+$$e_i = \vert V_{medido\_i} - V_{ideal\_i} \vert$$
+Identificamos
+el error
+máximo:
+$$e_{max} = \max(e_i)$$
+La
+alinealidad en
+porcentaje
+será:
+$$ALIN(\%) = \frac{e_{max}}{FSR} \cdot 100\%$$
+Donde FSR es
+el rango de
+salida
+(en este caso,
+$$8$$
+$$\text{V}$$
+).
+
+1. Modelo real
+del
+potenciómetro
+cargado
+Llamemos x a
+la fracción de
+desplazamiento
+del cursor del
+potenciómetro:
+$$0 \le x \le 1$$
+Sabiendo que
+el rango de
+$$\alpha$$
+va de 72° a
+288° sobre
+360°:
+Para
+$$P=0$$
+$$\implies$$
+$$x_{min} = \frac{72^\circ}{360^\circ} = 0.2$$
+Para
+$$P=P_{max}$$
+$$\implies$$
+$$x_{max} = \frac{288^\circ}{360^\circ} = 0.8$$
+Punto medio
+del rango:
+$$\implies$$
+$$x_{med} = 0.5$$
+
+El circuito de
+Thevenin
+equivalente
+visto desde el
+cursor tiene
+una tensión
+$$V_{th}$$
+y una
+resistencia
+$$R_{th}$$
+:
+$$V_{th} = 5 \cdot x$$
+$$R_{th} = R_t \cdot x \cdot (1-x)$$
+$$R_{th} = 10\text{k} \cdot x \cdot (1-x)$$
+Al conectarlo
+a la carga:
+$$R_L = R_1 = 100$$
+$$\text{k}\Omega$$
+la tensión
+real en el
+cursor:
+$$V_{cursor\_real}$$
+se ve
+atenuada por
+el divisor de
+tensión:
+$$V_{cursor\_real}(x) = V_{th} \cdot \frac{R_L}{R_L + R_{th}}$$
+$$V_{cursor\_real}(x) = 5x \cdot \frac{100\text{k}}{100\text{k} + 10\text{k} \cdot x(1-x)}$$
+Simplificando,
+obtenemos la
+función real
+del sensor:
+$$V_{cursor\_real}(x) = \frac{50x}{10 + x - x^2}$$
+
+2. Cálculo de
+las tensiones
+reales de
+salida
+(
+$$V_{out}$$
+)
+En el
+apartado A,
+calculamos los
+valores
+nominales
+asumiendo
+idealidad:
+$$V_{ref} = -1$$
+$$\text{V}$$
+y
+$$R_2 = 166.67$$
+$$\text{k}\Omega$$
+.
+La magnitud de
+la tensión de
+salida es:
+$$\vert V_{out\_real}(x) \vert = \frac{R_2}{100\text{k}} \cdot (V_{cursor\_real}(x) + V_{ref})$$
+$$\vert V_{out\_real}(x) \vert = \frac{5}{3} \cdot (V_{cursor\_real}(x) - 1)$$
+Evaluamos en
+los tres
+puntos clave
+(extremos y
+centro):
+
+En
+$$x = 0.2$$
+(Mínimo):
+$$V_{cursor\_real}(0.2) = \frac{50(0.2)}{10 + 0.2 - 0.04}$$
+$$V_{cursor\_real}(0.2) = \frac{10}{10.16}$$
+$$V_{cursor\_real}(0.2) = 0.9842$$
+$$\text{V}$$
+$$\vert V_{out\_real}(0.2) \vert = \frac{5}{3} \cdot (0.9842 - 1)$$
+$$\vert V_{out\_real}(0.2) \vert = -0.0263$$
+$$\text{V}$$
+
+En
+$$x = 0.8$$
+(Máximo):
+$$V_{cursor\_real}(0.8) = \frac{50(0.8)}{10 + 0.8 - 0.64}$$
+$$V_{cursor\_real}(0.8) = \frac{40}{10.16}$$
+$$V_{cursor\_real}(0.8) = 3.9370$$
+$$\text{V}$$
+$$\vert V_{out\_real}(0.8) \vert = \frac{5}{3} \cdot (3.9370 - 1)$$
+$$\vert V_{out\_real}(0.8) \vert = 4.8950$$
+$$\text{V}$$
+
+En
+$$x = 0.5$$
+(Punto medio,
+donde el
+error suele
+ser máximo):
+$$V_{cursor\_real}(0.5) = \frac{50(0.5)}{10 + 0.5 - 0.25}$$
+$$V_{cursor\_real}(0.5) = \frac{25}{10.25}$$
+$$V_{cursor\_real}(0.5) = 2.4390$$
+$$\text{V}$$
+$$\vert V_{out\_real}(0.5) \vert = \frac{5}{3} \cdot (2.4390 - 1)$$
+$$\vert V_{out\_real}(0.5) \vert = 2.3983$$
+$$\text{V}$$
+(Nota: Como
+ves, los
+extremos
+reales no son
+exactly 0 V y
+5 V debido a
+que los
+cálculos del
+apartado A no
+tuvieron en
+cuenta la
+caída de
+tensión en
+Rth).
+
+3. Recta Ideal
+por Ajuste de
+Extremos
+Para calcular
+la
+alinealidad,
+trazamos la
+recta ideal:
+$$V_{ideal}(x)$$
+que une los
+dos puntos
+extremos
+reales que
+acabamos de
+calcular:
+$$(0.2; -0.0263\text{ V})$$
+y
+$$(0.8; 4.8950\text{ V})$$
+.
+El rango
+completo de
+salida
+(Fondo de
+Escala o FSR)
+es:
+$$FSR = 4.8950 - (-0.0263)$$
+$$FSR = 4.9213$$
+$$\text{V}$$
+La recta
+ideal
+evaluada en
+el punto
+medio:
+$$x = 0.5$$
+sería
+exactly la
+mitad del
+recorrido:
+$$V_{ideal}(0.5) = -0.0263 + \frac{4.9213}{2}$$
+$$V_{ideal}(0.5) = 2.4343$$
+$$\text{V}$$
+
+4. Cálculo
+final de la
+Alinealidad
+La
+alinealidad
+es la
+desviación
+máxima entre
+la salida
+real y la
+ideal,
+expresada en
+porcentaje
+del fondo de
+escala.
+Comprobamos el
+error en el
+centro del
+rango:
+$$Error_{max} = \vert V_{out\_real}(0.5) - V_{ideal}(0.5) \vert$$
+$$Error_{max} = \vert 2.3983 - 2.4343 \vert$$
+$$Error_{max} = 0.0360$$
+$$\text{V}$$
+Finalmente:
+$$ALIN(\%) = \frac{Error_{max}}{FSR} \cdot 100$$
+$$ALIN(\%) = \frac{0.0360}{4.9213} \cdot 100$$
+$$ALIN(\%) = 0.73\%$$
+
+---
+
+## Problema 3 <a name="3"></a>
+**Pregunta:**
+3.- Para la
+medida de un
+desplazamiento
+(x) disponemos
+de un
+potenciómetro
+conectado al
+circuito de la
+figura.
+a) Calcule la
+relación entre
+Vo y el
+desplazamiento
+x.
+b) Calcule la
+alinealidad del
+sistema para un
+rango de X
+entre 0 y L.
+
+**Respuesta:**
+a) Relación
+entre
+$$V_{out}$$
+y el
+desplazamiento
+x
+Para obtener la
+función de
+transferencia
+exacta, debemos
+modelar el
+potenciómetro
+teniendo en
+cuenta que no
+está en vacío,
+sino conectado
+a la
+resistencia
+$$R_3$$
+del circuito
+amplificador.
+
+1. Modelo del
+potenciómetro
+(Thevenin)
+Llamemos
+$$\alpha$$
+al
+desplazamiento
+fraccional,
+de forma que:
+$$\alpha = \frac{x}{L}$$
+variando entre
+$$0$$
+y
+$$1$$
+.
+Según el
+diagrama, en
+$$x=0$$
+el cursor está
+conectado a
+$$+5$$
+$$\text{V}$$
+(pin 1) y en
+$$x=L$$
+está en masa
+(pin 3).
+Tensión de
+Thevenin:
+$$V_{th}$$
+Es la tensión
+en vacío.
+$$V_{th}(\alpha) = 5 \cdot (1 - \alpha)$$
+$$\text{V}$$
+Resistencia de
+Thevenin:
+$$R_{th}$$
+Es el paralelo
+de las dos
+ramas del
+potenciómetro
+divididas por
+el cursor.
+$$R_{th}(\alpha) = R_t \cdot \alpha \cdot (1 - \alpha)$$
+$$R_{th}(\alpha) = 10\text{k}\Omega \cdot (\alpha - \alpha^2)$$
+
+2. Análisis del
+Amplificador
+Operacional
+El
+amplificador
+LM741 tiene la
+entrada no
+inversora (pin
+3,
+$$V^+$$
+) conectada a
+un divisor de
+tensión
+formado por
+$$R_1$$
+y
+$$R_2$$
+desde
+$$+5$$
+$$\text{V}$$
+:
+$$V^+ = 5 \cdot \frac{R_1}{R_1 + R_2}$$
+$$\text{V}$$
+$$V^+ = 5 \cdot \frac{200\text{k}}{200\text{k} + 200\text{k}}$$
+$$V^+ = 2.5$$
+$$\text{V}$$
+Debido al
+cortocircuito
+virtual del
+operacional
+ideal:
+$$V^- = V^+ = 2.5$$
+$$\text{V}$$
+
+3. Obtención de
+la función de
+transferencia
+$$V_{out}(\alpha)$$
+Aplicamos la
+Ley de
+Corrientes de
+Kirchhoff en el
+nudo
+$$V^-$$
+(donde
+concurren la
+corriente que
+viene del
+potenciómetro
+y la de
+realimentación):
+$$\frac{V_{th}(\alpha) - V^-}{R_{th}(\alpha) + R_3} + \frac{V_{out}(\alpha) - V^-}{R_4} = 0$$
+Sustitui-
+mos todos los
+valores (
+$$V^- = 2.5$$
+$$\text{V}$$
+,
+$$R_3 = R_4 = 200$$
+$$\text{k}\Omega$$
+):
+$$\frac{5(1 - \alpha) - 2.5}{10\text{k}\cdot(\alpha - \alpha^2) + 200\text{k}} + \frac{V_{out}(\alpha) - 2.5}{200\text{k}} = 0$$
+Simplificamos
+la expresión
+para despejar
+$$V_{out}(\alpha)$$
+:
+$$\frac{V_{out}(\alpha) - 2.5}{200} = -\frac{2.5 - 5\alpha}{10(\alpha - \alpha^2) + 200}$$
+$$V_{out}(\alpha) = 2.5 - 200 \cdot \frac{2.5 - 5\alpha}{10(\alpha - \alpha^2) + 200}$$
+Dividiendo
+numerador y
+denominador de
+la fracción
+entre 10:
+$$V_{out}(\alpha) = 2.5 - 20 \cdot \frac{2.5 - 5\alpha}{\alpha - \alpha^2 + 20}$$
+$$V_{out}(\alpha) = 2.5 - \frac{50 - 100\alpha}{20 + \alpha - \alpha^2}$$
+Sustituyendo
+$$\alpha$$
+por
+$$x/L$$
+obtenemos la
+relación
+final:
+$$V_{out}(x) = 2.5 - \frac{50 - 100(x/L)}{20 + (x/L) - (x/L)^2}$$
+$$\text{V}$$
+
+b) Cálculo de
+la alinealidad
+del sistema
+La
+alinealidad
+expresa el
+error máximo
+de nuestra
+curva real
+respecto a una
+recta ideal,
+en porcentaje
+del Fondo de
+Escala (FSR).
+
+1. Recta Ideal
+y Fondo de
+Escala
+Comprobamos
+los valores de
+salida en los
+extremos del
+recorrido para
+trazar la
+recta por
+ajuste de
+extremos:
+Para
+$$x=0$$
+(
+$$\alpha=0$$
+):
+$$V_{out}(0) = 2.5 - \frac{50}{20}$$
+$$V_{out}(0) = 2.5 - 2.5 = 0$$
+$$\text{V}$$
+Para
+$$x=L$$
+(
+$$\alpha=1$$
+):
+$$V_{out}(1) = 2.5 - \frac{50 - 100}{20}$$
+$$V_{out}(1) = 2.5 - (-2.5) = 5$$
+$$\text{V}$$
+El Fondo de
+Escala es:
+$$FSR = 5 - 0 = 5$$
+$$\text{V}$$
+La función de
+la recta ideal
+es:
+$$V_{ideal}(\alpha) = 5\alpha$$
+$$\text{V}$$
+
+2. Función de
+Error
+El error
+absoluto en
+cada punto
+viene dado por
+la diferencia
+entre la
+salida real y
+la ideal:
+$$E(\alpha) = V_{out}(\alpha) - V_{ideal}(\alpha)$$
+$$E(\alpha) = 2.5 - \frac{50 - 100\alpha}{20 + \alpha - \alpha^2} - 5\alpha$$
+Haciendo
+denominador
+común, la
+expresión se
+simplifica a:
+$$E(\alpha) = \frac{5\alpha^3 - 7.5\alpha^2 + 2.5\alpha}{20 + \alpha - \alpha^2}$$
+
+3. Error
+Máximo y
+Alinealidad
+Observamos que
+el error es
+nulo en los
+extremos (
+$$\alpha=0$$
+y
+$$\alpha=1$$
+) y en el
+centro (
+$$\alpha=0.5$$
+).
+La desviación
+máxima ocurre
+alrededor de:
+$$\alpha \approx 0.2113$$
+y
+$$\alpha \approx 0.7887$$
+(puntos
+calculados
+haciendo la
+derivada de
+$$E(\alpha)$$
+igual a cero).
+Evaluamos el
+error máximo
+en el punto
+crítico
+inferior (
+$$\alpha = 0.2113$$
+):
+$$V_{out}(0.2113) \approx 1.0685$$
+$$\text{V}$$
+$$V_{ideal}(0.2113) \approx 1.0565$$
+$$\text{V}$$
+$$Error_{max} = \vert 1.0685 - 1.0565 \vert$$
+$$Error_{max} = 0.0120$$
+$$\text{V}$$
+Calculamos
+finalmente el
+porcentaje de
+alinealidad
+referida al
+Fondo de
+Escala:
+$$ALIN(\%) = \frac{Error_{max}}{FSR} \cdot 100$$
+$$ALIN(\%) = \frac{0.0120}{5} \cdot 100$$
+$$ALIN(\%) = 0.24\%$$
+
+(Nota de
+diseño: El
+circuito del
+enunciado es
+excelente. Si
+la resistencia
+de carga de
+$$200$$
+$$\text{k}\Omega$$
+estuviera
+conectada
+directamente a
+masa, la
+alinealidad
+sería peor. Al
+conectarla a
+$$2.5$$
+$$\text{V}$$
+virtuales,
+produce un
+efecto de
+compensación
+simétrica de
+la caída de
+tensión
+interna
+$$R_{th}$$
+reduciendo la
+alinealidad
+real a un
+magnífico
+$$0.24\%$$
+).
+
+---
+
+## Problema 4 <a name="4"></a>
+**Pregunta:**
+4.- Para la
+medida de la
+dirección del
+viento (
+$$0 < \alpha < 360^\circ$$
+;
+$$\delta = \alpha/360$$
+) disponemos
+de una veleta
+cuyo eje está
+asociado a un
+potenciómetro
+lineal (
+$$R_t = 10$$
+$$\text{k}\Omega$$
+) de una vuelta.
+Los terminales
+del
+potenciómetro
+se asocian a un
+circuito
+amplificador.
+a) Calculad la
+relación entre
+la tensión de
+salida y el
+ángulo de
+dirección del
+viento.
+b) Calculad la
+alinealidad del
+sistema.
+
+**Respuesta:**
+El Transductor/
+Sensor
+(Veleta +
+Potenciómetro):
+La veleta mide
+la dirección
+del viento en
+un rango
+angular de:
+$$0^\circ < \alpha < 360^\circ$$
+Para relacionar
+de forma
+matemática el
+ángulo con una
+variable
+eléctrica, el
+eje se asocia a
+un
+potenciómetro
+lineal de una
+vuelta con una
+resistencia
+total:
+$$R_t = 10$$
+$$\text{k}\Omega$$
+El enunciado
+define un
+parámetro
+adimensional
+de desplaza-
+miento
+fraccional:
+$$\delta = \frac{\alpha}{360}$$
+donde:
+$$0 < \delta < 1$$
+La resistencia
+del
+potenciómetro
+queda dividida
+por el cursor
+en dos partes:
+$$R_1 = \delta \cdot R_t$$
+y
+$$R_2 = (1-\delta) \cdot R_t$$
+.
+El cursor se
+conecta al
+circuito
+mediante una
+resistencia:
+$$R_3 = 200$$
+$$\text{k}\Omega$$
+para
+protegernos de
+la pequeña
+zona muerta.
+
+El Circuito
+Acondicionador
+(Amplificador
+con
+Operacional):
+El circuito
+utiliza un
+amplificador
+operacional
+(LM741).
+A diferencia
+del sumador
+inversor
+clásico, aquí
+la señal del
+cursor entra
+por la entrada
+no inversora
+(
+$$V^+$$
+, pin 3)
+mediante un
+divisor de
+tensión.
+La
+realimentación
+se introduce
+por la entrada
+inversora
+(
+$$V^-$$
+, pin 2)
+a través de
+$$R_4$$
+y
+$$R_5$$
+formando una
+etapa no
+inversora.
+
+a) Relación
+entre la
+tensión de
+salida (
+$$V_{out}$$
+) y el
+desplazamiento
+(ángulo
+$$\alpha$$
+)
+Vamos a
+obtener la
+función de
+transferencia
+analítica:
+$$V_{out} = f(\alpha)$$
+calculando las
+tensiones en
+los nodos del
+operacional.
+
+Paso 1: Calcular
+la tensión en
+la entrada no
+inversora (
+$$V^+$$
+)
+El extremo
+superior del
+potenciómetro
+está conectado
+a una tensión
+fija de
+$$+1$$
+$$\text{V}$$
+.
+El extremo
+inferior está
+conectado a
+masa (GND).
+El cursor del
+potenciómetro
+ve un divisor
+de tensión
+formado por la
+resistencia
+inferior del
+propio
+potenciómetro
+(
+$$R_1 = \delta \cdot R_t$$
+) en paralelo
+con la
+impedancia que
+ofrece la rama
+de entrada del
+circuito, que
+en este caso
+es la
+resistencia
+$$R_3$$
+conectada a la
+entrada del
+operacional (la
+cual podemos
+considerar que
+no drena
+corriente por
+ser un
+operacional
+ideal).
+
+Fijándonos en
+las conexiones
+del esquema:
+El terminal
+superior del
+potenciómetro
+va directamente
+a la
+resistencia
+$$R_2 = 200$$
+$$\text{k}\Omega$$
+y al pin 3 (
+$$V^+$$
+).
+El cursor (pin
+2 del POT) se
+conecta
+mediante:
+$$R_3 = 200$$
+$$\text{k}\Omega$$
+también al pin
+3 (
+$$V^+$$
+).
+El terminal
+inferior va a
+masa.
+
+Aplicamos la
+Ley de
+Corrientes de
+Kirchhoff en el
+nudo de la
+entrada no
+inversora (
+$$V^+$$
+, pin 3):
+Las corrientes
+que entran a
+ese nudo desde
+la fuente de
+$$+1$$
+$$\text{V}$$
+a través de la
+resistencia
+superior del
+potenciómetro
+(
+$$R_2$$
+) y desde el
+cursor a
+través de
+$$R_3$$
+deben sumar
+cero:
+$$\frac{1 - V^+}{(1-\delta)R_t} + \frac{V_{cursor} - V^+}{R_3} = 0$$
+Como el
+potenciómetro
+es un divisor
+lineal
+alimentado por
+la misma
+tensión de
+$$+1$$
+$$\text{V}$$
+la tensión en
+vacío del
+cursor es:
+$$V_{cursor} = \delta$$
+$$\text{V}$$
+Sustituyendo
+los valores
+del enunciado
+(
+$$R_t = 10$$
+$$\text{k}\Omega$$
+,
+$$R_3 = 200$$
+$$\text{k}\Omega$$
+):
+$$\frac{1 - V^+}{10\text{k}(1-\delta)} + \frac{\delta - V^+}{200\text{k}} = 0$$
+Multiplicamos
+toda la
+ecuación por
+$$200$$
+$$\text{k}\Omega$$
+para eliminar
+denominadores:
+$$20 \cdot \frac{1 - V^+}{1-\delta} + (\delta - V^+) = 0$$
+$$\frac{20}{1-\delta} - \frac{20}{1-\delta}V^+ + \delta - V^+ = 0$$
+$$\frac{20}{1-\delta} + \delta = \left( 1 + \frac{20}{1-\delta} \right) V^+$$
+$$\frac{20 + \delta(1-\delta)}{1-\delta} = \left( \frac{1-\delta + 20}{1-\delta} \right) V^+$$
+$$V^+(\delta) = \frac{20 + \delta - \delta^2}{21 - \delta}$$
+$$\text{V}$$
+
+Paso 2: Relación
+de la etapa no
+inversora
+La ganancia de
+tensión viene
+dada por las
+resistencias
+de
+realimentación:
+$$V_{out} = \left( 1 + \frac{R_5}{R_4} \right) V^+$$
+Sustituyendo
+los valores de
+las
+resistencias:
+$$R_4 = 10$$
+$$\text{k}\Omega$$
+$$R_5 = 40$$
+$$\text{k}\Omega$$
+$$V_{out} = \left( 1 + \frac{40\text{k}}{10\text{k}} \right) V^+$$
+$$V_{out} = 5 \cdot V^+$$
+
+Paso 3: Ecuación
+final en
+función del
+ángulo
+$$\alpha$$
+Combinando
+ambos pasos y
+sustituyendo
+$$\delta = \frac{\alpha}{360}$$
+:
+$$V_{out}(\alpha) = 5 \cdot \left[ \frac{20 + \left(\frac{\alpha}{360}\right) - \left(\frac{\alpha}{360}\right)^2}{21 - \left(\frac{\alpha}{360}\right)} \right]$$
+$$\text{V}$$
+
+b) Cálculo de
+la alinealidad
+del sistema
+La
+alinealidad
+cuantifica la
+desviación
+máxima de la
+curva real
+obtenida
+frente a la
+recta ideal
+que une los
+extremos del
+rango (ajuste
+por extremos).
+Su fórmula es:
+$$ALIN(\%) = \frac{\vert V_{real} - V_{ideal} \vert_{MAX}}{FSR} \cdot 100\%$$
+
+Paso 1: Calcular
+los valores
+reales en los
+extremos del
+rango
+Para
+$$\alpha = 0^\circ$$
+$$\implies$$
+$$\delta = 0$$
+:
+$$V_{out}(0) = 5 \cdot \frac{20 + 0 - 0}{21 - 0}$$
+$$V_{out}(0) = \frac{100}{21}$$
+$$V_{out}(0) \approx 4.7619$$
+$$\text{V}$$
+Para
+$$\alpha = 360^\circ$$
+$$\implies$$
+$$\delta = 1$$
+:
+$$V_{out}(1) = 5 \cdot \frac{20 + 1 - 1}{21 - 1}$$
+$$V_{out}(1) = 5$$
+$$\text{V}$$
+El fondo de
+escala (FSR)
+real es:
+$$FSR = 5 - 4.7619$$
+$$FSR = 0.2381$$
+$$\text{V}$$
+
+Paso 2: Definir
+la recta ideal
+por ajuste de
+extremos
+La ecuación de
+la recta ideal
+es:
+$$V_{ideal}(\delta) = 4.7619 + 0.2381 \cdot \delta$$
+$$\text{V}$$
+
+Paso 3: Calcular
+el error en el
+punto medio
+del rango (
+$$\delta = 0.5$$
+)
+Valor Real:
+$$V_{out}(0.5) = 5 \cdot \frac{20 + 0.5 - 0.25}{21 - 0.5}$$
+$$V_{out}(0.5) = 5 \cdot \frac{20.25}{20.5}$$
+$$V_{out}(0.5) \approx 4.9390$$
+$$\text{V}$$
+Valor Ideal:
+$$V_{ideal}(0.5) = 4.7619 + 0.2381 \cdot 0.5$$
+$$V_{ideal}(0.5) = 4.8810$$
+$$\text{V}$$
+Error absoluto
+máximo:
+$$Error_{max} = \vert 4.9390 - 4.8810 \vert$$
+$$Error_{max} = 0.0580$$
+$$\text{V}$$
+
+Paso 4: Cálculo
+del porcentaje
+de alinealidad
+$$ALIN(\%) = \frac{0.0580}{0.2381} \cdot 100\%$$
+$$ALIN(\%) \approx 24.36\%$$
+
+---
+
+## Problema 5 <a name="5"></a>
+**Pregunta:**
+5.- Para la
+medida de un
+desplazamiento
+(x) disponemos
+de un
+potenciómetro
+conectado al
+circuito de la
+figura.
+a) Calcule la
+relación entre
+Vo y el
+desplazamiento
+x.
+b) Calcule la
+alinealidad del
+sistema para un
+rango de X
+entre 0 y L
+utilizando la
+estimación
+aproximada de
+nuestros
+apuntes.
+
+**Respuesta:**
+a) Relación
+entre
+$$V_{out}$$
+y el
+desplazamiento
+x
+Para obtener la
+función de
+transferencia,
+primero debemos
+modelar el
+potenciómetro.
+Considerando
+que el
+potenciómetro
+es lineal, la
+resistencia
+respecto a la
+posición x
+(con
+$$0 \le x \le L$$
+) se divide en
+dos ramas:
+$$R_1(x) = R_t \cdot \frac{x}{L}$$
+$$R_2(x) = R_t \cdot \left(1 - \frac{x}{L}\right)$$
+
+Modelo de
+Thevenin:
+El
+potenciómetro,
+visto desde el
+cursor (pin 2),
+se comporta
+como una fuente
+de tensión:
+$$V_{th} = V_{ref} \cdot \frac{x}{L}$$
+en serie con
+una resistencia
+interna:
+$$R_{th} = R_t \cdot \frac{x}{L} \cdot \left(1 - \frac{x}{L}\right)$$
+
+Influencia de
+la carga:
+Dado que el
+cursor está
+conectado a
+$$R_3$$
+, el divisor de
+tensión real en
+el cursor se
+ve modificado
+por el efecto
+de carga:
+$$V_{cursor}(x) = 5\text{V} \cdot \frac{R_3}{R_3 + R_{th}} \cdot \frac{x}{L}$$
+
+Etapa de
+amplificación:
+El operacional
+está
+configurado
+para procesar
+esta señal.
+Dada la
+configuración
+con:
+$$R_1=R_2=R_3=R_4=200$$
+$$\text{k}\Omega$$
+el circuito
+amplificador
+realiza una
+operación de
+resta y
+ganancia.
+La salida final
+se obtiene
+mediante la
+superposición
+de las
+entradas:
+$$V_{out}(x) = \left( 1 + \frac{R_4}{R_1} \right) \cdot V_{cursor}(x) - \frac{R_4}{R_2} \cdot V_{ref}$$
+Sustituyendo
+los valores,
+la salida es
+proporcional al
+desplazamiento,
+afectada
+ligeramente por
+la carga
+$$R_3$$
+.
+
+b) Cálculo de
+la alinealidad
+del sistema
+La alinealidad
+mide la
+desviación
+máxima respecto
+a la recta
+ideal:
+$$ALIN(\%) = \frac{\vert V_{real}(x) - V_{ideal}(x) \vert_{MAX}}{FSR} \cdot 100\%$$
+
+Recta ideal:
+Calculamos los
+valores de
+salida para
+$$x=0$$
+y
+$$x=L$$
+.
+Para
+$$x=0$$
+:
+$$V_{out}(0) = 0$$
+$$\text{V}$$
+.
+Para
+$$x=L$$
+:
+$$V_{out}(L) = 5$$
+$$\text{V}$$
+.
+$$FSR = 5$$
+$$\text{V}$$
+.
+
+Error real:
+Al estar el
+potenciómetro
+cargado por:
+$$R_3 = 200$$
+$$\text{k}\Omega$$
+la relación
+no es una
+recta perfecta,
+sino una
+curva.
+El error
+máximo ocurre
+típicamente
+cerca de:
+$$x = \frac{L}{2}$$
+.
+
+Cálculo:
+La desviación
+máxima se
+calcula
+encontrando la
+diferencia
+entre el valor
+real obtenido
+con el divisor
+de carga y el
+valor de la
+recta ideal:
+$$V_{ideal} = 5 \cdot \frac{x}{L}$$
+Con:
+$$\frac{R_L}{R_t} = \frac{200\text{k}}{10\text{k}} = 20$$
+la alinealidad
+máxima se
+puede estimar
+mediante la
+fórmula
+aproximada de
+diseño:
+$$ALIN_{max} \approx \frac{15}{K}$$
+$$\%$$
+con:
+$$K = \frac{R_L}{R_t} = 20$$
+$$ALIN \approx \frac{15}{20}$$
+$$ALIN = 0.75\%$$
+Este valor
+representa la
+desviación
+máxima que
+cometería tu
+sistema en el
+peor caso.
