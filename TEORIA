@@ -1,0 +1,7653 @@
+# Preguntas Teóricas
+
+## Índice
+- [Unid/Patr/Esc](#unidad-de-medida-patrón-y-escala)
+- [Func. Transf.](#función-de-transferencia)
+- [Trazab. Concepto](#trazabilidad-de-medidas-concepto-y-procedimientos)
+- [Trazab. Inst. Concr.](#trazabilidad-de-la-medida-instrumento-concreto)
+- [Incert. Medida](#incertidumbre-de-una-medida)
+- [Errores Indir.](#errores-indirectos)
+- [Err. Aleat/Sist](#error-aleatorio-y-sistemático)
+- [Galgas Extens.](#galgas-extensiométricas)
+- [Galgas Tipos/Char](#galgas-extensiométricas-tipos-y-características)
+- [LVDT](#lvdt)
+- [Prox. Detect.](#detectores-de-proximidad)
+- [Fza. Piezoeléc.](#fuerza-piezoeléctrica)
+- [Sincro/Resolver](#sincros-y-resolvers)
+- [Ultrasonidos](#ultrasonidos)
+- [Ultrasonidos Dist.](#medida-de-distancia-mediante-ultrasonidos)
+- [Reglas Opticas](#reglas-codificadas-ópticas)
+- [Termopares](#termopares)
+- [Termop. Union Fria](#compensación-de-la-unión-fría-en-termopares-técnicas-para-su-solución)
+- [Semiconductores](#union-semiconductora-union-p-n)
+- [Termistores NTC](#termistores-ntc)
+
+## Tema 1: Conceptos Generales
+
+### Unidad de Medida, Patrón y Escala
+**Pregunta:**
+1.- Unidad de
+Medida. Patron.
+Escala.
+
+**Respuesta:**
+1.- Unidad de
+Medida, Patron
+y Escala
+
+La medición es el
+proceso
+experimental
+mediante el cual
+obtenemos
+informacion
+cuantitativa de
+una variable en
+un sistema,
+denominada
+mensurando:
+$$P_i$$
+asociando un
+valor numerico a
+dicha variable.
+Para que esta
+informacion sea
+util, el
+resultado de la
+medida se
+expresa como un
+valor numerico
+acompañado de
+una unidad de
+medida y, a
+menudo, una
+incertidumbre
+que cuantifica
+el nivel de
+confianza del
+resultado.
+
+A) Unidad de
+Medida
+La Unidad de
+Medida es un
+termino de
+referencia
+convencional
+que se asigna a
+una magnitud
+fisica para
+cuantificar su
+valor.
+En España, como
+en la mayoria
+de los paises,
+se utiliza el
+Sistema
+Internacional
+de Unidades
+(SI), que es un
+sistema
+coherente
+adoptado y
+recomendado por
+la Conferencia
+General de
+Pesas y Medidas
+(CGPM).
+
+B) Patron de
+Medida
+La unidad de
+medida se
+define y
+materializa
+mediante un
+concepto
+fundamental
+llamado Patron
+de Medida.
+Definición: Un
+patron es una
+medida
+materializada,
+un instrumento
+de medida, un
+material de
+referencia o un
+sistema de
+medida
+concebido para
+definir,
+realizar,
+conservar o
+reproducir una
+unidad o uno o
+mas valores de
+una magnitud,
+sirviendo de
+referencia con
+una
+incertidumbre
+establecida.
+Caracteristi-
+cas:
+- Universalidad:
+El patron debe
+estar basado en
+un fenomeno
+fisico
+universal y
+constante
+(ejemplo: el
+metro definido
+a partir de la
+velocidad de
+la luz en el
+vacio).
+- Realizabili-
+dad: Debe ser
+un
+procedimiento o
+metodo
+realizable
+tecnicamente.
+- Convenciona-
+lidad: Su
+definicion es
+fruto del
+acuerdo
+internacional,
+vigilado por
+organismos como
+el BIPM (Bureau
+International
+des Poids et
+Mesures).
+- Incertidum-
+bre: Todo
+patron debe
+tener una
+incertidumbre
+especificada y
+reducida en
+comparacion con
+los patrones de
+orden inferior
+de la cadena de
+trazabilidad.
+
+C) Escala
+La Escala es un
+termino
+asociado a una
+magnitud
+concreta y se
+define como el
+conjunto de
+valores que
+can tomar
+dicha magnitud.
+- Magnitudes
+Aditivas: Son
+aquellas donde
+la cualidad se
+cuantifica
+mediante la
+suma de los
+valores de sus
+partes (ej. la
+longitud).
+Quedan
+definidas
+completamente
+por su unidad
+de medida.
+- Magnitudes
+No Aditivas:
+Son aquellas
+que no permiten
+cuantificar la
+cualidad
+mediante la
+suma (ej. la
+temperatura).
+Para
+definirlas, no
+basta con la
+unidad de
+medida, sino
+que es
+necesaria la
+definicion de
+una escala
+(como la
+escala ITS-90
+para tempera-
+tura) que
+incluya puntos
+de referencia
+(transiciones
+de fase) y un
+metodo de
+interpolacion
+entre ellos.
+
+Espero que esta
+explicacion te
+ayude a
+preparar el
+examen. Si
+tienes dudas
+sobre los
+niveles de la
+cadena de
+trazabilidad o
+la estructura
+de los
+sistemas de
+medida, no
+dudes en
+preguntar.
+
+### Función de Transferencia
+**Pregunta:**
+- Características
+Estáticas de un
+transductor:
+Función de
+Transferencia.
+
+**Respuesta:**
+1. Definición
+General
+Un transductor
+(o sensor) es el
+bloque funcional
+encargado de
+convertir una
+variable física,
+química o
+biológica
+(mensurando,
+$$X_i$$
+) en una señal o
+variable
+eléctrica de
+salida
+(
+$$X_o$$
+como tensión,
+intensidad,
+resistencia,
+etc.).
+El comporta-
+miento de un
+transductor en
+régimen
+permanente (con
+entradas
+constantes o
+cuasi-
+constantes) se
+describe
+mediante sus
+Característi-
+cas Estáticas.
+
+2. Función de
+Transferencia
+La Función de
+Transferencia
+es la
+característica
+estática
+fundamental,
+ya que describe
+la relación
+matemática entre
+el parámetro de
+salida
+(
+$$X_o$$
+) y el de
+entrada
+(
+$$X_i$$
+):
+$$X_o = f(X_i)$$
+Consideracio-
+nes clave sobre
+la Función de
+Transferencia:
+- Dependencia de
+variables de
+influencia: Si
+la salida
+depende de otras
+magnitudes
+(como
+temperatura,
+presión o
+humedad), es
+necesario
+especificar las
+condiciones
+bajo las cuales
+es válida la
+función de
+transferencia.
+- Formas de
+expresión:
+Analítica:
+Una expresión
+matemática
+(como un
+polinomio o una
+función
+exponencial)
+que relaciona
+ambas
+variables.
+Tabla de datos:
+Listado de
+puntos
+discretos
+medidos o
+teóricos.
+Gráfica:
+Representación
+visual de la
+relación
+$$X_o$$
+vs
+$$X_i$$
+.
+- Idealidad: El
+comporta-
+miento deseable
+es que la
+relación sea
+lineal:
+$$X_o = K \cdot X_i$$
+lo que
+simplifica el
+modelado, el
+ajuste del
+sistema y
+garantiza que
+el error sea
+homogéneo en
+todo el rango.
+- Realidad: Los
+sensores reales
+suelen
+presentar
+desviaciones
+respecto al
+ideal. Por
+ello, se
+distingue entre
+la función de
+transferencia
+teórica (o
+nominal) y la
+experimental
+(curva de
+calibración
+obtenida para
+un dispositivo
+concreto), que
+permite ajustar
+el comporta-
+miento del
+sensor.
+
+3. Otras
+característi-
+cas estáticas
+derivadas
+A partir de la
+función de
+transferencia,
+se definen
+otros
+parámetros
+críticos:
+- Sensibilidad
+(
+$$S$$
+): Es la
+pendiente de la
+snm de
+transferencia.
+Para una
+relación no
+lineal,
+depende del
+punto de
+trabajo:
+$$S \approx \frac{\Delta X_o}{\Delta X_i} \approx \frac{dX_o}{dX_i}$$
+- Alinealidad:
+Cuantifica la
+desviación
+máxima entre la
+curva de
+transferencia
+real y una
+recta de
+aproximación.
+- Histéresis:
+Diferencia
+máxima en la
+salida para un
+mismo valor de
+entrada,
+dependiendo de
+si se recorre
+el rango en
+sentido
+ascendente o
+descendente.
+
+## Tema 2: Error e Incertidumbre
+
+### Trazabilidad de medidas: Concepto y Procedimientos
+**Pregunta:**
+1.- Trazabilidad
+de medidas.
+Concepto y
+procedimientos
+para garantizarla.
+
+**Respuesta:**
+A) Concepto de
+Trazabilidad
+La trazabilidad
+es una propiedad
+fundamental de
+los resultados
+de medida,
+definida como la
+capacidad de
+relacionar
+dichos
+resultados con
+una referencia
+(un patron)
+mediante una
+cadena
+ininterrumpida y
+documentada de
+calibraciones.
+Cada eslabon de
+esta cadena
+contribuye a la
+incertidumbre de
+la medida
+final.
+Este concepto
+es esencial
+para garantizar
+la
+comparabilidad y
+fiabilidad de
+las medidas a
+nivel
+internacional,
+asegurando que
+un resultado de
+medida o el
+valor de un
+patron este
+conectado a
+referencias de
+niveles
+superiores
+hasta llegar al
+patron
+primario.
+
+B)
+Procedimientos
+para
+garantizar la
+Trazabilidad
+Para garantizar
+la
+trazabilidad,
+se debe
+establecer una
+cadena de
+trazabilidad
+jerarquica.
+Esta cadena
+consiste en una
+serie
+ininterrumpida
+de
+comparaciones,
+todas ellas
+con
+incertidumbres
+establecidas,
+que se
+estructura en
+los siguientes
+niveles:
+- Definicion de
+la unidad: Es
+el nivel
+superior,
+internacional-
+mente
+reconocido
+(coordinado por
+el BIPM),
+basado en
+fenomenos
+fisicos
+universales
+(ej. el metro
+definido por la
+velocidad de
+la luz en el
+vacio).
+- Patrones
+Primarios
+Nacionales:
+Custodiados por
+las autoridades
+nacionales de
+metrologia
+(en España,
+el CEM,
+Centro Español
+de
+Metrologia).
+- Patrones de
+Referencia: Son
+patrones de la
+mas alta
+calidad
+metrologica
+disponible en
+una
+organizacion o
+laboratorio,
+utilizados para
+derivar las
+mediciones en
+dicho lugar.
+- Patrones de
+Trabajo:
+Utilizados
+comunmente en
+la industria,
+educacion y
+hospitales
+para calibrar
+instrumentos
+de medida.
+- Mediciones
+(Usuarios
+finales): El
+instrumento
+de medida
+utilizado en el
+proceso final.
+Es fundamental
+destacar que la
+incertidumbre
+aumenta
+sistematicam-
+ente a medida
+que se
+desciende por
+esta cadena de
+trazabilidad.
+Por lo tanto,
+cualquier
+patron de
+nivel superior
+debe tener una
+incertidumbre
+menor que la
+de los niveles
+inferiores.
+
+C) El rol de
+la Calibracion
+La herramienta
+fundamental
+para asegurar
+la
+trazabilidad
+es la
+calibracion.
+Definicion: Es
+el procedimien-
+to experimental
+que determina
+las
+caracteristi-
+cas
+metrologicas
+de un
+instrumento,
+sistema o
+material de
+referencia
+mediante la
+comparacion
+directa con un
+patron de
+medida o
+material de
+referencia
+certificado.
+Objetivo:
+Conocer el
+error que
+comete el
+equipo bajo
+estudio para
+asegurar que
+la
+incertidumbre
+de sus
+medidas
+futuras sea
+conocida.
+Certificacion:
+El resultado
+del proceso de
+calibracion se
+formaliza
+mediante una
+declaracion,
+una tabla de
+calibracion, un
+diagrama o una
+curva de
+calibracion.
+
+### Trazabilidad de la medida: Instrumento Concreto
+**Pregunta:**
+1.- Trazabilidad
+de la medida.
+¿Cómo
+garantizamos
+dicha
+trazabilidad
+para un
+instrumento
+concreto?
+
+**Respuesta:**
+1. Concepto de
+Trazabilidad:
+La trazabilidad
+es la propiedad
+de un
+resultado de
+medida
+mediante la
+cual este
+puede
+relacionarse
+con una
+referencia (un
+patron) a
+traves de una
+cadena
+ininterrumpi-
+da y
+documentada de
+calibraciones,
+donde cada
+paso
+contribuye a
+la
+incertidumbre
+de la medida
+final.
+Asegura que
+cualquier
+medicion sea
+comparable y
+fiable,
+ligandola
+finalmente al
+patron
+primario.
+
+2. Garantia de
+la
+Trazabilidad:
+Para
+garantizar la
+trazabilidad
+de un
+instrumento
+concreto, se
+debe seguir
+una cadena de
+trazabilidad
+jerarquica.
+Los pasos
+fundamentales
+son:
+- Calibracion:
+Es la
+herramienta
+principal.
+Consiste en el
+procedimiento
+experimental
+para
+determinar
+las
+caracteristi-
+cas
+metrologicas
+de un
+instrumento
+mediante su
+comparacion
+directa con un
+patron de
+medida o
+material de
+referencia
+certificado.
+El objetivo
+es conocer el
+error del
+equipo para
+asegurar que
+su
+incertidumbre
+sea conocida.
+- Cadena de
+calibracio-
+nes: El
+instrumento
+se calibra
+contra un
+"Patron de
+trabajo".
+Este, a su
+vez, se
+calibra
+contra un
+"Patron de
+referencia", y
+asi
+sucesivamente
+subiendo
+hasta los
+"Patrones
+Primarios
+Nacionales"
+(custodiados
+por
+organismos
+como el CEM
+en España) y,
+finalmente,
+hasta la
+Definicion de
+la Unidad
+basada en
+fenomenos
+fisicos
+universales
+(coordinada
+por el BIPM).
+- Certifica-
+cion: El
+resultado de
+cada
+calibracion
+se debe
+certificar
+formalmente
+mediante una
+declaracion,
+curva de
+calibracion o
+tabla de
+valores,
+documentando
+asi el
+eslabon de la
+cadena.
+- Incertidum-
+bre: Es
+crucial
+recordar que
+la
+incertidumbre
+aumenta
+siempre a
+medida que
+descendemos
+por la cadena
+de
+trazabilidad;
+por tanto, el
+patron
+utilizado
+debe tener
+siempre una
+incertidumbre
+especificada
+y menor que la
+del equipo que
+estamos
+calibrando.
+
+### Incertidumbre de una medida
+**Pregunta:**
+1.- Incertidumbre
+de una medida.
+¿Qué es y cómo
+se garantiza?.
+
+**Respuesta:**
+1. Incertidumbre
+de una Medida:
+¿Que es?
+
+1.1. Definicion
+Metrologica
+De acuerdo con
+las
+transparencias
+de teoria de la
+asignatura, la
+incertidumbre
+de medida se
+define como la
+expresion
+cuantitativa
+del nivel de
+confianza del
+resultado de
+una medicion.
+Fisicamente,
+determina una
+banda o
+intervalo de
+valores
+alrededor del
+resultado de
+la medida,
+dentro de la
+cual se estima
+que se
+encuentra el
+valor verdadero
+del mensurando
+con una cierta
+probabilidad
+(grado de
+confianza
+estadistica).
+Es fundamental
+destacar
+metrologica-
+mente que la
+incertidumbre
+no tiene por
+que ser
+constante,
+sino que puede
+ser diferente
+para
+diferentes
+partes del
+rango del
+instrumento.
+
+1.2.
+Incertidumbre
+versus
+Error de
+Medida
+Es un error
+conceptual
+grave en el
+examen
+confundir
+ambos
+terminos,
+ya que las
+transparencias
+de clase
+marcan
+diferencias
+nitidas entre
+ambos:
+- El error de
+medida o error
+absoluto
+$$E$$
+es la
+diferencia
+matematica
+exacta entre
+el valor
+medido por el
+instrumento
+$$X_m$$
+y el valor
+real del
+mensurando
+$$X_r$$
+asociado:
+$$E = X_m - X_r$$
+En condiciones
+de operacion
+normales, el
+error de
+medida es
+completamente
+desconocido,
+ya que no
+sabemos cual
+es el valor
+real
+$$X_r$$
+- La
+incertidumbre,
+en cambio, es
+una estimacion
+del maximo
+error
+esperable. No
+se conoce a
+priori, sino
+que se
+determina
+mediante el
+analisis
+previo de los
+errores
+cometidos por
+el instrumento
+a traves de un
+proceso
+experimental
+controlado
+denominado
+calibracion.
+
+2. ¿Como se
+garantiza la
+Incertidumbre?
+Para poder
+asignar una
+cota de
+incertidumbre
+valida y legal
+a un
+instrumento de
+medida, esta
+se debe
+soportar sobre
+dos pilares
+metrologicos
+inquebranta-
+bles: la
+calibracion y
+la trazabili-
+dad
+metrologica.
+
+2.1. La
+Calibracion
+del
+Instrumento
+La calibracion
+es el
+procedimiento
+experimental
+que determina
+las
+caracteristi-
+cas
+metrologicas
+de un
+instrumento,
+sistema o
+material de
+referencia.
+Procedimiento:
+Se logra
+mediante la
+comparacion
+directa con
+patrones de
+medida o
+materiales de
+referencia
+certificados
+en condiciones
+ambientales
+controladas
+(un
+Laboratorio de
+Calibracion).
+Objetivo:
+El objetivo
+primordial de
+la calibracion
+de un equipo
+de medida es
+conocer y
+analizar el
+error que
+puede cometer
+dicho equipo
+en el proceso
+de medida;
+es decir,
+asegurar que
+la
+incertidumbre
+de las
+medidas
+realizadas con
+este
+instrumento
+sea conocida.
+Certificacion:
+El resultado
+del proceso
+se expresa y
+se documenta
+formalmente
+mediante una
+declaracion,
+una funcion
+de
+calibracion,
+un diagrama o
+curva de
+calibracion,
+o una tabla de
+calibracion.
+
+2.2. La
+Trazabilidad
+Metrologica y
+la Cadena de
+Calibraciones
+Para que la
+calibracion
+sea valida, el
+patron
+utilizado debe
+estar
+conectado con
+las
+referencias
+mundiales. La
+trazabilidad
+es la
+propiedad de
+una medida
+por la cual el
+resultado
+puede
+relacionarse
+con una
+referencia
+(patron)
+mediante una
+cadena
+ininterrumpida
+y documentada
+de
+calibraciones,
+cada una de
+las cuales
+contribuye a
+la
+incertidumbre
+de medida.
+Esta cadena
+de
+trazabilidad
+es una
+piramide
+jerarquica de
+comparaciones
+con
+incertidumbres
+establecidas,
+estructurada
+desde el
+usuario final
+hasta la
+definicion de
+la unidad:
+- DEFINICION
+DE LA UNIDAD
+(BIPM / SI)
+- PATRONES
+PRIMARIOS
+NACIONALES
+(CEM)
+- PATRONES
+DE REFERENCIA
+(ENAC)
+- PATRONES
+DE TRABAJO
+- MEDICIONES
+FINALES
+Definicion de
+la Unidad
+(Patron
+Internacional):
+Es la cuspide
+de la
+piramide,
+reconocida por
+los firmantes
+de un acuerdo
+internacional
+con la
+intencion de
+ser utilizado
+mundialmente
+(coordinado
+por el BIPM,
+Bureau
+International
+des Poids
+et Mesures). Se
+basa en
+fenomenos
+universales
+(por ejemplo,
+definir el
+metro a
+traves de la
+velocidad de
+la luz).
+Patrones
+Primarios
+Nacionales:
+Custodiados
+por las
+autoridades
+nacionales de
+metrologia.
+En España,
+el organismo
+oficial
+encargado de
+definir las
+unidades y
+patrones es el
+CEM (Centro
+Español de
+Metrologia).
+Patrones de
+Referencia:
+De la mas
+alta calidad
+metrologica
+disponible en
+una
+organizacion
+o laboratorios
+de
+calibracion
+acreditados.
+Patrones de
+Trabajo:
+Utilizados
+corrientemente
+en
+laboratorios,
+empresas e
+industrias
+para
+verificar e
+instrumentar
+los equipos
+finales.
+Mediciones
+(Usuarios
+Finales): El
+instrumento
+de medida
+utilizado en
+el dia a dia
+en nuestros
+laboratorios
+o procesos
+industriales.
+Regla de Oro
+Metrologica
+(Pregunta de
+Examen):
+A medida que
+se baja por la
+cadena de
+trazabilidad
+(desde el
+BIPM hasta
+nuestro
+instrumento
+de medida),
+la
+incertidumbre
+aumenta
+obligatoria-
+mente. Por
+lo tanto, un
+patron de
+orden
+superior
+siempre debe
+tener una
+incertidumbre
+especificada y
+asesores
+reducida en
+comparacion con
+la de los
+patrones de
+orden
+inferior.
+
+3. Estimacion
+y Expresion
+Matematica de
+la
+Incertidumbre
+Dependiendo
+de los datos
+que nos
+entregue el
+laboratorio de
+calibracion,
+la
+incertidumbre
+final
+comercial de
+nuestro
+instrumento
+se calcula
+bajo dos
+alternativas
+estaticas
+(Tema II):
+
+Alternativa
+A)
+Incertidumbre
+SIN curva de
+calibracion
+(Un único
+número)
+Es el caso
+mas habitual
+en los
+catalogos
+comerciales,
+donde el
+fabricante
+proporciona
+un unico
+valor
+numerico de
+incertidumbre
+$$U_c$$
+aplicable a
+todo el rango
+de medida. Al
+ser un unico
+valor, debe
+englobar de
+manera
+conservadora
+tanto los
+efectos de
+los errores
+sistematicos
+como los
+aleatorios:
+$$U_c = B + U_e$$
+Donde:
+$$B = \vert \beta_{\text{MAX}} \vert$$
+representa la
+cota del peor
+error
+sistematico
+(sesgo maximo)
+detectado en
+todo el rango
+durante la
+calibracion.
+$$U_e = F \cdot \sigma$$
+es la
+incertidumbre
+expandida
+para cubrir
+el error
+aleatorio,
+donde
+$$\sigma$$
+es la
+desviacion
+tipica
+(incertidumbre
+tipica) y
+$$F$$
+es el factor
+de cobertura
+probabilis-
+tico. Lo
+normal en
+ingenieria es
+tomar un
+nivel de
+confianza del
+$$95\%$$
+utilizando un
+factor
+$$F = 2$$
+(o la t de
+Student
+$$t_{95,N}$$
+si el
+numero de
+muestras
+$$N < 30$$
+).
+
+Alternativa
+B)
+Incertidumbre
+CON curva de
+calibracion
+Si el
+laboratorio
+nos aporta
+una tabla o
+una curva
+analitica de
+calibracion
+(por ejemplo,
+un polinomio
+de ajuste
+como:
+$$X_{mc} = a_0 + a_1X_m + \dots$$
+obtenido por
+regresion
+cuadratica),
+el usuario
+puede restar
+y corregir el
+sesgo
+sistematico
+de su
+lectura. Al
+obtener el
+valor
+corregido
+$$X_{mc}$$
+el error
+sistematico
+se anula, por
+lo que la
+incertidumbre
+de la medida
+pasa a
+depender
+exclusiva-
+mente del
+error
+aleatorio no
+eliminable:
+$$U = F \cdot \sigma_s$$
+Donde la
+incertidumbre
+tipica
+$$\sigma_s$$
+se calcula
+analizando la
+dispersion de
+los residuos
+experimen-
+tales
+respecto a
+los valores
+arrojados por
+la propia
+curva de
+calibracion.
+
+Efecto de la
+Resolucion
+Digital
+(Error de
+Redondeo):
+Si al tomar
+muestras en
+el banco la
+dispersion
+estadistica
+fuera nula
+$$\sigma = 0$$
+la
+incertidumbre
+no se
+extingue.
+Se debe
+incorporar
+fidedignamente
+la
+limitacion
+por la
+resolucion
+de salida
+$$Q$$
+del display
+digital. Al
+modelar el
+redondeo como
+una funcion
+de densidad
+de
+probabilidad
+uniforme
+(cuadrada) de
+ancho
+$$Q$$
+aporta una
+varianza de:
+$$\sigma_{red}^2 = \frac{Q^2}{12}$$
+lo que añade
+de forma
+inevitable una
+desviacion
+tipica por
+redondeo de:
+$$0.289 \cdot Q$$
+a la suma
+cuadratica de
+incertidumbres
+parasitas del
+sistema.
+
+### Errores indirectos
+**Pregunta:**
+1.- Errores
+indirectos:
+Calculo de
+propagacion
+de errores.
+
+**Respuesta:**
+1. Errores
+Indirectos
+Definicion:
+Ocurre cuando
+el mensurando
+se calcula de
+varias medidas
+directas:
+$$y = f(x_1, x_2, \dots, x_n)$$
+Los errores de
+las variables
+$$x_i$$
+se propagan a
+la salida
+$$y$$
+segun dos
+criterios:
+
+A) Cota Maxima
+(Peor Caso):
+Se usa con
+sesgos maximos
+conocidos o
+cotas
+$$\Delta x_i$$
+Matematicamente
+asume el peor
+caso sumando
+desviaciones:
+$$\beta_y = \sum_{i=1}^{n} \left\vert \frac{\partial f}{\partial x_i} \cdot \beta_{xi} \right\vert$$
+$$\Delta y = \sum_{i=1}^{n} \left\vert \frac{\partial f}{\partial x_i} \cdot \Delta x_i \right\vert$$
+Es muy
+conservador y
+pesimista.
+
+B) Suma
+Cuadratica
+(Probabilistico)
+Metodo standard
+para valores
+estadisticos,
+incertidumbres
+tipicas o
+desviaciones
+estandar.
+Fórmula:
+$$\sigma_y = \sqrt{\sum_{i=1}^{n} \left( \frac{\partial f}{\partial x_i} \cdot \sigma_{xi} \right)^2}$$
+Mantiene el
+nivel de
+confianza del
+sistema.
+
+Ejemplo
+Practico:
+Funcion:
+$$y = 2x_1 + 3x_2 - 2x_3$$
+Datos:
+$$x_1 = 20.2 \pm 0.2$$
+$$x_2 = 15.5 \pm 0.3$$
+$$x_3 = 18.1 \pm 0.3$$
+
+1. Valor medio:
+$$y = 2(20.2) + 3(15.5) - 2(18.1)$$
+$$y = 50.7$$
+
+2. Derivadas:
+$$\frac{\partial f}{\partial x_1} = 2$$
+$$\frac{\partial f}{\partial x_2} = 3$$
+$$\frac{\partial f}{\partial x_3} = -2$$
+
+3. Cota maxima:
+$$\Delta y = \vert 2 \cdot 0.2 \vert + \vert 3 \cdot 0.3 \vert + \vert -2 \cdot 0.3 \vert$$
+$$\Delta y = 0.4 + 0.9 + 0.6$$
+$$\Delta y = 1.9$$
+Resultado:
+$$51 \pm 2$$
+
+4. Suma
+cuadratica:
+$$\Delta y = \sqrt{(2 \cdot 0.2)^2 + (3 \cdot 0.3)^2 + (-2 \cdot 0.3)^2}$$
+$$\Delta y = \sqrt{0.16 + 0.81 + 0.36}$$
+$$\Delta y = \sqrt{1.33}$$
+$$\Delta y \approx 1.15$$
+Resultado:
+$$50.7 \pm 1.2$$
+
+### Error aleatorio y sistemático
+**Pregunta:**
+1.- Error
+aleatorio y
+sistematico.
+Definicion y
+caracterizacion.
+
+**Respuesta:**
+Antes de
+desglosarlos,
+recordemos que
+el error de
+medida o error
+absoluto
+$$E$$
+se define como
+la diferencia
+entre el valor
+medido por el
+instrumento
+$$X_m$$
+y el valor
+real del
+mensurando
+$$X_r$$
+asociado:
+$$E = X_m - X_r$$
+Tiene signo,
+las mismas
+unidades que el
+mensurando y
+es propio de
+cada medida.
+Para
+analizarlo de
+forma estatica,
+se asume que
+cada error
+individual
+esta compuesto
+por la suma de
+dos terminos
+bien
+diferenciados:
+el error
+aleatorio y el
+error
+sistematico.
+$$E_i = X_{mi} - X_r$$
+$$E_i = (X_{mi} - \overline{X}_m) + (\overline{X}_m - X_r)$$
+$$E_i = \delta_i + \beta$$
+
+2. Error
+Sistematico
+(Sesgo)
+Definicion
+El error
+sistematico o
+sesgo
+$$\beta$$
+describe la
+tendencia
+general del
+error del
+instrumento
+para un valor
+de entrada
+determinado.
+Permanece
+constante (es
+el mismo) para
+toda una serie
+de medidas
+bajo las
+mismas
+condiciones.
+Origen:
+Se debe a
+imperfecciones
+intrinsecas
+del propio
+instrumento,
+tales como
+desajustes de
+cero, falta de
+linealidad,
+envejecimiento
+de componentes
+o
+calibraciones
+defectuosas.
+Correccion:
+Al ser un
+comportamiento
+repetible y
+predecible,
+es posible
+corregirlo
+mediante una
+tabla o curva
+de calibracion
+analitica
+(ajustes por
+minimos
+cuadrados,
+polinomios,
+etc.) restando
+el sesgo al
+valor medido.
+Caracterizacion
+Matematicamente
+se caracteriza
+determinando
+el valor medio
+de una serie
+muy grande de
+muestras
+$$N \to \infty$$
+y comparandolo
+con el valor
+real aportado
+por un patron
+de referencia
+en un
+laboratorio de
+calibracion:
+$$\beta = \mu - X_r$$
+Donde
+$$\mu$$
+representa el
+valor central
+o la media
+matematica de
+las infinitas
+lecturas
+posibles
+$$\overline{X}_m$$
+Relacionado
+con este error
+esta la
+veracidad, que
+es la cualidad
+del
+instrumento
+para que la
+media de sus
+medidas se
+acerque al
+valor
+verdadero.
+
+3. Error
+Aleatorio
+Definicion
+El error
+aleatorio
+$$\delta_i$$
+es el
+componente del
+error que
+varia de forma
+impredecible
+de una
+medicion a
+otra. Es un
+valor propio y
+unico de cada
+muestra
+individual.
+Origen:
+Procede de
+fenomenos
+impredecibles
+de naturaleza
+aleatoria,
+tales como el
+ruido por
+agitacion
+termica,
+interferencias
+electromagne-
+ticas
+(EMI) o
+fluctuaciones
+ambientales
+incontrolables.
+Correccion:
+Debido a su
+naturaleza
+intrinsecamente
+azarosa, no
+es posible
+corregirlo
+para una sola
+muestra
+individual.
+Sin embargo,
+su impacto
+puede
+minimizarse
+promediando
+una serie de
+$$N$$
+medidas, ya
+que su valor
+medio tiende
+a cero a
+medida que
+aumenta el
+numero de
+repeticiones.
+Caracterizacion
+Al ser un
+fenomeno
+estocastico,
+no se puede
+predecir su
+valor exacto,
+pero se
+caracteriza
+estadisticamente
+mediante una
+funcion de
+densidad de
+probabilidad,
+que en la
+inmensa
+mayoria de los
+casos
+practicos
+responde a una
+distribucion
+normal o
+campana de
+Gauss:
+$$f(Z) = \frac{1}{\sigma \sqrt{2\pi}} \cdot e^{-\frac{1}{2}\left(\frac{Z-\mu}{\sigma}\right)^2}$$
+Los parametros
+que lo definen
+son:
+Media
+$$\mu$$
+Que coincide
+con el valor
+central de la
+campana.
+Desviacion
+tipica o
+estandar
+$$\sigma$$
+Que mide la
+dispersion o
+la anchura de
+la
+distribucion
+(a menor
+$$\sigma$$
+menor error
+aleatorio y
+mayor
+precision del
+instrumento).
+Experimen-
+talmente se
+estima usando
+la
+cuasivarianza
+(incertidumbre
+tipica):
+$$\sigma_s = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(X_{mi} - \overline{X}_m)^2}$$
+Gracias a esta
+caracterizacion
+gaussiana,
+podemos
+acotar el
+error
+aleatorio
+asignandole
+un intervalo
+o banda de
+confianza
+probabilistica
+a la medida:
+Para una
+banda de
+$$\pm 1\sigma$$
+la
+probabilidad
+de contener el
+valor central
+es del
+$$68.26\%$$
+Para una
+banda de
+$$\pm 2\sigma$$
+(el factor de
+cobertura mas
+habitual en
+ingenieria,
+$$F = 2$$
+la confianza
+es del
+$$95.44\%$$
+Para una
+banda de
+$$\pm 3\sigma$$
+la confianza
+es del
+$$99.74\%$$
+
+## Tema 3: Transductores
+
+### Galgas extensiométricas
+**Pregunta:**
+3.- Galgas
+extensiometricas
+Principio de
+funcionamiento y
+adaptacion.
+
+**Respuesta:**
+Una galga
+extensiometrica
+o extensimetro
+es un sensor
+pasivo que
+actua como
+una
+resistencia
+variable con la
+deformacion
+superficial:
+$$R = f(\epsilon)$$
+Se pega
+firmemente
+sobre la
+superficie de
+un elemento
+elastico
+(pieza en
+voladizo,
+anillo
+dinamometrico,
+cilindro,
+etc.) que se
+deforma al
+aplicarsele
+una fuerza
+peso:
+$$F$$
+Al estirarse
+o comprimirse
+la pieza, la
+galga
+experimenta la
+misma
+deformacion
+unitaria
+longitudinal:
+$$\epsilon = \frac{\Delta L}{L}$$
+Cualitativa-
+mente, un
+incremento
+en la
+deformacion
+provoca una
+variacion
+unitaria en
+su resistencia
+electrica:
+$$\frac{\Delta R}{R}$$
+la cual es
+directamente
+proporcional
+a la
+deformacion
+unitaria
+mediante un
+parametro
+caracteristico
+del material
+denominado
+Factor de
+Galga
+$$K_g$$
+asociado:
+$$\delta = \frac{\Delta R}{R} = K_g \cdot \epsilon = K_g \cdot \frac{\Delta L}{L}$$
+Para las
+galgas
+metalicas
+comerciales
+mas habituales
+(como las de
+aleacion de
+Constantan),
+el factor de
+galga tiene
+un valor
+tipico de:
+$$K_g \approx 2$$
+En las
+semiconduc-
+toras,
+este valor
+es mucho
+mas elevado:
+$$\approx 100$$
+lo que les
+otorga
+mayor
+sensibilidad
+a costa de
+una peor
+linealidad.
+
+B) Deduccion
+matematica
+Fisicamente,
+si
+consideramos
+una galga
+cilindrica de
+hilo
+conductor de
+longitud
+$$L$$
+resistividad
+$$\rho$$
+y seccion
+transversal
+circular de
+radio
+$$r$$
+su
+resistencia
+inicial es:
+$$R = \rho \cdot \frac{L}{\pi \cdot r^2}$$
+Diferenciando
+de forma total
+con respecto
+a las tres
+variables
+geometricas y
+de material
+cuando se
+somete a
+una pequeña
+deformacion,
+obtenemos la
+variacion
+relativa:
+$$\frac{\Delta R}{R} \approx \frac{dR}{R} = \frac{d\rho}{\rho} + \frac{dL}{L} - 2\frac{dr}{r}$$
+Para
+expresarlo
+todo en
+funcion de
+la
+deformacion
+longitudinal:
+$$\frac{dL}{L}$$
+aplicamos dos
+leyes fisicas
+de la
+resistencia de
+materiales:
+- Ley de
+Poisson:
+Relaciona la
+contraccion
+transversal
+con el
+estiramiento
+longitudinal
+mediante el
+coeficiente
+de Poisson
+$$\nu$$
+que cumple:
+$$0 \le \nu \le 0.5$$
+segun:
+$$\frac{dr}{r} = -\nu \cdot \frac{dL}{L}$$
+- Efecto
+Piezorresis-
+tivo (Ley de
+Bridgman):
+El cambio de
+resistividad
+se vincula
+a la
+variacion de
+volumen:
+$$V = \pi r^2 L$$
+a traves de
+la constante
+de Bridgman
+$$C$$
+segun:
+$$\frac{d\rho}{\rho} = C \cdot \frac{dV}{V}$$
+donde:
+$$\frac{dV}{V} = \frac{dL}{L} + 2\frac{dr}{r} = (1 - 2\nu)\frac{dL}{L}$$
+Sustituyendo
+ambas
+relaciones en
+la ecuacion
+diferencial,
+se llega a la
+expresion
+final del
+Factor de
+Galga
+$$K_g$$
+asociado:
+$$\frac{\Delta R}{R} = [C(1 - 2\nu) + (1 + 2\nu)] \cdot \frac{dL}{L} = K_g \cdot \epsilon$$
+
+Nota
+metrologica
+importante:
+En la
+practica
+(zonas
+elasticas de
+metales),
+las
+deformaciones
+son
+minusculas,
+del orden
+de:
+$$1000$$
+$$\mu\epsilon$$
+cumpliendo:
+$$\epsilon = 0.001$$
+Por tanto,
+para una
+galga
+estandar de
+$$R = 200$$
+$$\Omega$$
+con:
+$$K_g = 2$$
+la variacion
+absoluta de
+resistencia
+es de tan
+solo:
+$$\Delta R = 0.4$$
+$$\Omega$$
+Debido a que:
+$$\Delta R \ll R$$
+esta
+totalmente
+descartado
+usar una
+conexion
+directa con
+fuente de
+corriente
+constante
+(ya que la
+salida:
+$$V_o = I \cdot R_0(1 + \delta)$$
+tendria un
+valor de
+continua
+enorme
+donde
+cualquier
+fluctuacion
+de la fuente
+enmascararia
+la medida).
+Es
+matematica-
+mente
+imperativo
+utilizar un
+circuito que
+elimine el
+valor inicial
+$$R_0$$
+y mida
+unicamente el
+incremento
+$$\Delta R$$
+siendo este
+el Puente de
+Wheatstone.
+
+3.2. Puente
+de Wheatstone
+El puente
+consta de 4
+ramas
+resistivas
+dispuestas en
+anillo
+alimentadas
+por una
+tension
+continua
+estable:
+$$E$$
+o
+$$V_{ref}$$
+La tension de
+salida en
+desequilibrio
+$$V_o$$
+se mide
+entre los
+dos nodos
+centrales:
+$$V_o = E \cdot \left( \frac{R_3}{R_1 + R_3} - \frac{R_4}{R_2 + R_4} \right)$$
+Partiendo de
+una condicion
+inicial de
+equilibrio
+simetrico
+perfecto:
+$$R_1 = R_2 = R_3 = R_4 = R$$
+donde
+$$V_o = 0$$
+analizamos
+los tres
+montajes de
+desequilibrio
+habituales
+segun el
+numero de
+ramas
+activas
+(galgas que
+varian):
+
+A) Puente de
+una rama
+activa
+(Cuarto de
+Puente)
+Configuracion:
+Se coloca
+una unica
+galga en la
+rama 3:
+$$R_3 \to R(1+\delta)$$
+y las otras
+tres ramas
+son
+resistencias
+fijas de
+valor de
+precision
+$$R$$
+Expresion
+exacta y
+aproximada:
+$$V_o = E \cdot \frac{1}{4} \cdot \frac{\delta}{1 + \frac{\delta}{2}} \approx \frac{E}{4} \cdot \delta = \frac{E \cdot K_g}{4} \cdot \epsilon$$
+Inconveniente:
+Presenta un
+termino de
+alinealidad
+en el
+denominador y
+no esta
+compensado
+termicamente
+frente a las
+derivas del
+hilo.
+
+B) Puente de
+dos ramas
+activas
+(Medio
+Puente)
+Configuracion
+con variacion
+opuesta:
+Se colocan
+dos galgas
+en ramas
+contiguas
+(por ejemplo,
+una en
+traccion en
+la rama 3:
+$$R_3 \to R(1+\delta)$$
+y otra en
+compresion en
+la rama 1:
+$$R_1 \to R(1-\delta)$$
+)
+
+### Galgas extensiométricas: Tipos y Características
+**Pregunta:**
+3.- Galgas
+extensiométricas:
+Principio de
+funcionamiento,
+tipos y
+características.
+
+**Respuesta:**
+1. Principio de
+Funcionamiento
+Una galga
+extensiométrica
+es un sensor
+pasivo que
+varía su
+resistencia
+eléctrica:
+$$R$$
+en función de la
+deformación
+mecánica
+superficial a
+la que es
+sometida:
+$$R = f(\epsilon)$$
+Al deformarse la
+pieza sobre la
+que está pegada,
+la galga
+experimenta la
+misma
+deformación
+unitaria
+longitudinal:
+$$\epsilon = \frac{\Delta L}{L}$$
+provocando una
+variación
+relativa de
+resistencia:
+$$\frac{\Delta R}{R} = K_g \cdot \epsilon$$
+donde
+$$K_g$$
+es el Factor de
+Galga
+(típico de
+$$2$$
+para metales).
+
+2. Tipos de
+Galgas
+
+Por su forma:
+- Uniaxiales:
+Miden en un
+único eje.
+- Biaxiales:
+Miden en dos
+ejes.
+- Triaxiales
+(rosetas):
+Disponen de
+tres elementos
+para el análisis
+de tensiones
+complejas.
+- Multiaxiales.
+
+Por su material:
+- Metálicas:
+Filamentos de
+aleaciones
+como el
+Constantán.
+- Semiconduc-
+toras: Ofrecen
+una mayor
+sensibilidad
+a costa de una
+peor linealidad.
+
+Galgas
+especiales:
+- Modelos de
+varios
+elementos.
+- Espirales.
+- De alta
+temperatura.
+- De gran
+elongación.
+- De rotura.
+
+3. Caracterís-
+ticas Estáticas
+
+- Resistencia
+Nominal:
+Valor óhmico
+típico de
+$$120$$
+a
+$$350$$
+$$\Omega$$
+- Sensibilidad
+Transversal:
+Tendencia a
+medir
+deformaciones
+en el eje
+perpendicular al
+de medida,
+aunque suele
+ser desprecia-
+ble.
+- Autocompen-
+sación:
+Existen galgas
+autocompensadas
+térmicamente
+para que su
+resistencia
+apenas varíe
+con los cambios
+de temperatura.
+- Límite de
+fatiga: Indica
+la vida útil
+del sensor bajo
+ciclos de
+esfuerzo
+repetidos.
+
+## Tema 4: Posición y Distancia
+
+### LVDT
+**Pregunta:**
+LVDT
+
+**Respuesta:**
+2. LVDT
+Definicion y
+Principio de
+Funcionamiento
+El LVDT es un
+transductor
+electromecanico
+de contacto de
+tipo pasivo
+(modulador),
+cuyo parametro
+de salida es
+una autoinduc-
+cion o
+transformador
+variable:
+$$X_{out} = L, M$$
+que se utiliza
+para la medida
+de la posicion
+y el desplaza-
+miento lineal.
+Fisicamente,
+esta
+constituido
+por un soporte
+cilindrico de
+material no
+ferromagnetic-
+o en el que se
+alojan:
+- Un arrolla-
+miento
+primario:
+Dispuesto en
+el centro y
+alimentado
+por una señal
+electrica
+alterna
+senoidal de
+amplitud
+$$A$$
+y frecuencia
+$$f$$
+constantes:
+$$u_i(t) = A \cdot \sin(\omega t)$$
+- Dos arrolla-
+mientos
+secundarios
+identicos:
+Colocados
+simetricamente
+a los lados
+del primario y
+conectados en
+oposicion de
+fase (serie
+oposicion).
+- Un nucleo
+movil:
+Consiste en
+una pieza
+cilindrica de
+material
+ferromagnetic-
+o de alta
+permeabilidad
+acoplada
+mecanicamente
+al vastago o
+pieza cuyo
+desplaza-
+miento
+$$x$$
+se desea
+medir.
+
+Funcion de
+Transferencia
+Ideal
+Cuando el
+nucleo esta
+exactly en el
+centro
+(posicion
+simetrica o
+punto nulo,
+$$x = 0$$
+), el acopla-
+miento
+magnetico
+hacia ambos
+secundarios
+es identico,
+induciendo
+tensiones
+iguales:
+$$u_{o1}(t) = u_{o2}(t)$$
+Al estar
+conectados en
+oposicion, la
+diferencia
+neta es cero:
+$$u_o(t) = 0$$
+Al
+desplazarse
+el nucleo una
+distancia
+$$x$$
+hacia un
+secundario, el
+flujo
+magnetico en
+este aumenta y
+en el opuesto
+disminuye,
+rompiendo el
+equilibrio.
+Matematica-
+mente, la
+funcion de
+transferencia
+temporal de la
+tension de
+salida
+diferencial
+responde a una
+señal
+modulada en
+amplitud (AM):
+$$u_o(t) = u_{o1}(t) - u_{o2}(t)$$
+$$u_o(t) = B(x) \cdot \sin(\omega t + \phi)$$
+$$u_o(t) = A \cdot [m_1(x) - m_2(x)] \cdot \sin(\omega t + \phi)$$
+Donde
+$$B(x) = K \cdot x$$
+indicando que
+la amplitud
+de la señal
+depende
+linealmente
+de la
+posicion. La
+fase
+$$\phi$$
+con respecto
+a la portadora
+del primario
+cambia
+bruscamente
+$$180$$
+$$^{\circ}$$
+al pasar el
+nucleo por el
+cero
+$$x = 0$$
+lo que permite
+discriminar
+el sentido del
+movimiento.
+
+2.2.
+Caracteristi-
+cas Tecnicas
+y Clasifica-
+cion
+
+Parametros
+Metrologicos
+Clave
+- Campo Nominal
+de Desplaza-
+miento (Rango):
+Varia
+tipicamente
+desde valores
+milimetricos:
+$$\pm 150$$
+$$\mu\text{m}$$
+hasta alcances
+industriales
+elevados:
+$$\pm 150$$
+$$\text{mm}$$
+o rangos
+desde
+$$\pm 12.5$$
+$$\text{mm}$$
+hasta
+$$\pm 75$$
+$$\text{mm}$$
+- Excitacion
+del Primario:
+Señales
+senoidales
+aceptables de
+$$0.5$$
+$$\text{V}$$
+a
+$$7$$
+$$\text{V}_{\text{rms}}$$
+a frecuencias
+de portadora
+altas de
+$$2$$
+$$\text{kHz}$$
+a
+$$10$$
+$$\text{kHz}$$
+(frecuencia
+tipica
+calibrada de
+$$5$$
+$$\text{kHz}$$
+a
+$$5$$
+$$\text{V}_{\text{rms}}$$
+).
+- Precision y
+Linealidad:
+Presenta
+errores de
+linealidad
+extrema-
+damente bajos,
+del orden del
+$$\pm 0.1\%$$
+al
+$$\pm 0.5\%$$
+del fondo de
+escala.
+
+Tipos segun
+su
+Construccion
+y Guia
+- Version AC
+(Pura): El
+dispositivo
+fisico
+contiene
+unicamente los
+devanados.
+Requiere un
+acondiciona-
+dor
+electronico
+externo, pero
+soporta un
+amplio rango
+de
+temperaturas
+de operacion
+de
+$$-58$$
+$$^{\circ}\text{F}$$
+a
+$$257$$
+$$^{\circ}\text{F}$$
+- Version DC:
+Incorpora el
+circuito
+integrado de
+acondiciona-
+miento de
+señal dentro
+de la propia
+capsula
+cilindrica
+del sensor.
+Esto
+simplifica la
+interfaz de
+salida, pero
+limita
+dramaticamente
+el margen de
+temperatura
+de operacion
+debido a la
+electronica
+interna.
+
+Segun el
+guiado del
+vastago:
+- Cautiva
+(Captive
+guided):
+Incorpora
+rodamientos
+internos que
+guian la
+armadura si la
+alineacion
+externa del
+sistema es
+pobre.
+- No guiada
+(Unguided):
+El nucleo se
+mueve
+libremente
+sin tocar las
+paredes
+internas,
+ofreciendo una
+operacion de
+rozamiento
+estrictamente
+nulo.
+- Con retorno
+por muelle
+(Spring
+return): Un
+muelle
+interno empuja
+el vastago
+hacia la
+posicion
+totalmente
+extendida,
+ideal para
+palpadores de
+control de
+calidad.
+
+2.3.
+Circuitos de
+Adaptacion
+Debido a que
+la salida del
+LVDT es una
+señal de
+alterna
+modulada en
+amplitud (AM),
+el circuito
+de adaptacion
+metrologico
+requiere
+obligatoria-
+mente dos
+bloques
+primordiales:
+un oscilador
+senoidal
+estable para
+excitacion del
+primario y un
+demodulador
+AM para
+extraer el
+valor en
+continua del
+desplaza-
+miento.
+Industrial-
+mente, se
+utiliza el
+chip
+especializado
+NE5521 para
+implementar
+toda esta
+cadena de
+bloques:
+- Referencia
+de Tension:
+Genera
+tensiones de
+continua
+altamente
+estables
+(tipicamente
+$$\pm 8$$
+$$\text{V}_{\text{dc}}$$
+) para
+alimentar el
+resto del
+integrado y
+evitar que
+variaciones
+en las
+fuentes se
+propaguen
+como errores
+de ganancia.
+- Oscilador:
+Genera una
+onda
+triangular
+base a la
+frecuencia de
+portadora
+deseada.
+- Driver:
+Contiene un
+sine converter
+que
+transforma la
+onda
+triangular en
+una onda
+senoidal pura
+de baja
+distorsion y
+un amplifi-
+cador
+operacional
+de potencia
+capaz de
+atacar la
+baja
+impedancia
+del primario
+del LVDT.
+- Demodulador
+Sincrono
+(Deteccion
+de Fase):
+¿Por que
+sincrono? Los
+demoduladores
+asincronos
+(tipo
+rectificador
+de diodo y
+filtro
+pasobaja
+pasivo) son
+mas baratos y
+no requieren
+la portadora,
+pero son
+incapaces de
+detectar los
+cambios de
+fase de la
+envolvente,
+obligando a
+usar dos
+rectificadores
+independien-
+tes en cada
+secundario y
+restar las
+salidas.
+El demodulador
+sincrono
+realiza una
+rectificacion
+multipli-
+cando la
+señal del
+secundario
+por una
+portadora
+cuadrada de
+sincronismo
+$$+1$$
+o
+$$-1$$
+generada por
+el driver. En
+su
+implementa-
+cion
+simplificada
+de bajo
+coste, esto
+se realiza
+mediante un
+inversor
+analogico y
+un multi-
+plexor
+analogico
+(AMUX)
+controlado
+por un
+comparador de
+cruce por
+cero de la
+portadora,
+eliminando
+la necesidad
+de un costoso
+multipli-
+cador
+analogico de
+cuatro
+cuadrantes.
+- Acondicio-
+nador Final
+(Filtro Paso
+Baja): Un
+filtro activo
+realizado con
+operacionales
+elimina los
+armonicos de
+la portadora
+de alta
+frecuencia de
+la salida del
+AMUX.
+Adicional-
+mente, este
+bloque suma
+una tension
+de offset
+constante
+(ajuste de
+cero) para
+adaptar y
+centrar la
+escala,
+permitiendo
+que la salida
+continua final
+$$V_{out}$$
+varie de
+forma
+unipolar (por
+ejemplo, de
+$$0$$
+a
+$$8$$
+$$\text{V}$$
+) para todo
+el rango de
+desplaza-
+miento del
+nucleo.
+
+2.4. Evalua-
+cion
+Metrologica
+
+Ventajas:
+- Robustez y
+fiabilidad
+mecanica
+excepcional:
+Al no tener
+contactos
+electricos
+deslizantes
+ni sufrir
+desgaste por
+rozamiento
+(en versiones
+no guiadas),
+posee una
+vida util
+extraordina-
+riamente
+larga.
+- Resolucion
+teorica
+infinita: Al
+ser un
+transductor
+analogico
+basado en
+variaciones
+continuas de
+flujo
+magnetico, la
+resolucion
+esta limitada
+unicamente
+por el ruido
+electrico del
+circuito de
+acondiciona-
+miento.
+- Excelente
+repetibilidad,
+alta
+linealidad y
+baja
+histeresis:
+Parametros
+ideales para
+su uso en
+entornos
+severos de
+control de
+procesos e
+instrumen-
+tacion
+aeroespacial.
+
+Inconve-
+nientes:
+- Elevado
+coste
+economico
+relativo: El
+proceso de
+bobinado de
+precision y
+el rectifica-
+do del nucleo
+ferromagnetic-
+o encarecen
+el sensor en
+comparacion
+con los
+potenciome-
+tros.
+- Complejidad
+del circuito
+de adapta-
+cion: Exige
+el uso de
+osciladores
+de alta
+estabilidad,
+drivers
+senoidales y
+circuitos de
+demodulacion
+sincrona con
+filtrado
+activo.
+- Ausencia de
+cero
+electrico
+perfecto:
+Debido a
+capacidades
+parasitas
+residuales o
+pequeñas
+asimetrias
+geometricas
+de los
+devanados,
+siempre
+existe una
+pequeña
+tension
+residual en
+el punto nulo
+donde:
+$$x = 0$$
+
+### Detectores de proximidad
+**Pregunta:**
+2.- Detectores de
+proximidad.
+Tipos, principios
+y caracteristicas
+de tecnicas
+disponibles.
+
+**Respuesta:**
+1. Introduccion
+Los detectores de
+proximidad son
+sensores de
+presencia de
+estado solido
+que conmutan su
+salida digital
+ante la
+proximidad de un
+objeto, sin
+contacto fisico
+ni desgaste
+mecanico.
+
+2. Clasificacion
+por Principio
+Fisico
+
+A) Inductivos
+Principio:
+Basados en la
+creacion de un
+campo magnetico
+alterno de alta
+frecuencia por
+un oscilador
+LC.
+Cuando un
+objeto metalico
+(conductor) se
+introduce en el
+campo, se
+inducen en el
+corrientes de
+Foucault (Eddy
+currents).
+Estas
+corrientes
+absorben
+energia del
+circuito
+oscilador,
+amortiguando y
+reduciendo la
+amplitud de la
+oscilacion LC.
+Un detector de
+amplitud con
+Trigger de
+Schmitt evalua
+esta caida y
+conmuta la
+salida digital.
+Caracteristi-
+cas:
+- Solo detectan
+materiales
+conductores
+(metales).
+- Poseen un
+rango de
+deteccion corto
+tipicamente
+desde
+$$1$$
+hasta
+$$50$$
+$$\text{mm}$$
+- Muy robustos
+frente a
+suciedad, polvo
+o humedad en el
+ambiente.
+
+B) Capacitivos
+Principio:
+Constan de un
+electrodo
+activo que
+actua como una
+de las placas
+de un
+condensador
+abierto.
+El objeto a
+detectar actua
+como la otra
+placa o como el
+dielectrico que
+modifica la
+capacidad
+equivalente:
+$$C$$
+Al acercarse el
+objeto, la
+capacidad
+aumenta,
+modificando la
+frecuencia de
+un oscilador
+RC.
+Al superar un
+umbral, el
+Trigger de
+Schmitt
+conmuta la
+salida.
+Caracteristi-
+cas:
+- Detectan
+cualquier tipo
+de material:
+conductores,
+aislantes,
+liquidos,
+plasticos,
+vidrio, agua o
+madera.
+- Rango de
+deteccion corto
+tipicamente de
+$$2$$
+a
+$$30$$
+$$\text{mm}$$
+- Sensibles a la
+presencia de
+humedad,
+pudiendo dar
+falsos
+disparos por
+condensacion.
+
+C) Opticos
+(Fotoelectricos)
+Principio:
+Constan de un
+emisor de luz
+(LED o laser) y
+un receptor
+(fototransistor
+o fotodiodo).
+Existen tres
+configuracio-
+nes clasicas:
+1. Barrera
+(Thru-beam): El
+emisor y el
+receptor estan
+enfrentados
+separados.
+El objeto se
+detecta al
+cortar el haz.
+Tiene el mayor
+rango (hasta
+$$100$$
+$$\text{m}$$
+de distancia).
+2. Reflexion
+sobre espejo
+(Retroreflec-
+tive): Emisor y
+receptor estan
+en la misma
+capsula. El haz
+se refleja en
+un catadioptri-
+co. Al cortarse
+el haz, se
+detecta el
+objeto.
+3. Difuso
+(Diffuse): El
+haz de luz se
+refleja en la
+propia
+superficie del
+objeto. El
+receptor capta
+la reflexion
+difusa.
+Rango mas corto
+y dependiente
+del color del
+objeto.
+Caracteristi-
+cas:
+- Rangos de
+deteccion muy
+largos en
+comparacion con
+los inductivos.
+- Sensibles a la
+suciedad de las
+lentes (polvo,
+niebla, grasa).
+
+D) Magneticos
+Principio:
+Detectan la
+presencia de un
+campo magnetico
+externo
+(provocado por
+un iman
+solidario al
+objeto).
+Tecnicas:
+- Reed Switch:
+Interruptor
+mecanico de
+lamparas
+flexibles
+ferromagnetic-
+as dentro de una
+ampolla de
+vidrio que se
+atraen con el
+campo magnetico.
+- Efecto Hall:
+Sensor de
+estado solido
+que genera una
+tension Hall:
+$$V_H$$
+transversal a
+la corriente y
+proporcional a
+la densidad de
+flujo
+magnetico:
+$$B$$
+Caracteristi-
+cas:
+- Muy alta
+velocidad de
+respuesta
+(Hall).
+- Inmunes a
+ambientes con
+polvo o grasa.
+- Requieren que
+el objeto
+lleve un iman
+acoplado.
+
+### Sincros y Resolvers
+**Pregunta:**
+- Sincros y
+Resolvers
+
+**Respuesta:**
+4.5. Sincros y
+Resolvers
+
+A) Definicion
+y Principio de
+Funcionamiento
+Un sincro es un
+transductor
+electromecanico
+de contacto y
+tipo pasivo
+(modulador),
+cuyo parametro
+de salida se
+basa en un
+transformador
+variable,
+utilizado
+especificamente
+para la medida
+de la posicion
+angular
+$$\theta$$
+Su aspecto
+exterior e
+interno
+recuerda al de
+un motor
+electrico
+rotativo.
+Fisicamente
+consta de dos
+partes
+principales:
+- El Estator
+(Fijo):
+Contiene tres
+arrollamientos
+o bobinados
+identicos
+distribuidos
+simetricamente
+en el espacio
+con un desfase
+geometrico de
+$$120$$
+$$^{\circ}$$
+conectados
+electricamente
+en estrella.
+Sus terminales
+accesibles
+desde el
+exterior se
+denominan
+$$S_1$$
+$$S_2$$
+y
+$$S_3$$
+- El Rotor
+(Movil):
+Esta acoplado
+mecanicamente
+al eje cuyo
+giro se desea
+medir. Contiene
+un arrolla-
+miento
+primario
+monofasico
+alimentado con
+una señal de
+alterna
+senoidal
+portadora:
+$$u_i(t) = A \cdot \sin(\omega t)$$
+a traves de un
+sistema de
+escobillas y
+anillos
+colectores
+(terminales
+$$R_1$$
+y
+$$R_2$$
+).
+
+B) Funcion de
+Transferencia
+del Sincro
+Al excitar el
+rotor en
+alterna, se
+induce por
+induccion
+electromagne-
+tica una
+tension en
+cada una de
+las tres
+bobinas del
+estator. Las
+amplitudes
+maximas de las
+tensiones
+inducidas
+entre los
+terminales del
+estator (linea
+a linea)
+dependen de la
+posicion
+angular
+$$\theta$$
+del rotor
+respecto al
+estator,
+respondiendo
+a leyes
+trigonome-
+tricas:
+$$u_{S1-S3}(t) = K \cdot A \cdot \sin(\theta) \cdot \sin(\omega t)$$
+$$u_{S3-S2}(t) = K \cdot A \cdot \sin(\theta + 120^\circ) \cdot \sin(\omega t)$$
+$$u_{S2-S1}(t) = K \cdot A \cdot \sin(\theta + 240^\circ) \cdot \sin(\omega t)$$
+Donde
+$$K$$
+representa la
+relacion de
+transformacion
+maxima del
+dispositivo.
+En definitiva,
+se obtiene un
+conjunto de
+tres señales
+de alterna
+moduladas en
+amplitud (AM)
+cuya
+envolvente
+porta la
+informacion
+fidedigna de
+la posicion
+angular.
+
+4.5.2.
+Resolvers
+
+A) Semejanzas
+y Diferencias
+con los
+Sincros
+El resolver
+comparte con
+el sincro el
+mismo
+principio
+fisico de
+transduccion
+inductiva
+(transformador
+variable) y
+campos de
+aplicacion
+industriales
+severos.
+Sin embargo,
+se diferencia
+radicalmente
+en la
+arquitectura
+geometrica y
+electrica de
+sus devanados:
+- Estator a
+$$90$$
+$$^{\circ}$$
+El estator
+del resolver
+no esta en
+estrella a
+$$120$$
+$$^{\circ}$$
+sino que
+consta de dos
+bobinados
+independientes
+desfasados
+geometrica-
+mente
+$$90$$
+$$^{\circ}$$
+entre si. Uno
+de ellos
+actua como la
+componente
+seno y el
+otro como
+coseno.
+- Rotor:
+Dispone
+habitualmente
+de un
+bobinado
+primario (o
+dos cruzados
+a
+$$90$$
+$$^{\circ}$$
+para
+aplicaciones
+especiales de
+calculo
+analogico).
+
+B) Funcion de
+Transferencia
+del Resolver
+Excitando el
+rotor con la
+portadora
+senoidal:
+$$A \cdot \sin(\omega t)$$
+las tensiones
+de salida
+inducidas en
+los dos
+canales del
+estator
+proporcionan
+directamente
+las
+componentes
+cartesianas
+(ortogonales)
+del angulo:
+$$u_{\text{Seno}}(t) = K \cdot A \cdot \sin(\theta) \cdot \sin(\omega t)$$
+$$u_{\text{Coseno}}(t) = K \cdot A \cdot \cos(\theta) \cdot \sin(\omega t)$$
+
+4.5.3.
+Interconexion
+y Circuitos de
+Acondiciona-
+miento
+
+A) Conversion
+Sincro-Resolver
+El Transfor-
+mador de Scott
+(Scott-T
+Transformer)
+Debido a que
+coexisten
+ambas
+tecnologias en
+la industria,
+es comun
+necesitar
+interconectar
+un sincro
+transmisor
+con un
+receptor o
+convertidor
+diseñado para
+resolver.
+Para realizar
+la conversion
+matematica
+bidireccional
+de señales a
+$$120$$
+$$^{\circ}$$
+"(Sincro) a"
+señales a
+$$90$$
+$$^{\circ}$$
+"(Resolver)"
+sin introducir
+desfases
+electronicos,
+se emplea un
+componente
+magnetico
+pasivo
+denominado
+Transformador
+de Scott.
+Consta de dos
+transformado-
+res acoplados
+de relaciones
+de transfor-
+macion
+especificas:
+- Transfor-
+mador Base:
+Conecta
+$$S_1$$
+y
+$$S_2$$
+del sincro.
+Posee una
+toma
+intermedia
+central
+conectada a
+tierra:
+$$0$$
+$$\text{V}$$
+Su relacion
+es
+$$1:1$$
+y extrae la
+señal del
+coseno.
+- Transfor-
+mador Teaser:
+Se conecta
+entre el
+terminal
+$$S_3$$
+del sincro y
+la toma
+central del
+transformador
+base. Para
+compensar el
+factor
+geometrico
+$$\sqrt{3}$$
+su relacion
+de espiras
+debe ser
+rigurosamente
+de
+$$1 : \frac{2}{\sqrt{3}}$$
+que es
+aproximada-
+mente:
+$$1 : 1.1547$$
+De su salida
+se extrae la
+señal limpia
+del seno.
+
+B)
+Convertidores
+Sincro-Digital
+y
+Resolver-
+Digital (SDC
+/ RDC)
+Para que un
+sistema
+microproce-
+sador
+$$\mu\text{P}$$
+o tarjeta
+digital
+adquiera el
+angulo, se
+utilizan
+circuitos
+integrados
+especiali-
+zados de
+señal mixta
+denominados
+SDC o RDC.
+Estos chips
+no realizan
+una simple
+conversion
+A/D por canal;
+emplean un
+lazo de
+seguimiento
+ratiometrico
+(Type II servo
+loop) que
+busca un
+angulo interno
+computado
+$$\phi$$
+tal que
+minimice la
+funcion de
+error
+analogica:
+$$\text{Error} = \sin(\omega t) \cdot \sin(\theta - \phi)$$
+Al anular el
+error mediante
+un demodulador
+sincrono y un
+integrador, el
+lazo se
+bloquea y el
+contador
+digital
+interno
+contiene
+directamente
+el valor
+binario del
+angulo
+$$\theta$$
+con una
+resolucion
+comercial
+tipica de
+$$10$$
+a
+$$16$$
+bits, siendo
+totalmente
+inmune a
+ruidos de
+amplitud o
+armonicos de
+la portadora.
+
+4.5.4.
+Aplicaciones
+Clasicas de
+Catalogo
+- Cadena de
+Par (Torque
+Chain):
+Transmision
+directa y
+remota de una
+posicion
+angular sin
+necesidad de
+electronica
+de control ni
+servomotores
+(usado
+tipicamente en
+indicadores de
+agujas de
+cabinas de
+aeronaves
+antiguos). Se
+conecta un
+sincro
+transmisor
+(TX)
+directamente
+a un sincro
+receptor (TR).
+Las corrientes
+generadas por
+el
+desequilibrio
+angular crean
+un par
+magnetico que
+hace girar el
+rotor del
+receptor hasta
+que copia
+exactamente el
+angulo del
+transmisor.
+- Servocontrol
+de Posicion:
+Configuracion
+para sistemas
+de alta
+potencia de
+posiciona-
+miento
+(radares,
+antenas de
+seguimiento,
+timones).
+Utiliza un
+sincro
+transmisor de
+control (CX)
+para meter la
+referencia y
+un sincro
+transformador
+de control
+(CT)
+solidario a la
+carga. El
+rotor del CT
+extrae la
+tension de
+error
+analogica, la
+cual ataca a
+la etapa de
+potencia del
+motor para
+corregir la
+posicion
+mecanicamente.
+
+4.5.5.
+Evaluacion
+Metrologica
+
+Estandares de
+Alimentacion
+Comerciales
+(Normas MIL):
+- Sistemas de
+baja
+frecuencia:
+$$115$$
+$$\text{V}_{\text{rms}}$$
+a
+$$50/60$$
+$$\text{Hz}$$
+en primario
+$$\to 90$$
+$$\text{V}$$
+linea a linea
+en estator.
+- Sistemas
+aeronauticos
+/ militares:
+$$26$$
+$$\text{V}_{\text{rms}}$$
+de excitacion
+a alta
+frecuencia:
+$$400$$
+$$\text{Hz}$$
+a
+$$10$$
+$$\text{kHz}$$
+$$\to 11.8$$
+$$\text{V}$$
+en estator.
+
+Exactitud:
+Los modelos
+industriales
+estandar
+ofrecen
+precisiones en
+el entorno de
+$$\pm 7$$
+a
+$$\pm 10$$
+$$\text{minutos de arco}$$
+Los modelos
+especiales de
+gran diametro
+sin escobillas
+(Slab o
+Pancake)
+empleados en
+plataformas
+inerciales o
+robotica
+pesada
+alcanzan
+exactitudes
+soberbias de
+$$\pm 10$$
+a
+$$\pm 20$$
+$$\text{segundos de arco}$$
+
+Tabla de Pros y
+Contras
+
+Ventajas:
+- Robustez y
+Fiabilidad
+Mecanica
+Extrema: Al
+ser bloques
+puramente
+inductivos
+bobinados en
+carcasas de
+acero
+selladas,
+soportan de
+forma
+excelente
+choques,
+vibraciones
+severas,
+aceites y
+humedades.
+- Inmunidad
+Termica y
+Electro-
+magnetica:
+Soportan
+amplios
+margenes de
+operacion de
+temperatura
+ambiental
+industrial
+(conforme a
+especificacio-
+nes
+militares)
+donde la
+electronica
+fallaria.
+- Transmision
+de Señal
+Balanceada:
+Las salidas
+diferenciales
+ratiometricas
+eliminan el
+ruido en modo
+comun en
+mangueras de
+cables largas.
+
+Inconve-
+nientes:
+- Elevado
+Coste
+Economico: El
+mecanizado
+del nucleo,
+el
+equilibrado
+rotatorio y el
+proceso de
+bobinado de
+precision los
+hacen
+considerable-
+mente mas
+caros que un
+potenciometro
+o encoder
+basico.
+- Complejidad
+del
+Acondiciona-
+miento: Exige
+circuiteria
+externa
+pesada
+compuesta por
+osciladores
+estables de
+potencia,
+transformado-
+res de Scott
+y converti-
+dores RDC/SDC
+sincronos.
+- Resolucion
+limitada por
+el lazo:
+Aunque
+analogica-
+mente es
+continua,
+digitalmente
+queda acotada
+por los bits
+del lazo de
+seguimiento
+del
+integrado.
+
+### Ultrasonidos
+**Pregunta:**
+- Ultrasonidos
+
+**Respuesta:**
+4.7. Ultrasonidos
+
+4.7.1. Definicion
+y Principio Físico
+de la Onda Sonora
+El sonido es una
+onda mecanica
+longitudinal de
+presion y
+deformacion que
+se propaga
+obligatoria-
+mente a traves
+de medios
+elasticos (ya
+sean solidos,
+liquidos o
+gases).
+En este tipo
+de ondas, las
+particulas del
+medio oscilan
+exactamente
+en la misma
+direccion de
+propagacion de
+la onda.
+La gama de
+frecuencias
+audibles por
+el ojo humano
+se situa entre
+$$20$$
+$$\text{Hz}$$
+y
+$$16$$
+$$\text{kHz}$$
+Las frecuencias
+inferiores se
+denominan
+infrasonidos y
+las
+frecuencias
+superiores a
+los
+$$16$$
+$$\text{kHz}$$
+se definen como
+ultrasonidos.
+Como fenomeno
+ondulatorio,
+los
+ultrasonidos
+sufren las
+siguientes
+interacciones
+metrologicas al
+propagarse:
+- Reflexión y
+Refracción: Al
+cambiar de
+medio de
+propagacion.
+- Difracción:
+Al chocar con
+objetos cuyas
+dimensiones
+son del orden
+de la longitud
+de onda:
+$$\approx \lambda$$
+- Dispersión
+(Scattering):
+Al incidir
+sobre objetos
+con
+dimensiones
+muy inferiores
+a la longitud
+de onda:
+$$\ll \lambda$$
+- Interferen-
+cias y
+Absorcion
+(atenuacion):
+Perdida de
+energia de la
+onda con la
+distancia.
+La gran
+mayoria de las
+aplicaciones
+de instrumen-
+tacion
+electronica
+industrial
+(como la
+medida de
+nivel de
+liquidos o
+detectores de
+proximidad) se
+basan en la
+emision de
+ondas
+ultrasonicas y
+el analisis
+de las ondas
+reflejadas.
+
+4.7.2. Principio
+de
+Funcionamiento:
+Medida del
+Tiempo de
+Vuelo (TOF)
+La medición de
+distancia sin
+contacto por
+ultrasonidos
+se fundamenta
+rigurosamente
+en la tecnica
+del Tiempo de
+Vuelo (en
+ingles, Time
+of Flight o
+TOF).
+El instrumento
+electronico
+envia un
+paquete de
+ondas
+ultrasonicas
+hacia el
+objeto y mide
+de forma
+precisa el
+tiempo
+cronometrado
+$$t_v$$
+que tarda en
+regresar el
+eco o rebote
+al receptor.
+Suponiendo una
+velocidad del
+sonido
+$$V_s$$
+homogenea en
+el medio, la
+distancia
+$$d$$
+al mensurando
+se calcula
+mediante la
+ecuacion
+cinematica:
+$$d = \frac{1}{2} \cdot V_s \cdot t_v$$
+El factor
+$$\frac{1}{2}$$
+se introduce
+matematica-
+mente debido a
+que el tiempo
+medido
+$$t_v$$
+contempla el
+camino de ida
+y vuelta de la
+onda.
+
+4.7.3.
+Consideraciones
+Practicas y
+Magnitudes de
+Influencia
+
+A) Dependencia
+de la
+velocidad del
+sonido con la
+Temperatura
+$$T$$
+La velocidad
+de transmision
+$$V_s$$
+no es una
+constante
+universal;
+depende
+drasticamente
+del medio
+(siendo mayor
+en solidos que
+en liquidos, y
+mayor en
+liquidos que
+en gases) y de
+sus variables
+ambientales.
+Para el caso
+del aire seco
+a
+$$20$$
+$$^{\circ}\text{C}$$
+la velocidad
+nominal es de
+$$V_s = 343$$
+$$\text{m/s}$$
+La variacion
+de
+$$V_s$$
+en el aire
+depende
+fundamental-
+mente de la
+temperatura
+(actuando como
+una fuerte
+magnitud de
+influencia),
+modelandose
+teoricamente
+mediante la
+ecuacion:
+$$V_s(T) = 331.5 \cdot \sqrt{1 + \frac{T}{273.15}}$$
+$$\text{m/s}$$
+que se
+aproxima por:
+$$V_s(T) \approx 331.5 + 0.6 \cdot T$$
+$$\text{m/s}$$
+donde
+$$T$$
+esta en
+$$^{\circ}\text{C}$$
+Compensacion
+metrologica de
+examen: Dado
+que un cambio
+en la
+temperatura
+ambiente
+falsea el
+calculo de la
+distancia, los
+sistemas
+industriales
+incorporan
+obligatoria-
+mente un
+sensor de
+temperatura
+independiente
+(como una
+PT100 o NTC)
+al lado del
+transductor
+para
+recalcular
+$$V_s$$
+por software,
+o emplean una
+varilla fisica
+de referencia
+a distancia
+fija para
+auto-calibrar
+el tiempo de
+vuelo de forma
+continua.
+
+B) Frecuencia
+de trabajo y
+Atenuacion
+En instrumen-
+tacion, la
+resolucion
+espacial del
+sistema esta
+acotada
+inferiormente
+por la
+longitud de
+onda
+$$\lambda$$
+cumpliendose
+la relacion
+fundamental:
+$$V_s = \lambda \cdot f$$
+$$\implies \lambda = \frac{V_s}{f}$$
+Para obtener
+una alta
+resolucion (un
+$$\lambda$$
+muy pequeño)
+interesaria
+elevar la
+frecuencia
+$$f$$
+a margenes de
+megahertzios.
+Sin embargo,
+la atenuacion
+o absorcion
+del sonido en
+los gases
+crece de forma
+exponencial
+con la
+frecuencia.
+Como
+compromiso de
+engineering
+para
+mediciones en
+el aire, se
+trabaja a
+frecuencias
+ultrasonicas
+relativamente
+bajas,
+tipicamente de
+$$40$$
+$$\text{kHz}$$
+a
+$$50$$
+$$\text{kHz}$$
+lo que mitiga
+la atenuacion
+a costa de
+dejar la
+resolucion en
+el entorno de
+$$1$$
+$$\text{cm}$$
+
+C) Directividad
+y Zona Muerta
+Baja
+directividad:
+El haz
+ultrasonico no
+es filiforme
+(a diferencia
+del laser),
+sino que
+tiende a
+abrirse en
+forma de cono,
+lo que
+provoca
+dispersion
+angular y
+riesgo de
+captar falsos
+ecos o
+reflexiones
+indeseadas en
+paredes u
+obstaculos
+laterales.
+Zona Muerta:
+El transductor
+requiere un
+tiempo minimo
+de amortigua-
+miento
+mecanico tras
+vibrar como
+emisor antes
+de poder
+actuar
+fidedignamente
+como receptor.
+Durante este
+breve
+intervalo, el
+sensor es
+ciego, lo que
+genera una
+distancia
+minima por
+debajo de la
+canal no se
+puede medir
+(zona muerta,
+tipicamente
+los primeros
+$$10$$
+a
+$$20$$
+$$\text{cm}$$
+).
+
+4.7.4.
+Tecnologia del
+Transductor y
+Circuito de
+Adaptacion
+Fisicamente,
+la generacion
+y deteccion de
+la onda
+ultrasonica se
+realiza
+mediante
+elementos
+piezoelectri-
+cos
+aprovechando
+la
+reversibilidad
+intrinseca del
+cristal
+(generalmente
+titanato de
+bario o
+cuarzo).
+Como emisor,
+un pulso de
+tension
+alterna de
+$$40$$
+$$\text{kHz}$$
+deforma el
+cristal
+generando la
+onda de
+presion.
+Como receptor,
+la onda de
+presion del
+eco deforma el
+cristal
+induciendo
+una carga
+electrica
+medible.
+Se puede
+configurar el
+instrumento
+usando una
+pareja
+independiente
+de emisor-
+receptor o,
+gracias a la
+reversibili-
+dad
+piezoelectri-
+ca, un unico
+elemento
+transductor
+que conmuta
+en el tiempo
+sus funciones
+de emision y
+recepcion.
+El circuito de
+acondiciona-
+miento
+electronico
+estandar
+consta de un
+microcontro-
+lador
+$$\mu\text{C}$$
+central que
+coordina dos
+etapas:
+- Subsistema de
+Transmision:
+Un driver que
+generates
+trenes de
+pulsos de alta
+tension a la
+frecuencia de
+resonancia del
+piezoelectri-
+co
+(
+$$40$$
+$$\text{kHz}$$
+) e inicia
+simultanea-
+mente un
+temporizador
+interno.
+- Subsistema de
+Recepcion:
+Un circuito de
+alta
+impedancia que
+amplifica el
+debil eco
+electrico
+devuelto, lo
+filtra para
+eliminar el
+ruido
+ambiental, y
+mediante un
+detector de
+umbral
+(comparador)
+genera una
+interrupcion
+digital que
+detiene el
+temporizador
+del
+$$\mu\text{C}$$
+consolidando
+el valor del
+$$t_v$$
+.
+
+4.7.5. Tabla
+Comparativa
+
+Ventajas:
+- Medición
+totalmente no
+invasiva y sin
+contacto: Ideal
+para evitar el
+desgaste
+mecanico y no
+alterar el
+sistema bajo
+estudio.
+- No se ve
+afectado por la
+opacidad:
+Funciona
+perfectamente
+con
+independencia
+del color,
+transparencia
+o brillo de la
+superficie (a
+diferencia de
+las tecnicas
+opticas),
+siendo ideal
+para el
+analisis de
+liquidos
+turbios y
+solidos
+opacos.
+- Excelente
+relacion
+coste/rendi-
+miento: Es una
+solucion
+tecnologica de
+muy bajo coste
+relativo
+comparada con
+los medidores
+basados en
+tecnologia
+laser.
+- Rango
+operativo
+medio
+versatil:
+Permite cubrir
+con soltura
+distancias
+desde unos
+pocos
+centimetros
+(
+$$10$$
+$$\text{cm}$$
+) hasta
+decenas de
+metros.
+
+Inconve-
+nientes:
+- Baja
+resolucion en
+el aire:
+Acotada por la
+longitud de
+onda de las
+frecuencias
+utilizables
+industriales,
+situandose
+tipicamente en
+el orden de
+$$1$$
+$$\text{cm}$$
+- Margen de
+rango limitado
+en el aire:
+Debido a la
+fuerte
+atenuacion
+atmosferica, el
+alcance
+industrial
+maximo
+efectivo rara
+vez supera
+los
+$$30$$
+$$\text{m}$$
+Además,
+presenta una
+zona muerta
+cercana al
+transductor.
+- Sensibili-
+dad ambiental
+extrema: La
+velocidad del
+sonido es
+altamente
+dependiente de
+la
+temperatura
+la humedad
+relativa
+$$H_r$$
+y la presion
+$$P$$
+exigiendo
+hardware
+adicional de
+compensacion.
+- Poca
+directividad:
+El haz
+ultrasonico
+diverge de
+forma conica,
+aumentando el
+riesgo de
+sufrir
+reflexiones
+indeseadas
+(falsos ecos).
+
+Cualquier duda
+que te surja
+sobre los
+esquemas
+comerciales de
+sensores
+ultrasonicos
+de nivel de
+liquidos o
+sobre el
+calculo del
+cono de
+divergencia,
+comentamelo y
+lo repasamos
+de cara al
+examen. ¡A por
+el aprobado!
+
+### Medida de distancia mediante ultrasonidos
+**Pregunta:**
+2.- Medida de
+distancia
+mediante
+ultrasonidos.
+
+**Respuesta:**
+La medicion de
+distancias por
+ultrasonidos
+se basa en la
+tecnica del
+Tiempo de
+Vuelo (Time of
+Flight o TOF).
+
+Principio de
+funciona-
+miento:
+El dispositivo
+emite un pulso
+o paquete de
+ondas
+ultrasonicas
+hacia el
+objeto. Estas
+ondas viajan a
+traves del
+medio
+(generalmente
+aire), rebotan
+en el objeto y
+regresan al
+sensor (emisor/
+receptor).
+
+Calculo:
+Sabiendo el
+tiempo que
+tarda el "eco"
+en volver:
+$$t_v$$
+y la
+velocidad del
+sonido en el
+medio:
+$$V_s$$
+la distancia
+$$d$$
+se calcula
+como:
+$$d = \frac{1}{2} \cdot V_s \cdot t_v$$
+El factor
+$$\frac{1}{2}$$
+se debe a que
+el tiempo
+medido
+corresponde al
+recorrido de
+ida y vuelta.
+
+Consideracio-
+nes tecnicas:
+
+- Temperatura:
+La velocidad
+del sonido en
+el aire
+depende
+fuertemente
+de la
+temperatura:
+$$V_s \approx 331.5 + 0.6 \cdot T$$
+$$\text{m/s}$$
+donde
+$$T$$
+esta en
+$$^{\circ}\text{C}$$
+lo que obliga
+a emplear un
+sensor de
+temperatura
+para compensar
+el error.
+
+- Frecuencia:
+Se utilizan
+frecuencias
+entre:
+$$40$$
+"a"
+$$50$$
+$$\text{kHz}$$
+frecuencias
+mayores
+aumentarian
+la resolucion
+pero sufrian
+una atenuacion
+exponencial
+en el aire.
+
+- Zona muerta:
+Existe una
+distancia
+minima inicial
+donde el
+transductor
+es "ciego"
+debido al
+tiempo que
+tarda en
+dejar de
+vibrar tras la
+emision.
+
+Ventajas /
+Inconvenien-
+tes:
+Es una
+tecnologia de
+bajo coste y
+no afectada
+por el color o
+transpariencia
+del objeto,
+pero es
+sensible a
+condiciones
+ambientales y
+presenta una
+baja
+directividad
+(posibilidad
+de falsos
+ecos).
+
+### Reglas codificadas ópticas
+**Pregunta:**
+2.- Reglas
+Codificadas
+Opticas.
+
+**Respuesta:**
+2.1. Definicion
+y Principio
+Una regla
+codificada es
+un transductor
+con contacto
+que se utiliza
+para la medida
+de la posicion
+(ya sea de
+forma lineal
+o angular).
+Físicamente
+consta de dos
+partes
+principales:
+- El cuerpo de
+la regla
+(o disco):
+Es el elemento
+estacionario
+o movil que
+posee marcas
+dispuestas en
+pistas que
+codifican las
+diferentes
+posiciones.
+- El elemento
+deslizante
+(slider o
+cabezal):
+Esta asociado
+mecanicamente
+a la pieza
+cuyo
+movimiento se
+quiere
+detectar y
+dispone de los
+dispositivos
+electronicos
+capaces de
+leer las
+marcas de la
+regla.
+La codificacion
+automatica se
+realiza
+marcando la
+posicion
+mediante un
+codigo
+binario, lo
+que
+proporciona
+directamente
+una salida
+digital.
+La lectura de
+estas marcas
+se efectua de
+manera optica
+mediante un
+principio de
+optoacopla-
+miento (un
+emisor de luz
+LED y un
+fototransductor
+receptor).
+Dependiendo
+del diseño
+fisico, el
+camino optico
+permite o
+impide el paso
+de la luz a
+traves de dos
+tecnicas
+posibles:
+- Transmisivas:
+La luz pasa
+a traves de
+zonas
+transparentes
+y se corta en
+zonas opacas
+de la regla.
+- Reflexivas:
+La luz se
+refleja en
+zonas
+espejadas y
+se dispersa o
+absorbe en
+zonas mate.
+
+2.2.
+Clasificacion
+y Tipos
+De acuerdo
+con el
+temario, las
+reglas opticas
+se clasifican
+fundamen-
+talmente en
+dos grandes
+grupos segun
+como se
+codifica y
+se interpreta
+la
+informacion
+de posicion:
+
+A) Reglas
+Absolutas
+En este tipo,
+cada posicion
+geometrica
+del rango
+esta
+codificada de
+forma unica
+con
+$$N$$
+bits.
+Constitucion:
+El cabezal
+o slider
+dispone de
+un conjunto
+de
+$$N$$
+lectores
+optoelectro-
+nicos
+alineados
+transversal-
+mente, de
+modo que
+cada pista
+de la regla
+corresponde
+a un bit del
+codigo (el
+numero total
+de
+posiciones
+diferentes
+maximas
+viene
+determinado
+por
+$$2^N$$
+).
+Uso del
+Codigo Gray:
+Una
+caracteristica
+metrologica
+crucial es
+que no se
+utiliza el
+codigo
+binario
+natural, sino
+codigos
+continuos
+como el
+codigo Gray.
+En el codigo
+Gray, entre
+una posicion
+y la
+inmediatamente
+consecutiva
+cambia solo
+un bit.
+Esto es
+matematicamente
+indispensable
+para evitar
+que, si el
+lector queda
+detenido en
+una posicion
+intermedia
+o de
+transicion
+entre dos
+franjas, se
+produzcan
+lecturas
+falsas
+catastroficas.
+Al recibir
+la señal en
+Gray, un
+circuito
+logico (como
+compuertas
+XOR en
+cascada) se
+encarga de
+convertirlo
+a binario
+para el
+microprocesa-
+dor.
+Ventaja
+clave:
+No pierde
+la posicion
+al quitar la
+alimentacion
+electrica (al
+encenderse,
+da instanta-
+neamente la
+posicion
+real).
+
+B) Reglas
+Incrementales
+(o Relativas)
+A medida que
+el numero
+de posiciones
+o la
+longitud
+del rango
+crece,
+fabricar una
+regla
+absoluta
+exige añadir
+demasiadas
+bandas y
+detectores
+(
+$$N$$
+muy elevado),
+lo que
+encarece el
+dispositivo.
+Como
+alternativa,
+la regla
+incremental
+no codifica
+la posicion
+absoluta en
+la superficie,
+sino el
+desplaza-
+miento o
+incremento
+de la
+posicion
+mediante el
+conteo de
+pulsos
+generados por
+una sola
+banda de
+marcas
+repetitivas.
+Presenta dos
+limitaciones
+de diseño
+que exigen
+soluciones
+especificas:
+- Sentido de
+giro /
+movimiento:
+Una sola
+pista de
+pulsos no
+indica si la
+pieza avanza
+o retrocede.
+Para
+solucionarlo,
+se añade un
+segundo
+detector
+desfasado
+electrica-
+mente
+$$90$$
+$$^{\circ}$$
+(en
+cuadratura).
+Analizando
+que señal
+(
+$$A$$
+o
+$$B$$
+) cambia de
+flanco
+primero, se
+determina el
+sentido.
+- Referencia
+absoluta:
+Al encender
+el equipo,
+no se sabe
+donde esta el
+slider. Por
+ello, se
+añade una
+marca unica
+en una pista
+independiente
+leida por un
+tercer
+detector de
+posicion cero
+o marca de
+indexacion
+(
+$$Z$$
+). El
+sistema debe
+buscar esta
+marca para
+inicializar
+el contador.
+
+Nota sobre
+las Reglas
+Incrementales
+de Salida
+Analógica:
+Existe una
+variante de
+alta
+precision
+donde las
+marcas de la
+regla
+interactuan
+con una trama
+fija
+generando un
+enmascara-
+miento
+geometrico de
+la luz. El
+fototransduc-
+tor mide la
+variacion de
+la intensidad
+luminosa, la
+cual sufre
+una variacion
+senoidal con
+el desplaza-
+miento. Al
+colocar dos
+sistemas
+desfasados
+un cuarto de
+cuadro, se
+obtienen
+señales
+analogicas
+en seno y
+coseno. Esto
+permite
+realizar una
+interpo-
+lacion
+electronica
+dentro de
+cada cuadro,
+logrando
+resoluciones
+submicro-
+nicas
+(elevadas
+resoluciones
+menores de
+$$0.01$$
+$$\text{mm}$$
+), ideales
+para
+laboratorios
+o maquinas
+herramienta
+de alta
+precision.
+
+2.3. Tabla
+Comparativa
+
+Ventajas:
+- Salida
+digital
+directa:
+Facilita la
+conexion
+directa con
+sistemas
+digitales y
+micropro-
+cesadores sin
+necesitar
+convertidores
+A/D
+complejos
+(en los
+modelos de
+salida
+digital).
+- Tecnologia
+adaptable:
+Es una
+solucion de
+ingenieria
+flexible que
+permite
+equilibrar
+perfectamente
+el coste
+frente a la
+exactitud
+requerida.
+- Modelos de
+altisima
+resolucion:
+Los encoders
+de salida
+analógica por
+interpo-
+lacion o
+interferome-
+tria alcanzan
+precisiones
+excepciona-
+les.
+
+Inconve-
+nientes:
+- Coste
+elevado para
+alta
+resolucion:
+Exige
+procesos de
+fabricacion
+litografica
+muy precisos
+y cabezales
+opticos con
+muchos
+canales si se
+requiere
+alta
+resolucion
+absoluta.
+- Sensibili-
+dad
+ambiental:
+Al ser un
+camino
+optico, el
+rendimiento
+se degrada
+fuertemente
+si entra
+polvo, grasa
+o humedad,
+por lo que
+requieren
+encapsulados
+industriales
+sellados.
+- Perdida de
+posicion
+(Incremen-
+tales):
+Obliga a
+almacenar la
+posicion en
+memoria
+volatil/
+no volatil y
+a realizar un
+protocolo de
+busqueda de
+cero
+(
+$$Z$$
+) cada vez
+que se
+interrumpe
+la alimenta-
+cion.
+
+## Tema 5: Fuerza
+
+### Fuerza piezoeléctrica
+**Pregunta:**
+3.- Transductor
+de fuerza
+piezoelectrico.
+
+**Respuesta:**
+3.1. Festo
+Piezoelectrico
+y Operacion
+
+A) Definicion
+fundamental
+Existen
+diferentes
+materiales,
+tanto
+naturales
+(Cuarzo,
+Turmalina,
+etc.) como
+artificiales,
+que presentan
+el fenomeno de
+la piezoelec-
+tricidad.
+En estos
+materiales
+cristalinos
+asimetricos,
+cuando se les
+aplica un
+esfuerzo
+mecanico que
+provoca su
+deformacion,
+aparece una
+carga
+electrica
+superficial
+$$Q$$
+en sus caras
+que es
+directamente
+proporcional
+a la fuerza
+aplicada
+$$F$$
+asociado:
+$$Q = S \cdot F$$
+Donde
+$$S$$
+representa la
+sensibilidad
+piezoelectrica
+del
+material. Es
+un efecto
+intrinsecamente
+reversible:
+si se aplica
+una tension
+electrica
+externa a las
+caras del
+cristal, este
+experimentara
+una
+deformacion
+mecanica
+proporcional
+(propiedad
+que permite
+fabricar
+actuadores).
+
+B) Tipos de
+Corte del
+Cristal
+(Criterio del
+Cuarzo)
+El cuarzo es
+el material
+mas utilizado
+industrialmey
+para la
+medicion de
+fuerzas
+debido a su
+excelente
+estabilidad y
+rigidez.
+Dependiendo
+de la
+orientacion
+geometrica en
+la que se
+talle el
+cristal (su
+corte), se
+pueden medir
+tres efectos
+diferenciados:
+
+- Efecto
+Longitudinal:
+La fuerza se
+ejerce en la
+misma
+direccion
+(eje
+$$x$$
+) en la que
+se genera y
+recoge la
+carga
+electrica.
+Matematica-
+mente se
+expresa como:
+$$Q_x = d_{11} \cdot F_x \cdot n$$
+Donde
+$$d_{11}$$
+es el
+coeficiente
+piezoelectrico
+(tipicamente
+$$-2.3$$
+$$\text{pC/N}$$
+para el
+cuarzo),
+$$F_x$$
+es la fuerza
+en el eje
+$$x$$
+y
+$$n$$
+representa el
+numero de
+discos de
+cuarzo
+apilados en
+paralelo
+(tecnica
+habitual para
+multiplicar
+la carga de
+salida y
+aumentar la
+sensibilidad).
+
+- Efecto
+Transversal:
+La fuerza se
+aplica en una
+direccion
+perpendicular
+(eje
+$$y$$
+) a las caras
+donde se
+induce y
+recolecta la
+carga
+electrica (eje
+$$x$$
+). Su funcion
+de
+transferencia
+incorpora las
+dimensiones
+geometricas
+del cristal:
+$$Q_x = -d_{11} \cdot F_y \cdot \frac{b}{a}$$
+Donde
+$$b$$
+y
+$$a$$
+son las
+dimensiones
+del elemento
+elastico.
+
+- Efecto de
+Cizalla
+(Shear):
+Las cargas se
+generan por
+un esfuerzo
+cortante o
+tangencial
+en los ejes
+del cristal.
+Su expresion
+para
+$$n$$
+discos es:
+$$Q_y = -2 \cdot d_{11} \cdot F_x \cdot n$$
+
+3.2. Modelo
+Electrico y
+Respuesta
+Fisicamente,
+un sensor
+piezoelectrico
+se comporta
+de manera
+equivalente
+a una fuente
+de carga
+$$Q(t)$$
+en paralelo
+con la
+propia
+capacidad
+interna del
+cristal
+$$C_s$$
+debido a su
+estructura de
+dielectrico
+entre
+electrodos.
+Sin embargo,
+el cuarzo no
+es un
+aislante
+perfecto;
+posee una
+resistencia
+de fugas
+$$R_s$$
+o
+$$R_f$$
+muy elevada
+a traves de
+la cual la
+carga
+acumulada se
+drena de
+forma
+espontanea
+con el
+tiempo. Por
+tanto, su
+modelo
+electrico
+real en
+configuracion
+Norton o
+Thevenin es:
+Norton:
+$$Q(t) \parallel C_s \parallel R_f$$
+Thevenin:
+$$V_s(t) = \frac{Q(t)}{C_s}$$
+en serie con
+$$C_s$$
+con fuga:
+$$R_f$$
+
+Consecuencias
+metrologicas
+criticas:
+- Impedancia
+de salida
+extrema-
+damente alta:
+Al modelarse
+como una
+fuente de
+tension con
+una capacidad
+en serie
+pequeña y
+una
+resistencia
+de fugas
+gigantesca,
+requiere
+circuitos de
+adaptacion
+especiales
+para evitar
+efectos de
+carga
+(interconex-
+ion).
+- Imposibi-
+lidad de
+realizar
+medidas
+estaticas:
+Si la fuerza
+aplicada es
+rigurosamente
+constante
+DC
+la carga se
+descarga por
+completo a
+traves de
+$$R_f$$
+La salida en
+continua
+DC
+es cero, lo
+que restringe
+el uso de
+estos
+transductores
+unicamente a
+medidas
+dinamicas o
+variables en
+el tiempo.
+- Respuesta
+en Frecuencia
+El transduc-
+tor presenta
+un comporta-
+miento de
+filtro paso
+alto por su
+naturaleza
+electrica, y
+una
+frecuencia
+de resonancia
+mecanica muy
+elevada
+(tipicamente
+entre
+$$15$$
+y
+$$40$$
+$$\text{kHz}$$
+segun el
+modelo). Esto
+lo hace ideal
+para captar
+transitorios
+rapidos,
+impactos o
+vibraciones.
+
+3.3.
+Circuitos de
+Adaptacion
+Para extraer
+la señal sin
+degradarla,
+se utilizan
+comercial-
+mente dos
+opciones de
+acondiciona-
+miento:
+
+A)
+Amplificador
+de Tension
+(Configura-
+cion de Alta
+Impedancia)
+Consiste en
+conectar el
+sensor a un
+amplificador
+de instrumen-
+tacion de
+caracteris-
+ticas
+electrome-
+tricas, es
+decir, con
+una
+impedancia de
+entrada
+extrema-
+damente alta
+mayor de
+$$1$$
+$$\text{T}\Omega$$
+y corrientes
+de polariza-
+cion
+desprecia-
+bles
+menores de
+$$1$$
+$$\text{pA}$$
+para no
+descargar el
+cristal.
+Funcion de
+transferencia
+Analizando
+el circuito
+completo, la
+capacidad
+equivalente
+es:
+$$C_{eq} = C_s + C_c + C_i$$
+y la
+resistencia
+equivalente
+es:
+$$R_{eq} = R_s \parallel R_c \parallel R_i$$
+La tension
+que llega al
+operacional
+en el dominio
+de Laplace
+es:
+$$V(s) = \frac{q(s)}{C_{eq}} \cdot \frac{s}{s + \frac{1}{R_{eq}C_{eq}}}$$
+Inconveniente
+principal
+(Efecto del
+cable):
+La
+sensibilidad
+del sistema
+en la banda
+de paso es
+inversamente
+proporcional
+a la
+capacidad
+total:
+$$\approx \frac{K}{C_{eq}}$$
+Como
+$$C_{eq}$$
+incluye la
+capacidad
+del cable de
+conexion
+$$C_c$$
+cualquier
+cambio en la
+longitud,
+tipo o
+movimiento
+del cable
+altera
+directamente
+la
+calibracion
+y la
+sensibilidad
+de la medida.
+Solucion
+comercial
+(Baja
+Impedancia -
+Piezotron):
+Para anular
+este
+problema, los
+fabricantes
+integran el
+mini-
+amplificador
+de tension
+DENTRO de la
+propia
+capsula del
+sensor
+(cables
+internos
+fijos de
+longitud
+despreciable)
+denominandose
+comercial-
+mente
+sensores de
+baja
+impedancia
+(como el
+sistema
+Piezotron de
+Kistler).
+
+B)
+Amplificador
+de Carga
+(Configura-
+cion Inversora
+de Kistler)
+Es la
+solucion de
+ingenieria
+optima y mas
+utilizada
+para sensores
+piezoelec-
+tricos puros.
+Consiste en
+conectar el
+sensor al
+nodo inversor
+(nodo de masa
+virtual) de
+un amplifi-
+cador
+operacional
+balanceado
+con una red
+de realimen-
+tacion en
+paralelo
+compuesta por
+un condensa-
+dor de
+precision
+$$C_2$$
+y una
+resistencia
+$$R_2$$
+Funcion de
+transferencia
+ideal
+(cuando la
+ganancia del
+operacional
+tiende a
+infinito):
+$$V_o(s) = \frac{-q(s)}{C_2} \cdot \frac{s}{s + \frac{1}{R_2C_2}}$$
+Ventaja
+revolucio-
+naria:
+Al estar el
+cable
+conectado a
+una masa
+virtual, la
+tension en
+sus extremos
+es cero y
+las
+capacidades
+del cable
+$$C_c$$
+y del sensor
+$$C_s$$
+quedan
+matematica-
+mente
+anuladas de
+la ecuacion
+de salida. La
+sensibilidad:
+$$\frac{-K}{C_2}$$
+y la
+frecuencia de
+corte
+inferior:
+$$\frac{1}{R_2C_2}$$
+dependen
+exclusiva-
+mente de los
+componentes
+internos del
+amplificador
+(
+$$R_2$$
+y
+$$C_2$$
+),
+permitiendo
+usar tiradas
+de manguera
+largas sin
+descalibrar
+el
+instrumento.
+Nota de
+diseño:
+El valor de
+R2 se escoge
+lo mas grande
+posible para
+bajar la
+frecuencia de
+corte y
+poder medir
+transitorios
+lentos, pero
+limitada por
+el desvio en
+continua
+provocado por
+la corriente
+de polariza-
+cion del
+operacional:
+$$V_{eDC} = -I_b \cdot R_2$$
+
+3.4. Tabla
+Comparativa
+
+Ventajas:
+- Alta rigidez
+mecanica:
+Experi-
+mentan
+deformaciones
+microsco-
+picas bajo
+cargas
+extremas
+(soportan
+esfuerzos de
+hasta
+$$20000$$
+$$\text{psi}$$
+).
+- Dinamica
+excelente:
+Poseen una
+frecuencia de
+resonancia
+altisima,
+idonea para
+transitorios,
+choques y
+acelero-
+metros.
+- Tamaño y
+masa
+reducidos:
+Permiten
+mediciones
+puntuales en
+piezas
+compactas sin
+añadir
+inercia
+termica o
+mecanica al
+sistema.
+
+Inconve-
+nientes:
+- Inviabilidad
+en estatica:
+Al descar-
+garse la
+señal, estan
+completa-
+mente
+limitados a
+medidas
+estrictamente
+dinamicas.
+- Circuitos
+complejos:
+Requieren
+ampli-
+ficadores de
+carga de alta
+tecnologia o
+acondiciona-
+dores
+electrome-
+tricos.
+- Sensibi-
+dad al ruido
+electromag-
+netico:
+Debido a su
+alta
+impedancia de
+salida, las
+lineas de
+transmision
+sin blindar
+son
+vulnerables
+al ruido
+ambiental.
+
+## Tema 6: Temperatura
+
+### Termopares
+**Pregunta:**
+- Termopares
+
+**Respuesta:**
+3. Termopares
+
+3.1. Principio
+de
+Funcionamiento:
+El Efecto
+Seebeck
+Descubierto por
+Thomas Seebeck
+en
+$$1821$$
+el efecto
+termoelectrico o
+Seebeck se
+produce al unir
+por sus
+extremos dos
+hilos de dos
+metales o
+aleaciones
+conductoras
+diferentes
+$$a$$
+y
+$$b$$
+Si ambas
+uniones se
+someten a
+temperaturas
+distintas:
+$$T_1 \neq T_2$$
+aparece de
+forma
+espontanea una
+fuerza
+electromotriz
+neta
+$$\epsilon_T$$
+distinta de
+cero en el
+circuito, lo
+que da lugar a
+una
+circulacion de
+corriente
+$$I$$
+Fisicamente, en
+el punto de
+contacto de
+ambos metales
+se genera un
+potencial de
+contacto
+originado por
+la difusion de
+electrones, el
+cual depende
+intrinsecamente
+de la
+naturaleza de
+los metales y
+de la
+temperatura a
+la que se
+encuentre la
+union.
+Si las
+temperaturas
+de ambas
+uniones son
+identicas:
+$$T_1 = T_2$$
+los
+potenciales son
+iguales y de
+signo opuesto,
+anulandose
+netamente:
+$$\epsilon_1 - \epsilon_2 = 0$$
+Si las
+temperaturas
+difieren:
+$$T_1 \neq T_2$$
+los
+potenciales de
+contacto se
+desequilibran,
+generando la
+f.e.m. medible:
+$$\epsilon_1 - \epsilon_2 \neq 0$$
+Matematica-
+mente, para
+dos metales
+concretos, la
+f.e.m. total
+generada se
+modela
+mediante un
+desarrollo
+polinomico
+dependiente de
+ambas
+temperaturas:
+$$\epsilon_T = \epsilon_{ab}(T_1) - \epsilon_{ab}(T_2)$$
+$$\epsilon_T = (\alpha_{ab}T_1 + \beta_{ab}T_1^2 + \gamma_{ab}T_1^3 + \dots) - (\alpha_{ab}T_2 + \beta_{ab}T_2^2 + \gamma_{ab}T_2^3 + \dots)$$
+$$\epsilon_T = \alpha_{ab}(T_1 - T_2) + \beta_{ab}(T_1^2 - T_2^2) + \gamma_{ab}(T_1^3 - T_2^3) + \dots$$
+Donde
+$$\alpha_{ab}, \beta_{ab}, \gamma_{ab}$$
+son los
+coeficientes
+termoelectricos
+propios de la
+combinacion de
+metales.
+Nota
+metrologica de
+examen (Doble
+Sensibilidad):
+La salida de un
+termopar es
+fidedignamente
+funcion de dos
+temperaturas
+independien-
+tes: la de la
+union de
+medida (union
+caliente,
+$$T_1$$
+) colocada en
+el mensurando,
+y la de la
+union de
+referencia
+(union fria,
+$$T_2$$
+) asociada a
+la zona de
+conexion del
+instrumento.
+Al tratarse de
+un problema de
+sensibilidad
+cruzada, para
+poder
+determinar
+$$T_1$$
+es
+matematica-
+mente
+imperativo
+conocer o
+compensar el
+valor de
+$$T_2$$
+.
+
+3.2. Las Tres
+Leyes de los
+Termopares
+Para el diseño
+fisico y la
+interconexion
+de estos
+sensores sin
+introducir
+errores
+parasitos, se
+deben cumplir
+tres leyes
+validadas
+experimen-
+talmente:
+1. Ley de los
+Circuitos
+Homogeneos: En
+un circuito
+cerrado hecho
+de un unico
+metal
+homogeneo, no
+puede
+producirse
+circulacion de
+corriente por
+diferencias de
+temperatura en
+su seno.
+Corolario: La
+f.e.m.
+generada por un
+termopar
+depende
+exclusiva-
+mente de las
+temperaturas
+de los extremos
+(
+$$T_1$$
+y
+$$T_2$$
+), siendo
+totalmente
+independiente
+de las
+temperaturas
+de los puntos
+intermedios a
+lo largo de los
+hilos.
+2. Ley de los
+Metales
+Intermedios:
+La suma
+algebraica de
+las f.e.m. en
+un circuito
+formado por
+varios metales
+distintos es
+cero si todo el
+conjunto se
+halla a una
+temperatura
+uniforme.
+Corolario: Si
+introducimos
+un tercer
+metal
+conductor
+(
+$$c$$
+) en el
+circuito (por
+ejemplo, hilos
+de cobre o
+soldadura de
+estaño),
+siempre que
+sus dos
+uniones con el
+termopar
+esten a la
+misma
+temperatura
+(
+$$T_1$$
+), la f.e.m.
+neta no se
+altera, siendo
+identica a la
+que se tendria
+suprimiendo
+dicho metal.
+3. Ley de las
+Temperaturas
+Sucesivas: Si
+un termopar
+genera una
+f.e.m.
+$$\epsilon_1$$
+al someter sus
+uniones a
+$$T_1$$
+y
+$$T_2$$
+, y una f.e.m.
+$$\epsilon_2$$
+al someterlas
+a
+$$T_2$$
+y
+$$T_3$$
+, la f.e.m.
+$$\epsilon_3$$
+generada al
+someterlas
+directamente
+a
+$$T_1$$
+y
+$$T_3$$
+es igual a la
+suma de las
+anteriores:
+$$\epsilon_3 = \epsilon_1 + \epsilon_2$$
+Esta ley
+permite
+construir las
+tablas de
+calibracion
+oficiales de
+los
+fabricantes
+referidas
+siempre a una
+temperatura de
+referencia
+fija
+(tipicamente
+$$T_{ref} = 0$$
+$$^{\circ}\text{C}$$
+).
+
+3.3. Tipos y
+Caracteristi-
+cas
+Comerciales
+(Norma
+IEC-584)
+Industrial-
+mente, se
+emplean
+aleaciones
+normalizadas
+internacio-
+nalmente para
+garantizar
+repetibilidad,
+linealidad y
+resistencia a
+la corrosion.
+El temario
+destaca los
+siguientes
+tipos:
+
+- Tipo J:
+Conductor (+):
+Hierro
+(
+$$\text{Fe}$$
+)
+Conductor (-):
+Constantan
+(
+$$\text{Cu-Ni}$$
+)
+Rango:
+$$-210$$
+a
+$$1200$$
+$$^{\circ}\text{C}$$
+Sensibilidad:
+$$50.38$$
+$$\mu\text{V}/^{\circ}\text{C}$$
+Notas: Barato,
+alta
+sensibilidad.
+Sufre
+oxidacion del
+hierro a alta
+temperatura.
+
+- Tipo K:
+Conductor (+):
+Cromel
+(
+$$\text{Ni-Cr}$$
+)
+Conductor (-):
+Alumel
+(
+$$\text{Ni-Al}$$
+)
+Rango:
+$$-270$$
+a
+$$1372$$
+$$^{\circ}\text{C}$$
+Sensibilidad:
+$$39.48$$
+$$\mu\text{V}/^{\circ}\text{C}$$
+Notas: El mas
+utilizado
+industrialmey
+por su amplio
+rango y buena
+resistencia a
+la oxidacion.
+
+- Tipo T:
+Conductor (+):
+Cobre
+(
+$$\text{Cu}$$
+)
+Conductor (-):
+Constantan
+(
+$$\text{Cu-Ni}$$
+)
+Rango:
+$$-270$$
+a
+$$400$$
+$$^{\circ}\text{C}$$
+Sensibilidad:
+$$38.74$$
+$$\mu\text{V}/^{\circ}\text{C}$$
+Notas:
+Excelente para
+bajas
+temperaturas
+(criogenia) y
+alta precision
+en rangos
+reducidos.
+
+- Tipo S:
+Conductor (+):
+$$\text{Pt}-10\%\ \text{Rh}$$
+Conductor (-):
+Platino
+(
+$$\text{Pt}$$
+)
+Rango:
+$$-50$$
+a
+$$1768$$
+$$^{\circ}\text{C}$$
+Sensibilidad:
+$$10.19$$
+$$\mu\text{V}/^{\circ}\text{C}$$
+Notas: Metales
+nobles.
+Altisima
+estabilidad y
+precision a
+temperaturas
+extremas. Muy
+caro.
+
+3.4. Circuitos
+de Acondicio-
+namiento de
+Señal
+El bloque de
+interfaz
+electronica
+para un
+termopar
+consta de tres
+funciones
+criticas:
+
+A)
+Conexionado:
+Cables de
+Extensión y
+Compensación
+Debido a la
+ley de los
+metales
+intermedios,
+si
+conectasemos
+el cabezal del
+termopar al
+instrumento
+usando hilos
+de cobre
+normales,
+creariamos
+nuevas uniones
+termoelectri-
+cas parasitas
+en el propio
+cabezal que
+falsearian la
+medida. Para
+evitarlo, la
+tirada de
+manguera hasta
+el equipo debe
+realizarse
+obligatoria-
+mente con
+cables de
+extension
+(mismo
+material que
+el termopar) o
+cables de
+compensacion
+(aleaciones
+mas baratas
+con
+caracteristi-
+cas
+termoelectri-
+cas
+equivalentes
+en rangos de
+$$0$$
+a
+$$100$$
+$$^{\circ}\text{C}$$
+). Al llegar
+al
+instrumento,
+los terminales
+se conectan a
+un bloque
+isotermo de
+alta
+conductividad
+termica que
+garantiza que
+ambas uniones
+de entrada
+esten
+exactamente
+a la misma
+temperatura
+ambiente
+(
+$$T_2$$
+).
+
+B)
+Amplificación
+y
+Linealización
+Al dar salidas
+de tensión muy
+reducidas
+(decenas de
+$$\mu\text{V}/^{\circ}\text{C}$$
+), se
+requiere un
+amplificador
+de alta
+ganancia
+realizado con
+operacionales
+de muy baja
+tensión de
+deriva y
+desvío (Low
+Offset OP).
+Para rangos
+amplios, se
+implementa por
+software en un
+microcontro-
+lador
+$$\mu\text{P}$$
+un algoritmo
+polinómico de
+conversión de
+orden
+$$N$$
+basado en las
+tablas del
+NIST para
+anular la
+alinealidad
+intrínseca.
+
+C) Técnicas
+de
+Compensación
+de la Unión
+Fría
+Para eliminar
+el error de la
+temperatura
+ambiente
+$$T_2$$
+del bloque
+isotermo,
+coexisten dos
+enfoques
+modernos:
+
+- Compensación
+Electrónica
+por Hardware
+(Analógica):
+Se coloca un
+segundo sensor
+de temperatura
+(como un
+termistor o
+diodo) en
+íntimo
+contacto
+térmico con
+el bloque
+isotermo.
+Este segundo
+sensor genera
+una tensión
+analógica
+$$V_2 = G_2 \cdot T_2$$
+de coeficiente
+positivo
+ajustada de
+forma que
+replique la
+pendiente del
+termopar a esa
+temperatura
+(
+$$G_2 \cdot T_2 \approx G_1 \cdot \text{f}_{ab}(T_2)$$
+). Al sumar
+en un circuito
+operacional
+sumador la
+señal
+amplificada
+del termopar
+(
+$$V_1 = G_1 \cdot [\epsilon(T_1) - \epsilon(T_2)]$$
+) con la del
+sensor, el
+término de
+$$T_2$$
+se cancela
+analógica-
+mente,
+resultando:
+$$V_o = G_1 \cdot \epsilon(T_1)$$
+
+- Compensación
+por Software
+(Digital): Es
+la alternativa
+estándar en
+los diseños
+modernos con
+microcontro-
+lador. El
+procedimiento
+secuencial del
+$$\mu\text{P}$$
+es el
+siguiente:
+Paso 1: Lee
+a través de un
+canal del ADC
+el valor del
+sensor local y
+calcula la
+temperatura
+real del
+bloque de
+conexiones
+(
+$$T_2$$
+).
+Paso 2:
+Mediante el
+polinomio
+directo
+oficial del
+tipo de
+termopar,
+calcula
+matemática-
+mente la
+f.e.m.
+teórica que
+corresponde-
+ría a esa
+temperatura de
+unión fría si
+estuviera
+referida a
+cero grados:
+$$\epsilon_2 = \text{f}(T_2)$$
+Paso 3: Lee a
+través de otro
+canal del ADC
+la tensión
+amplificada
+del termopar
+(
+$$V_1$$
+) y obtiene
+la f.e.m.
+neta del
+sensor:
+$$\epsilon = \frac{V_1}{G_1}$$
+Paso 4:
+Aplicando la
+Ley de las
+Temperaturas
+Sucesivas,
+calcula la
+f.e.m. total
+corregida
+respecto a
+$$0$$
+$$^{\circ}\text{C}$$
+:
+$$\epsilon_1 = \epsilon + \epsilon_2$$
+Paso 5:
+Introduce
+$$\epsilon_1$$
+en el
+polinomio
+inverso de
+conversión
+para extraer
+fidedigna-
+mente la
+temperatura
+final de la
+unión
+caliente:
+$$T_1 = \text{f}'(\epsilon_1)$$
+
+### Compensación de la unión fría en Termopares: Técnicas para su solución
+**Pregunta:**
+3.- Compensación
+de la unión
+fría en
+Termopares:
+Técnicas para
+su solución.
+
+**Respuesta:**
+1. El problema
+de la union
+fria (Doble
+sensibilidad)
+El principio de
+funcionamiento
+de un termopar
+se basa en el
+efecto Seebeck,
+where la
+fuerza
+electromotriz
+(f.e.m.)
+generada:
+$$\epsilon_T$$
+depende de la
+diferencia de
+temperatura
+entre la union
+de medida
+(union
+caliente,
+$$T_1$$
+situada en el
+mensurando) y
+la union de
+referencia
+(union fria,
+$$T_2$$
+situada en los
+terminales del
+equipo de
+medida).
+La f.e.m. total
+que el equipo
+de medida
+recibe es:
+$$\epsilon_T = f(T_1) - f(T_2)$$
+Esto significa
+que el
+termopar
+presenta una
+doble
+sensibilidad.
+Si la
+temperatura
+$$T_2$$
+del bloque de
+conexiones
+cambia, el
+valor de la
+f.e.m. medida
+variara aunque
+$$T_1$$
+permanezca
+constante.
+Por tanto,
+para obtener el
+valor correcto
+de
+$$T_1$$
+es obligatorio
+conocer o
+compensar el
+valor de
+$$T_2$$
+.
+
+2. Tecnicas de
+solucion
+Para
+garantizar una
+medida
+correcta,
+existen varias
+tecnicas de
+compensacion:
+
+A) Tecnica de
+temperatura de
+referencia fija
+(Tref = 0 ºC)
+Es una tecnica
+tradicional y
+robusta,
+aunque menos
+habitual en
+instrumenta-
+cion industrial
+moderna
+compacta.
+Consiste en
+sumergir la
+union de
+referencia en
+un baño de
+agua y hielo
+fundente,
+garantizando
+que:
+$$T_2 = 0$$
+$$^{\circ}\text{C}$$
+Dado que, por
+convencion,
+los termopares
+se tabulan
+respecto a:
+$$0$$
+$$^{\circ}\text{C}$$
+al ser:
+$$f(0\ ^\circ\text{C}) = 0$$
+la f.e.m.
+medida depende
+directamente
+de
+$$T_1$$
+segun:
+$$\epsilon = f(T_1)$$
+En la
+practica, se
+utilizan uno o
+mas termopares
+de
+compensacion
+para llevar
+esta
+referencia a
+un bloque
+isotermo.
+
+B)
+Compensacion
+electronica por
+Hardware
+(Analoga)
+Se utiliza un
+segundo sensor
+de temperatura
+(como un
+termistor NTC
+o diodo) en
+contacto
+termico con el
+bloque
+isotermo para
+medir la
+temperatura
+ambiente
+$$T_2$$
+.
+El circuito
+genera una
+tension de
+correccion:
+$$V_2 = G_2 \cdot T_2$$
+que se suma
+a la señal del
+termopar.
+Si se diseñan
+correctamente
+las ganancias,
+el termino
+dependiente de
+$$T_2$$
+se cancela
+analogica-
+mente,
+obteniendo una
+tension de
+salida:
+$$V_o \approx G_1 \cdot f(T_1)$$
+
+C)
+Compensacion
+por Software
+(Digital)
+Es la tecnica
+estandar en
+sistemas
+modernos con
+microcontro-
+lador. El
+procedimiento
+es:
+- Se mide
+$$T_2$$
+usando un
+sensor de
+temperatura
+local
+(integrado en
+el bloque
+isotermo).
+- Mediante la
+funcion
+analitica
+oficial del
+termopar, el
+microcontro-
+lador calcula
+la f.e.m.
+equivalente a
+esa
+temperatura de
+referencia:
+$$\epsilon_2 = f(T_2)$$
+- Se mide la
+f.e.m. del
+termopar y se
+suma el valor
+calculado:
+$$\epsilon_1 = \epsilon_{medida} + \epsilon_2 = f(T_1)$$
+- Finalmente,
+se aplica la
+funcion
+inversa para
+obtener la
+temperatura
+real:
+$$T_1 = f^{-1}(\epsilon_1)$$
+Esta tecnica
+es altamente
+flexible, ya
+que permite
+cambiar el
+tipo de
+termopar
+mediante
+software y
+realizar la
+linealizacion
+de la señal,
+corrigiendo la
+no linealidad
+intrinseca del
+termopar.
+
+### Unión semiconductora
+**Pregunta:**
+- Unión
+semiconductora
+(unión p-n)
+
+**Respuesta:**
+6.5. Union
+Semiconductora
+(Union p-n)
+
+6.5.1. Principio
+Fisico
+Los sensores de
+temperatura
+integrados de
+silicio basan
+su funciona-
+miento en la
+dependencia
+que guarda con
+la temperatura
+absoluta:
+$$T$$
+expresada en
+Kelvin, la
+tension base-
+emisor:
+$$U_{BE}$$
+de un
+transistor
+bipolar (BJT)
+polarizado en
+su zona activa.
+La relacion
+entre la
+corriente de
+colector:
+$$I_C$$
+y la tension
+$$U_{BE}$$
+se modela como:
+$$U_{BE} = \frac{k \cdot T}{q} \cdot \ln\left(\frac{I_C}{I_{CS}}\right)$$
+Donde:
+$$k$$
+es la
+constante de
+Boltzmann:
+$$1.38 \times 10^{-23}$$
+$$\text{J/K}$$
+$$q$$
+es la carga
+del electron:
+$$1.602 \times 10^{-19}$$
+$$\text{C}$$
+$$I_C$$
+es la
+intensidad de
+corriente de
+colector.
+$$I_{CS}$$
+es la
+corriente de
+saturacion
+inversa de la
+union de
+colector.
+Inconveniente
+metrologico y
+necesidad de
+linealizacion:
+Aunque el
+termino
+termico:
+$$\frac{k \cdot T}{q}$$
+conocido como
+tension
+termica:
+$$V_t$$
+es lineal con
+la temperatura,
+la corriente de
+saturacion
+$$I_{CS}$$
+presenta una
+fuerte
+dependencia
+exponencial
+y una severa
+alinealidad con
+la temperatura.
+Por tanto, si
+usaramos un
+unico
+transistor p-n
+aislado, la
+salida seria
+fuertemente no
+lineal. Para
+anular el
+impacto
+parasito de
+$$I_{CS}$$
+y conseguir
+una respuesta
+fidedignamente
+lineal, los
+diseños de
+instrumentacion
+integrada
+recurren a
+estructuras de
+emparejamiento
+con espejos de
+corriente.
+
+6.5.2. Espejos y
+PTAT
+Para comprender
+como se
+independiza la
+medida de
+$$I_{CS}$$
+analizamos la
+arquitectura
+estandar
+compuesta por
+dos
+transistores
+bipolares
+identicos
+$$Q_1$$
+y
+$$Q_2$$
+integrados en
+el mismo
+sustrato de
+silicio (lo que
+garantiza que
+compartan la
+misma
+temperatura,
+$$T$$
+).
+Fijamos mediante
+fuentes de
+corriente
+internas que
+por el colector
+de
+$$Q_1$$
+circule una
+intensidad
+$$I$$
+mientras que
+por el colector
+de
+$$Q_2$$
+se obliga a
+circular el
+doble de
+corriente:
+$$2 \cdot I$$
+La tension neta
+de salida
+$$U_s$$
+se toma como la
+diferencia
+entre ambas
+tensiones base-
+emisor:
+$$U_s = U_{BE1} - U_{BE2}$$
+Desarrollando:
+$$U_{s} = \frac{k \cdot T}{q} \cdot \ln\left(\frac{I}{\alpha \cdot I_{CS}}\right) - \frac{k \cdot T}{q} \cdot \ln\left(\frac{2 \cdot I}{\alpha \cdot I_{CS}}\right)$$
+$$U_{s} = \frac{k \cdot T}{q} \cdot \left[ \ln\left(\frac{1}{\alpha \cdot I_{CS}}\right) - \ln\left(\frac{2 \cdot I}{\alpha \cdot I_{CS}}\right) \right]$$
+$$U_{s} = \frac{k \cdot T}{q} \cdot \ln\left( \frac{\frac{I}{\alpha \cdot I_{CS}}}{\frac{2 \cdot I}{\alpha \cdot I_{CS}}} \right)$$
+$$U_{s} = \frac{k \cdot \ln\left(\frac{1}{2}\right)}{q} \cdot T$$
+$$\implies U_{s} = K \cdot T$$
+Al restarse los
+componentes,
+el termino
+conflictivo
+$$I_{CS}$$
+se cancela de
+la ecuacion,
+dando como
+resultado una
+tension de
+salida
+$$U_s$$
+que es
+estrictamente
+proporcional a
+la temperatura
+absoluta
+(comporta-
+miento conocido
+como PTAT:
+Proportional
+To Absolute
+Temperature).
+
+6.5.3. Tipos
+de Salida
+Gracias a que
+todo el
+conjunto se
+fabrica sobre
+silicio, en el
+mismo
+encapsulado se
+integran
+etapas de
+amplificacion y
+acondiciona-
+miento:
+
+A) Salida en
+Corriente
+(AD590)
+Funcionamiento:
+El circuito
+interno fuerza
+a que el
+integrado actue
+como una
+fuente de
+corriente
+ideal
+dependiente de
+la temperatura.
+Su funcion de
+transferencia
+esta calibrada
+a:
+$$I_{out} = 1$$
+$$\mu\text{A/K}$$
+$$\cdot T\text{(K)}$$
+Acondiciona-
+miento
+practico: Para
+adquirir la
+señal en
+tension
+$$V_T$$
+basta con
+hacer circular
+la corriente a
+traves de una
+resistencia de
+precision
+(por ejemplo,
+una resistencia
+ajustable de
+$$100$$
+$$\Omega$$
+en serie con
+una fija de
+$$950$$
+$$\Omega$$
+sumando
+$$1$$
+$$\text{k}\Omega$$
+en total)
+conectado a
+masa, lo que
+proporciona
+una
+sensibilidad
+de:
+$$1$$
+$$\text{mV/K}$$
+siendo:
+$$V_T = I_{out} \cdot 1$$
+$$\text{k}\Omega$$
+Es ideal para
+tiradas de
+cables
+kilometricas ya
+que la caida
+de tension del
+hilo no
+introduce
+error.
+
+B) Salida
+Digital Directa
+(LTC1392)
+Funcionamiento:
+El chip de
+silicio integra
+el sensor,
+una referencia
+de tension
+(bandgap de
+$$2.42$$
+$$\text{V}$$
+), un
+multiplexor
+analogico
+(AMUX), un
+convertidor
+analogico-
+digital
+(ADC de
+aproximaciones
+sucesivas de
+$$10$$
+bits) y un
+puerto de
+comunicacion
+serie (SPI/I2C)
+para conectar
+con el
+microcontro-
+lador
+$$\mu\text{P}$$
+.
+
+6.5.4. Tabla
+Comparativa
+
+Ventajas:
+- Facilidad de
+interfaz
+extrema: Al
+entregar
+salidas
+normalizadas
+en corriente
+(
+$$1$$
+$$\mu\text{A/K}$$
+), tension
+lineal o buses
+digitales
+directos,
+ahorran
+circuitos
+externos.
+- Bajo coste
+relativo: Su
+fabricacion en
+masa como
+integrados los
+hace muy
+economicos.
+- Linealidad
+excelente: En
+su estrecho
+rango de
+operacion, la
+linealidad
+supera a las
+NTC.
+
+Inconve-
+nientes:
+- Rango de
+operacion muy
+limitado:
+Restringidos a
+un espectro de
+trabajo de
+$$-55$$
+a
+$$+125$$
+$$^{\circ}\text{C}$$
+(maximo
+$$+150$$
+$$^{\circ}\text{C}$$
+), quedando
+descartados
+para hornos o
+criogenia.
+- Exactitud y
+resolucion
+mediocres (sin
+calibrar): Los
+modelos
+comerciales
+sufren
+tolerancias
+que imponen
+errores de
+$$\pm 1$$
+a
+$$\pm 2$$
+$$^{\circ}\text{C}$$
+requiriendo
+ajustes por
+software.
+- Sensibilidad
+al autocalen-
+tamiento: Al
+requerir
+alimentacion
+activa,
+disipan
+potencia Joule
+afectando a la
+medida si el
+medio no
+disipa bien.
+
+### Termistores NTC
+**Pregunta:**
+- Termistores
+NTC
+
+**Respuesta:**
+3. Termistores
+NTC
+
+3.1. Definicion y
+Fundamentos
+Los termistores
+son sensores de
+temperatura
+resistivos
+fabricados con
+materiales
+semiconductores.
+Su nombre
+proviene de la
+contraccion de
+Thermally
+Sensitive
+Resistor.
+Dentro de esta
+familia, las
+NTC (Negative
+Temperature
+Coefficient) se
+caracterizan por
+una resistencia
+ohmica que
+varia inversa-
+mente con la
+temperatura;
+es decir,
+poseen un
+coeficiente de
+temperatura
+negativo: a
+mayor tempera-
+tura, menor
+resistencia.
+Principio Fisico:
+En los
+semiconductores,
+la conductivi-
+dad electrica
+depende del
+numero de
+electrones
+disponibles en
+la banda de
+conduccion.
+Al aumentar la
+temperatura, la
+energia media
+de las
+particulas
+aumenta, lo que
+incrementa la
+probabilidad de
+que electrones
+salten de la
+banda de
+valencia a la
+de conduccion,
+aumentando asi
+la conductivi-
+dad y, por
+ende,
+disminuyendo
+la resistencia.
+
+3.2. Modelos
+Matematicos y
+Comportamiento
+La relacion
+resistencia-
+temperatura de
+una NTC es
+fuertemente no
+lineal.
+Modelo de dos
+parametros: Es
+el modelo mas
+habitual para
+aproximaciones
+de rango
+estrecho:
+$$R_{NTC}(T) = R_f \cdot e^{B \cdot \left( \frac{1}{T} - \frac{1}{T_f} \right)}$$
+Donde
+$$T_f$$
+es una
+temperatura de
+referencia
+(tipicamente
+$$298$$
+$$\text{K}$$
+),
+$$R_f$$
+es la
+resistencia a
+esa
+temperatura, y
+$$B$$
+es un
+parametro que
+caracteriza al
+material en el
+rango de
+temperaturas
+especificado.
+Modelos de Alta
+Precision: Para
+aplicaciones
+de mayor
+exactitud, se
+utilizan
+ecuaciones como
+la de
+Steinhart-Hart,
+que permiten
+reducir el
+error a
+milesimas de
+grado:
+$$R_{NTC}(T) = e^{A + \frac{B}{T} + \frac{C'}{T^3}}$$
+
+3.3.
+Acondiciona-
+miento y
+Linealizacion
+Debido a la
+fuerte
+alinealidad, en
+aplicaciones
+de medida es
+imperativo
+linealizar la
+respuesta. Las
+tecnicas mas
+frecuentes
+incluyen:
+- Paralelo con
+resistencia
+fija
+(
+$$R_p$$
+): Al conectar
+una resistencia
+fija en
+paralelo con la
+NTC, se obtiene
+una resistencia
+equivalente
+$$R_e(T)$$
+con una curva
+mas lineal (en
+forma de S o
+sigmoide) en el
+rango de medida
+deseado. El
+valor de
+$$R_p$$
+se elige para
+optimizar la
+linealidad,
+bien forzando
+el punto de
+inflexion en el
+centro del
+rango de
+interes o
+mediante
+metodos
+geometricos
+para que tres
+puntos de la
+curva se
+alineen.
+- Divisor de
+Tension:
+Conectar la
+NTC en un
+divisor de
+tension con una
+resistencia
+serie
+(
+$$R_s$$
+) y una fuente
+de referencia
+(
+$$V_{ref}$$
+). La tension
+de salida
+$$V_s(T)$$
+tendra una
+forma
+funcional
+analoga a la
+resistencia
+equivalente
+$$R_e(T)$$
+permitiendo
+obtener una
+señal de
+tension
+linealizada con
+una etapa
+amplificadora
+posterior.
+
+3.4.
+Caracteristicas
+Comparativas
+(Frente a RTD)
+
+Ventajas:
+- Presentan una
+mayor
+sensibilidad y
+un coste
+generalmente
+inferior a las
+RTDs de
+platino.
+
+Inconve-
+nientes:
+- Su rango de
+operacion es
+limitado
+(tipicamente de
+$$-55$$
+a
+$$+125$$
+$$^{\circ}\text{C}$$
+, maximo
+$$150$$
+$$^{\circ}\text{C}$$
+), carecen de
+la excelente
+linealidad de
+una PT100 y, al
+ser elementos
+activos, se
+debe considerar
+el error por
+autocalen-
+tamiento
+(disipacion de
+potencia Joule)
+en el diseño
+del circuito
+de medida.
+
+## Tema 6: Temperatura
+<!-- Preguntas teóricas de este tema -->
+
